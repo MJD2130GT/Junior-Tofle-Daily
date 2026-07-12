@@ -166,13 +166,16 @@ nav.bottom button.active { color: var(--primary-dark); }
   font-weight: 800; font-size: .82rem;
   font-family: var(--mono);
 }
-.choice.selected { border-color: var(--primary); background: var(--primary-soft); box-shadow: 0 0 10px rgba(109, 74, 255, .18); }
+.choice:active { transform: scale(.98); }
+.choice.selected { border-color: var(--primary); background: var(--primary-soft); box-shadow: 0 0 10px rgba(109, 74, 255, .18); animation: choice-pop .18s ease; }
 .choice.selected .letter { background: var(--primary); color: #fff; }
-.choice.correct { border-color: var(--green); background: var(--green-soft); }
+.choice.correct { border-color: var(--green); background: var(--green-soft); animation: choice-pop .32s ease; }
 .choice.correct .letter { background: var(--green); color: #fff; }
-.choice.wrong { border-color: var(--red); background: var(--red-soft); }
+.choice.wrong { border-color: var(--red); background: var(--red-soft); animation: choice-shake .4s ease; }
 .choice.wrong .letter { background: var(--red); color: #fff; }
 .choice:disabled { cursor: default; }
+@keyframes choice-pop { 0% { transform: scale(1); } 45% { transform: scale(1.035); } 100% { transform: scale(1); } }
+@keyframes choice-shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-7px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(2px); } }
 
 .grade-banner {
   border-radius: 12px; padding: 12px 14px;
@@ -311,7 +314,44 @@ input::placeholder { color: #9a9aa6; }
   100% { transform: translateY(80vh) rotate(360deg); opacity: 0; }
 }
 
+/* ---------- level-up modal ---------- */
+.modal.levelup { max-width: 320px; }
+.lv-ring {
+  width: 96px; height: 96px; margin: 4px auto 0;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem;
+  background: radial-gradient(circle at 50% 40%, rgba(124, 92, 255, .28), rgba(124, 92, 255, .08));
+  border: 2px solid rgba(124, 92, 255, .5);
+  animation: lv-pop .45s cubic-bezier(.2, 1.2, .4, 1);
+}
+.lv-tag {
+  display: inline-block; font-family: var(--mono); font-weight: 800;
+  font-size: .72rem; letter-spacing: .18em;
+  color: var(--primary-dark);
+  background: var(--primary-soft); border: 1px solid rgba(109, 74, 255, .3);
+  border-radius: 999px; padding: 3px 12px;
+}
+@keyframes lv-pop { 0% { transform: scale(.3); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+/* ---------- charts (stats) ---------- */
+.bar-row + .bar-row { margin-top: 14px; }
+.bar-label { font-weight: 700; font-size: .9rem; }
+.bar-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.bar-val { font-family: var(--mono); font-weight: 800; font-size: .88rem; }
+.bar-track { height: 12px; margin-top: 7px; background: #ece9f7; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; min-width: 4px; border-radius: 999px; transition: width .6s cubic-bezier(.2, .8, .3, 1); }
+
+.spark { width: 100%; height: auto; display: block; overflow: visible; }
+.spark-grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 3; }
+.spark-gtext { fill: var(--sub); font-size: 9px; font-family: var(--mono); }
+.spark-area { fill: rgba(109, 74, 255, .13); }
+.spark-line { fill: none; stroke: #6d4aff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.spark-dot { fill: #6d4aff; stroke: var(--card); stroke-width: 1.6; }
+
 /* ---------- result ---------- */
+.result-emoji { font-size: 3.2rem; animation: result-pop .5s cubic-bezier(.2, 1.3, .4, 1); }
+@keyframes result-pop { 0% { transform: scale(0) rotate(-12deg); } 70% { transform: scale(1.15) rotate(4deg); } 100% { transform: scale(1) rotate(0); } }
 .result-score { font-size: 2.6rem; font-weight: 900; font-family: var(--mono); }
 .point-line { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px dashed var(--line); font-size: .9rem; }
 .point-line:last-child { border-bottom: none; }
@@ -329,3 +369,14 @@ input::placeholder { color: #9a9aa6; }
 .link-btn { color: var(--primary-dark); font-weight: 700; font-size: .88rem; }
 a.link-btn { text-decoration: none; }
 .back-btn { font-size: 1.3rem; padding: 4px 10px 4px 0; color: var(--sub); }
+
+/* ---------- 접근성: 모션 최소화 설정 시 애니메이션/전환 비활성화 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .confetti { display: none !important; }
+}

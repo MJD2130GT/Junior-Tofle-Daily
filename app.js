@@ -103,6 +103,11 @@ let S = null;          // 전역 상태 (localStorage 동기화)
 let view = { name: "home" };   // 현재 화면
 let quiz = null;       // 진행 중 퀴즈 세션(메모리): {mode, qids, idx, phase, selected, results[]}
 let parentUnlocked = false;    // 부모님 공간 잠금 해제 (세션 한정)
+let pendingLevelUp = null;     // 레벨업 발생 시 결과 화면에서 띄울 모달 정보
+
+function prefersReduced() {
+  return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+}
 
 function nowISO() { return new Date().toISOString(); }
 function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
@@ -185,6 +190,11 @@ function levelInfo(total) {
   }
   const pct = next ? Math.min(100, Math.round((total - cur.min) / (next.min - cur.min) * 100)) : 100;
   return { ...cur, next, pct };
+}
+function levelIndex(total) {
+  let idx = 0;
+  for (let i = 0; i < LEVELS.length; i++) if (total >= LEVELS[i].min) idx = i;
+  return idx;
 }
 
 function hasBadge(id) { return S.badges.some(b => b.id === id); }
@@ -364,6 +374,12 @@ function render() {
     default:        html = viewHome();
   }
   el.innerHTML = html + (inQuiz ? "" : navHTML());
+  runCountUps();
+  if (view.name === "result" && pendingLevelUp) {
+    const lv = pendingLevelUp;
+    pendingLevelUp = null;
+    setTimeout(() => showLevelUpModal(lv), 650); // 점수 카운트업이 끝난 뒤 등장
+  }
 }
 
 function esc(s) {
@@ -510,6 +526,7 @@ function startDaily() {
     idx: set.answers.length,
     phase: "answer", selected: null,
     results: set.answers.slice(),
+    startLevelIdx: levelIndex(S.points.total),
   };
   // 마지막 문제까지 답하고 결과 직전에 나갔던 경우 → 바로 완료 처리
   if (quiz.idx >= quiz.qids.length) { finishQuiz(); return; }
@@ -519,7 +536,7 @@ function startDaily() {
 function startReview(ids) {
   ids = (ids || []).filter(id => getQ(id));
   if (!ids.length) { toast("복습할 오답이 없어요!"); return; }
-  quiz = { mode: "review", qids: shuffle(ids), idx: 0, phase: "answer", selected: null, results: [] };
+  quiz = { mode: "review", qids: shuffle(ids), idx: 0, phase: "answer", selected: null, results: [], startLevelIdx: levelIndex(S.points.total) };
   go("quiz");
 }
 
@@ -651,6 +668,11 @@ function finishQuiz() {
   }
   checkBadges();
   checkMissions();
+  // 이번 세션에서 레벨이 올랐으면 결과 화면에서 축하 모달을 띄운다
+  if (quiz && quiz.startLevelIdx != null) {
+    const newIdx = levelIndex(S.points.total);
+    if (newIdx > quiz.startLevelIdx) pendingLevelUp = LEVELS[newIdx];
+  }
   save();
   go("result");
 }
@@ -677,23 +699,24 @@ function viewResult() {
   const r = S.settings.rules;
   const isDaily = quiz.mode === "daily";
 
+  const pv = n => `+<span class="countup" data-to="${n}">0</span>P`;
   let lines = "";
   if (isDaily) {
     const solved = quiz.sessionSolve || 0;
     const bonus = quiz.sessionBonus || 0;
     lines = `
-      <div class="point-line"><span>문제 풀이 ×${solved}</span><span class="p">+${r.solve * solved}P</span></div>
-      ${bonus ? `<div class="point-line"><span>첫 정답 보너스 ×${bonus}</span><span class="p">+${r.correct * bonus}P</span></div>` : ""}
-      <div class="point-line"><span>오늘 학습 완료</span><span class="p">+${r.daily}P</span></div>`;
+      <div class="point-line"><span>문제 풀이 ×${solved}</span><span class="p">${pv(r.solve * solved)}</span></div>
+      ${bonus ? `<div class="point-line"><span>첫 정답 보너스 ×${bonus}</span><span class="p">${pv(r.correct * bonus)}</span></div>` : ""}
+      <div class="point-line"><span>오늘 학습 완료</span><span class="p">${pv(r.daily)}</span></div>`;
   } else {
-    lines = `<div class="point-line"><span>오답 정복 ×${correct}</span><span class="p">+${r.review * correct}P</span></div>`;
+    lines = `<div class="point-line"><span>오답 정복 ×${correct}</span><span class="p">${pv(r.review * correct)}</span></div>`;
   }
 
   return `
   <div class="center" style="padding-top:5vh">
-    <div style="font-size:3.2rem">${correct === total ? "🏆" : correct >= total / 2 ? "🎉" : "💪"}</div>
+    <div class="result-emoji">${correct === total ? "🏆" : correct >= total / 2 ? "🎉" : "💪"}</div>
     <h1 class="mt8">${isDaily ? "오늘 학습 완료!" : "복습 완료!"}</h1>
-    <div class="result-score mt8">${correct}<span class="sub" style="font-size:1.2rem"> / ${total}</span></div>
+    <div class="result-score mt8"><span class="countup" data-to="${correct}">0</span><span class="sub" style="font-size:1.2rem"> / ${total}</span></div>
     ${isDaily ? `<p class="sub mt8">🔥 연속 학습 ${displayedStreak()}일째!</p>` : ""}
   </div>
   <div class="card mt16">
@@ -772,16 +795,6 @@ function viewStats() {
     return `<div class="${cls}" title="${d}">${parseInt(d.slice(8), 10)}</div>`;
   }).join("");
 
-  const rows = [
-    ["🏝️ 어드벤처", accuracy("adventure"), accuracy("adventure", 7)],
-    ["✏️ 문법·어휘", accuracy("lfm"), accuracy("lfm", 7)],
-    ["📚 전체", accuracy(null), accuracy(null, 7)],
-  ].map(([name, all, wk]) => `
-    <div class="point-line">
-      <span>${name}</span>
-      <span><b>${all == null ? "-" : all + "%"}</b> <span class="sub small">(최근7일 ${wk == null ? "-" : wk + "%"})</span></span>
-    </div>`).join("");
-
   const learnedDays = Object.values(S.dailySets).filter(s => s.completed).length;
 
   return `
@@ -793,14 +806,65 @@ function viewStats() {
     <div class="stat-tile"><div class="v">${S.streak.longest}</div><div class="k">최장 연속</div></div>
   </div>
   <div class="card mt16">
-    <h3>정답률</h3>
-    <div class="mt8">${rows}</div>
+    <h3>유형별 정답률</h3>
+    <div class="mt12">${accuracyBarsHTML()}</div>
   </div>
   <div class="card mt16">
-    <h3>최근 14일</h3>
+    <h3>최근 14일 정답률 추이</h3>
+    <div class="mt12">${trendSparklineHTML()}</div>
+  </div>
+  <div class="card mt16">
+    <h3>최근 14일 학습</h3>
     <div class="cal-grid mt12">${cal}</div>
     <p class="sub small mt8">🟩 완료 · 연한 초록 = 일부 진행</p>
   </div>`;
+}
+
+// 유형별 정답률 가로 막대 (직접 라벨링 → 색이 유일 식별 수단이 아님)
+function accuracyBarsHTML() {
+  const rows = [
+    ["🏝️ 어드벤처", "#ea580c", accuracy("adventure"), accuracy("adventure", 7)],
+    ["✏️ 문법·어휘", "#0891b2", accuracy("lfm"), accuracy("lfm", 7)],
+    ["📚 전체", "#6d4aff", accuracy(null), accuracy(null, 7)],
+  ];
+  return rows.map(([name, color, all, wk]) => `
+    <div class="bar-row">
+      <div class="row between">
+        <span class="bar-label"><span class="bar-dot" style="background:${color}"></span>${name}</span>
+        <span class="bar-val">${all == null ? "-" : all + "%"}<span class="sub small" style="font-family:inherit"> · 7일 ${wk == null ? "-" : wk + "%"}</span></span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:${all == null ? 0 : all}%;background:${color}"></div></div>
+    </div>`).join("");
+}
+
+// 최근 14일 일별 정답률 스파크라인 (단일 시계열 → 보라 단색, 범례 불필요)
+function trendSparklineHTML() {
+  const today = todayKey();
+  const data = [];
+  for (let i = 13; i >= 0; i--) {
+    const k = addDays(today, -i);
+    const att = S.attempts.filter(a => a.date.slice(0, 10) === k);
+    data.push({ k, n: att.length, acc: att.length ? Math.round(att.filter(a => a.isCorrect).length / att.length * 100) : null });
+  }
+  const pts = data.map((d, i) => ({ ...d, i })).filter(d => d.acc != null);
+  if (pts.length < 2) return `<p class="sub small">데이터가 더 모이면 추이가 표시돼요. (이틀 이상 학습 필요)</p>`;
+  const W = 320, H = 96, padL = 6, padR = 6, padT = 10, padB = 18;
+  const x = i => padL + i / 13 * (W - padL - padR);
+  const y = acc => padT + (100 - acc) / 100 * (H - padT - padB);
+  const line = pts.map((d, j) => (j ? "L" : "M") + x(d.i).toFixed(1) + " " + y(d.acc).toFixed(1)).join(" ");
+  const area = `M${x(pts[0].i).toFixed(1)} ${(H - padB).toFixed(1)} `
+    + pts.map(d => "L" + x(d.i).toFixed(1) + " " + y(d.acc).toFixed(1)).join(" ")
+    + ` L${x(pts[pts.length - 1].i).toFixed(1)} ${(H - padB).toFixed(1)} Z`;
+  const dots = pts.map(d => `<circle cx="${x(d.i).toFixed(1)}" cy="${y(d.acc).toFixed(1)}" r="3.2" class="spark-dot"><title>${d.k.slice(5)} · 정답률 ${d.acc}% (${d.n}문제)</title></circle>`).join("");
+  const g50 = y(50).toFixed(1);
+  return `<svg viewBox="0 0 ${W} ${H}" class="spark" role="img" aria-label="최근 14일 일별 정답률 추이">
+    <line x1="${padL}" y1="${g50}" x2="${W - padR}" y2="${g50}" class="spark-grid"/>
+    <text x="${W - padR}" y="${(y(50) - 3).toFixed(1)}" class="spark-gtext" text-anchor="end">50%</text>
+    <path d="${area}" class="spark-area"/>
+    <path d="${line}" class="spark-line"/>
+    ${dots}
+  </svg>
+  <div class="row between sub small mt8"><span>${data[0].k.slice(5)}</span><span>점을 누르면 상세가 보여요</span><span>오늘</span></div>`;
 }
 
 // ---------------- 보상 ----------------
@@ -1229,6 +1293,7 @@ function toast(msg, kind) {
   setTimeout(() => el.remove(), 2600);
 }
 function burstConfetti() {
+  if (prefersReduced()) return;
   const emojis = ["🎉", "⭐", "🪙", "✨", "🎊"];
   for (let i = 0; i < 14; i++) {
     const el = document.createElement("div");
@@ -1239,6 +1304,44 @@ function burstConfetti() {
     document.body.appendChild(el);
     setTimeout(() => el.remove(), 2200);
   }
+}
+
+// data-to 값까지 숫자를 부드럽게 올리는 애니메이션 (축소 모션이면 즉시 표시)
+function runCountUps() {
+  if (!document.querySelectorAll) return;
+  document.querySelectorAll(".countup").forEach(el => {
+    if (el.dataset.done) return;
+    el.dataset.done = "1";
+    const to = parseInt(el.dataset.to, 10) || 0;
+    if (prefersReduced() || to <= 0) { el.textContent = to.toLocaleString(); return; }
+    const dur = Math.min(900, 250 + to * 12);
+    const t0 = performance.now();
+    (function tick(now) {
+      const t = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+      el.textContent = Math.round(to * eased).toLocaleString();
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = to.toLocaleString();
+    })(t0);
+  });
+}
+
+// 레벨업 축하 모달
+function showLevelUpModal(level) {
+  const back = document.createElement("div");
+  back.className = "modal-back";
+  back.innerHTML = `<div class="modal levelup center">
+    <div class="lv-ring">${level.icon}</div>
+    <div class="lv-tag mt12">LEVEL UP</div>
+    <h2 class="mt8">${esc(level.title)} 레벨 달성!</h2>
+    <p class="sub mt8">누적 포인트로 레벨이 올랐어요. 대단해요! 🎉</p>
+    <button class="btn primary mt16" id="lv-ok">좋아요!</button>
+  </div>`;
+  const close = () => back.remove();
+  back.addEventListener("click", e => { if (e.target === back) close(); });
+  document.body.appendChild(back);
+  document.getElementById("lv-ok").addEventListener("click", close);
+  burstConfetti();
 }
 
 // ---------------- 초기화 ----------------
