@@ -56,6 +56,15 @@ const VOCAB = [
   ["helmet", "헬멧"], ["uniform", "교복, 유니폼"], ["aquarium", "수족관"], ["experiment", "실험"],
   ["wing", "날개"], ["insect", "곤충"], ["mammal", "포유류"], ["nectar", "(꽃의) 꿀"],
   ["hive", "벌집"], ["volcano", "화산"], ["fence", "울타리"], ["stroke", "(수영) 팔 젓기"],
+  // 아래는 LFM(문법·어휘) 문항에도 걸리도록 추가한 단어. LFM 빈칸은 조사/전치사 자리라
+  // 빈칸 앞뒤 단어(형용사·동사·명사)는 그대로 남아 있어 매칭된다.
+  ["someday", "언젠가"], ["decided", "결심했다 (decide: 결심하다)"], ["agreed", "동의했다 (agree: 동의하다)"],
+  ["promised", "약속했다 (promise: 약속하다)"], ["advised", "조언했다 (advise: 조언하다)"], ["invented", "발명했다 (invent: 발명하다)"],
+  ["scientist", "과학자"], ["island", "섬"], ["ocean", "바다"], ["environment", "환경"], ["choir", "합창단"],
+  ["afraid", "무서워하는"], ["famous", "유명한"], ["proud", "자랑스러운"], ["tired", "피곤한, 싫증난"],
+  ["different", "다른"], ["honest", "정직한"], ["polite", "예의 바른, 공손한"], ["careful", "조심스러운"],
+  ["difficult", "어려운"], ["beautiful", "아름다운"], ["exciting", "신나는"], ["delicious", "맛있는"],
+  ["popular", "인기 있는"], ["freezing", "몹시 추운"],
 ];
 
 // 통계·리포트용 태그 한글 이름
