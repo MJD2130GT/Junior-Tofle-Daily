@@ -30,6 +30,50 @@ const BADGES = [
   { id: "solve_100",   icon: "📚", name: "100문제 돌파",  desc: "누적 100문제 풀이" },
 ];
 
+// 주간 미션 (월요일 시작 주 단위, 달성 시 1회 보너스)
+const MISSIONS = [
+  { id: "m_days", name: "이번 주 5일 학습 완료", target: 5, points: 50, prog: () => completedDaysThisWeek() },
+  { id: "m_correct", name: "이번 주 정답 20개 모으기", target: 20, points: 40, prog: () => correctThisWeek() },
+  { id: "m_conquer", name: "이번 주 오답 5개 정복", target: 5, points: 30, prog: () => conqueredThisWeek() },
+];
+
+// 오늘의 어휘 사전 (오늘 푼 문항의 지문에 등장한 단어만 노출)
+const VOCAB = [
+  ["attic", "다락방"], ["treasure", "보물"], ["backpack", "배낭"], ["nervous", "긴장한"],
+  ["worried", "걱정하는"], ["excited", "신이 난"], ["coach", "코치, 감독"], ["prize", "상"],
+  ["contest", "대회"], ["borrow", "빌리다"], ["reopen", "다시 열다"], ["instead", "대신에"],
+  ["notice", "공지문"], ["field trip", "현장 학습"], ["arrive", "도착하다"], ["sharp", "(시각 뒤에서) 정각"],
+  ["gift card", "상품권"], ["bookmark", "책갈피"], ["theme", "주제"], ["sandcastle", "모래성"],
+  ["seashell", "조개껍데기"], ["parade", "퍼레이드, 행진"], ["campfire", "모닥불"], ["picnic", "소풍"],
+  ["climb", "오르다"], ["pouch", "(캥거루의) 주머니"], ["joey", "새끼 캥거루"], ["trunk", "코끼리 코"],
+  ["flap", "펄럭이다, 파닥이다"], ["hump", "(낙타의) 혹"], ["eyelash", "속눈썹"], ["echo", "메아리"],
+  ["upside down", "거꾸로"], ["squeeze", "비집고 들어가다"], ["sticky", "끈적한"], ["tongue", "혀"],
+  ["seal", "바다표범"], ["danger", "위험"], ["enemy", "적"], ["hide", "숨다"],
+  ["blink", "깜박이다"], ["breathe", "숨을 쉬다"], ["encourage", "격려하다"], ["relay race", "이어달리기"],
+  ["baton", "배턴"], ["fold", "접다"], ["spread", "펴 바르다"], ["stir", "휘젓다"],
+  ["soil", "흙"], ["seed", "씨앗"], ["ribbon", "리본"], ["take turns", "번갈아 하다"],
+  ["look after", "돌보다"], ["belong to", "~의 것이다"], ["depend on", "~에 달려 있다"], ["chore", "집안일"],
+  ["helmet", "헬멧"], ["uniform", "교복, 유니폼"], ["aquarium", "수족관"], ["experiment", "실험"],
+  ["wing", "날개"], ["insect", "곤충"], ["mammal", "포유류"], ["nectar", "(꽃의) 꿀"],
+  ["hive", "벌집"], ["volcano", "화산"], ["fence", "울타리"], ["stroke", "(수영) 팔 젓기"],
+];
+
+// 통계·리포트용 태그 한글 이름
+const TAG_KO = {
+  "tense": "시제", "past-perfect": "과거완료", "past-progressive": "과거진행", "present-perfect": "현재완료",
+  "preposition": "전치사", "collocation": "짝꿍 표현", "gerund": "동명사", "infinitive": "to부정사",
+  "verb-pattern": "동사 활용", "conditional": "조건문", "comparative": "비교급", "superlative": "최상급",
+  "as-as": "원급 비교", "quantifier": "수량 표현", "uncountable": "셀 수 없는 명사", "countable": "셀 수 있는 명사",
+  "modal": "조동사", "obligation": "의무 표현", "necessity": "필요 표현", "passive": "수동태",
+  "pronoun": "대명사", "possessive": "소유격", "reflexive": "재귀대명사", "object": "목적격",
+  "relative-clause": "관계대명사", "adverb": "부사", "word-form": "품사 구별", "so-that": "so~that 구문",
+  "conjunction": "접속사", "contrast": "대조 표현", "article": "관사", "subject-verb-agreement": "수 일치",
+  "question-word": "의문사", "idiom": "관용 표현", "vocabulary": "어휘", "detail": "세부 정보 찾기",
+  "inference": "추론", "main-idea": "주제 찾기", "purpose": "목적 찾기", "cause-effect": "원인과 결과",
+  "sequence": "순서 파악", "feeling": "감정 파악", "dialogue": "대화문", "story": "이야기 글",
+  "notice": "공지문", "letter": "편지 글", "nonfiction": "설명문", "how-to": "방법 설명 글", "reading": "독해",
+};
+
 const DEFAULT_RULES = {
   solve: 5,      // 문제 1개 제출(시도 보상)
   correct: 5,    // 첫 정답 보너스
@@ -77,7 +121,9 @@ function defaultState() {
     rewards: DEFAULT_REWARDS.map(r => ({ ...r })),
     redemptions: [], // {id, rewardId, name, cost, status, requestedAt, decidedAt}
     settings: { rules: { ...DEFAULT_RULES }, parentPin: null },
-    meta: { firstCorrect: {}, wrongCount: {}, conquered: {} },
+    // conquered: 정복한 날짜(구버전은 true), recheck: 간격 반복 재출제 예정일
+    meta: { firstCorrect: {}, wrongCount: {}, conquered: {}, recheck: {} },
+    missions: {}, // 주차키 -> {미션id: true}
   };
 }
 
@@ -87,6 +133,9 @@ function load() {
     if (raw) {
       S = Object.assign(defaultState(), JSON.parse(raw));
       S.settings.rules = Object.assign({ ...DEFAULT_RULES }, S.settings.rules || {});
+      if (!S.meta) S.meta = { firstCorrect: {}, wrongCount: {}, conquered: {}, recheck: {} };
+      if (!S.meta.recheck) S.meta.recheck = {};
+      if (!S.missions) S.missions = {};
     } else {
       S = defaultState();
     }
@@ -176,15 +225,53 @@ function bumpStreak() {
   checkBadges();
 }
 
+// ---------------- 주간 미션 ----------------
+function weekStartKey() { // 이번 주 월요일
+  const t = new Date();
+  const day = (t.getDay() + 6) % 7; // 월=0 … 일=6
+  return todayKey(new Date(t.getFullYear(), t.getMonth(), t.getDate() - day));
+}
+function attemptsBetween(a, b) {
+  return S.attempts.filter(x => { const d = x.date.slice(0, 10); return d >= a && d <= b; });
+}
+function completedDaysThisWeek() {
+  const ws = weekStartKey();
+  let n = 0;
+  for (let i = 0; i < 7; i++) { const s = S.dailySets[addDays(ws, i)]; if (s && s.completed) n++; }
+  return n;
+}
+function correctThisWeek() {
+  const ws = weekStartKey();
+  return attemptsBetween(ws, addDays(ws, 6)).filter(a => a.isCorrect).length;
+}
+function conqueredThisWeek() {
+  const ws = weekStartKey(), we = addDays(ws, 6);
+  return Object.values(S.meta.conquered).filter(v => typeof v === "string" && v >= ws && v <= we).length;
+}
+function checkMissions() {
+  const wk = weekStartKey();
+  if (!S.missions[wk]) S.missions[wk] = {};
+  for (const m of MISSIONS) {
+    if (!S.missions[wk][m.id] && m.prog() >= m.target) {
+      S.missions[wk][m.id] = true;
+      addPoints(m.points, `주간 미션 완료: ${m.name}`);
+      burstConfetti();
+    }
+  }
+}
+
 // ---------------- 데일리 세트 구성 ----------------
-// 규칙: 아직 안 푼 문제 우선 → 오답(미정복) 재출제 → 랜덤 보충
+// 규칙: 간격 반복(정복 후 3일 뒤 재확인, 하루 1문제) → 안 푼 문제 → 오답(미정복) → 랜덤 보충
 function pickForTrack(track, n) {
   const bank = questionBank().filter(q => q.track === track);
   const attemptedIds = new Set(S.attempts.map(a => a.questionId));
+  const today = todayKey();
+  const due = shuffle(bank.filter(q => S.meta.recheck[q.id] && S.meta.recheck[q.id] <= today)).slice(0, 1);
   const unseen = shuffle(bank.filter(q => !attemptedIds.has(q.id)));
   const wrong = shuffle(bank.filter(q => attemptedIds.has(q.id) && S.meta.wrongCount[q.id] > 0 && !S.meta.conquered[q.id]));
-  const rest = shuffle(bank.filter(q => !unseen.includes(q) && !wrong.includes(q)));
-  return unseen.concat(wrong, rest).slice(0, n).map(q => q.id);
+  const usedIds = new Set(due.concat(unseen, wrong).map(q => q.id));
+  const rest = shuffle(bank.filter(q => !usedIds.has(q.id)));
+  return due.concat(unseen, wrong, rest).slice(0, n).map(q => q.id);
 }
 function shuffle(arr) {
   const a = arr.slice();
@@ -369,12 +456,32 @@ function viewHome() {
     <div class="stat-tile"><div class="v">📕 ${wrongs}</div><div class="k">오답 대기</div></div>
   </div>
   <div class="card mt16">
+    <h3>🎯 주간 미션</h3>
+    ${missionRowsHTML()}
+  </div>
+  <div class="card mt16">
     <div class="row between">
       <h3>${lv.icon} ${lv.title} 레벨</h3>
       <span class="sub small">${lv.next ? `다음 레벨까지 ${(lv.next.min - S.points.total).toLocaleString()}P` : "최고 레벨!"}</span>
     </div>
     <div class="progress-track mt8"><div class="progress-fill gold" style="width:${lv.pct}%"></div></div>
   </div>`;
+}
+
+function missionRowsHTML() {
+  const wk = weekStartKey();
+  const got = S.missions[wk] || {};
+  return MISSIONS.map(m => {
+    const p = Math.min(m.prog(), m.target);
+    const done = !!got[m.id];
+    return `<div class="mt8">
+      <div class="row between">
+        <span class="small" style="font-weight:600">${m.name}</span>
+        <span class="small" style="font-weight:800;color:${done ? "var(--green)" : "var(--sub)"}">${done ? `✅ +${m.points}P` : `${p}/${m.target}`}</span>
+      </div>
+      <div class="progress-track mt8" style="height:7px"><div class="progress-fill${done ? " gold" : ""}" style="width:${Math.round(p / m.target * 100)}%"></div></div>
+    </div>`;
+  }).join("");
 }
 
 // ---------------- 퀴즈 ----------------
@@ -480,17 +587,25 @@ function gradeCurrent() {
       quiz.sessionBonus = (quiz.sessionBonus || 0) + 1;
     }
     toast(`+${earned}P ${ok ? "획득!" : "(도전 보상)"} 🪙`, "coin");
+    // 간격 반복 재확인 문항: 이번 답으로 재확인 완료 (틀리면 아래에서 오답노트로 복귀)
+    if (S.meta.recheck[q.id]) delete S.meta.recheck[q.id];
   } else { // review
     if (ok) {
-      S.meta.conquered[q.id] = true;
+      S.meta.conquered[q.id] = todayKey();
+      S.meta.recheck[q.id] = addDays(todayKey(), 3); // 3일 뒤 데일리 세트에서 재확인
       addPoints(r.review, "오답 정복");
     }
   }
 
-  if (!ok) S.meta.wrongCount[q.id] = (S.meta.wrongCount[q.id] || 0) + 1;
+  if (!ok) {
+    S.meta.wrongCount[q.id] = (S.meta.wrongCount[q.id] || 0) + 1;
+    delete S.meta.conquered[q.id]; // 다시 틀리면 오답노트로 복귀
+    delete S.meta.recheck[q.id];
+  }
 
   quiz.phase = "graded";
   checkBadges();
+  checkMissions();
   save();
   render();
 }
@@ -519,6 +634,7 @@ function finishQuiz() {
     }
   }
   checkBadges();
+  checkMissions();
   save();
   go("result");
 }
@@ -568,8 +684,32 @@ function viewResult() {
     <h3>🪙 획득 포인트</h3>
     <div class="mt8">${lines}</div>
   </div>
+  ${vocabCardHTML()}
   ${wrong ? `<button class="btn ghost mt16" onclick="go('review')">📕 틀린 문제 ${wrong}개 확인하기</button>` : ""}
   <button class="btn primary mt12" onclick="quiz=null;go('home')">홈으로</button>`;
+}
+
+// 오늘 푼 문항 텍스트에 등장한 어휘만 골라 보여 준다
+function todaysVocab() {
+  if (!quiz) return [];
+  const text = quiz.qids.map(id => {
+    const q = getQ(id);
+    return q ? [q.passage || "", q.stem, (q.choices || []).join(" ")].join(" ") : "";
+  }).join(" ");
+  const found = [];
+  for (const [w, k] of VOCAB) {
+    const re = new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "e?s?\\b", "i");
+    if (re.test(text)) found.push({ w, k });
+  }
+  return shuffle(found).slice(0, 5);
+}
+function vocabCardHTML() {
+  const words = todaysVocab();
+  if (!words.length) return "";
+  return `<div class="card mt16">
+    <h3>📖 오늘의 어휘</h3>
+    <div class="mt8">${words.map(v => `<div class="point-line"><span><b>${esc(v.w)}</b></span><span class="sub">${esc(v.k)}</span></div>`).join("")}</div>
+  </div>`;
 }
 
 // ---------------- 오답노트 ----------------
@@ -747,8 +887,17 @@ function viewSettings() {
     <button class="btn ghost mt12" onclick="saveProfile()">저장</button>
   </div>
   <div class="card mt16">
+    <h3>💾 데이터 백업/복원</h3>
+    <p class="sub small mt8">학습 기록·포인트·설정을 파일로 저장해 두면, 기기를 바꾸거나 브라우저 데이터를 지워도 복원할 수 있어요.</p>
+    <button class="btn ghost mt12" onclick="exportBackup()">📤 백업 파일 내려받기</button>
+    <div class="field">
+      <label>백업 파일 불러오기 (현재 데이터를 덮어씀)</label>
+      <input type="file" id="restore-file" accept=".json" onchange="importBackupFile(this)">
+    </div>
+  </div>
+  <div class="card mt16">
     <h3>👨‍👩‍👧 부모님 공간</h3>
-    <p class="sub small mt8">보상 등록 · 교환 승인 · 포인트 규칙 · 문항 관리</p>
+    <p class="sub small mt8">보상 등록 · 교환 승인 · 포인트 규칙 · 문항 관리 · 주간 리포트</p>
     <button class="btn primary mt12" onclick="parentUnlocked=false;go('parent')">들어가기 🔒</button>
   </div>
   <div class="card mt16">
@@ -760,6 +909,43 @@ function viewSettings() {
     </div>
   </div>`;
 }
+// ---------------- 백업/복원 ----------------
+function buildBackup() {
+  let bank = [];
+  try { bank = JSON.parse(localStorage.getItem(BANK_KEY) || "[]"); } catch (e) {}
+  return { app: "jr-toefl-daily", version: 1, exportedAt: nowISO(), state: S, customBank: bank };
+}
+function exportBackup() {
+  const blob = new Blob([JSON.stringify(buildBackup())], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `jrtoefl-backup-${todayKey()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  toast("백업 파일을 내려받았어요 💾");
+}
+function importBackupFile(input) {
+  const file = input.files && input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const obj = JSON.parse(reader.result);
+      if (obj.app !== "jr-toefl-daily" || !obj.state) throw new Error("형식 오류");
+      if (!confirm(`${(obj.exportedAt || "").slice(0, 10)} 백업으로 현재 데이터를 덮어쓸까요? 되돌릴 수 없습니다.`)) { input.value = ""; return; }
+      localStorage.setItem(STORE_KEY, JSON.stringify(obj.state));
+      if (Array.isArray(obj.customBank) && obj.customBank.length) localStorage.setItem(BANK_KEY, JSON.stringify(obj.customBank));
+      location.reload();
+    } catch (e) {
+      toast("백업 파일 형식이 올바르지 않아요 ❌");
+      input.value = "";
+    }
+  };
+  reader.readAsText(file, "utf-8");
+}
+
 function saveProfile() {
   const name = document.getElementById("set-name").value.trim();
   const goal = parseInt(document.getElementById("set-goal").value, 10);
@@ -818,6 +1004,8 @@ function viewParent() {
       <div class="point-line"><span>포인트 (잔액/누적)</span><span><b>${S.points.balance.toLocaleString()} / ${S.points.total.toLocaleString()}P</b></span></div>
     </div>
   </div>
+
+  ${weeklyReportHTML()}
 
   <div class="card mt16">
     <h3>⏳ 교환 승인 대기 ${pending.length ? `<span class="pill-num">${pending.length}</span>` : ""}</h3>
@@ -880,6 +1068,59 @@ function viewParent() {
     <h3>⚠️ 데이터 초기화</h3>
     <p class="sub small mt8">모든 학습 기록·포인트·보상 내역이 삭제됩니다.</p>
     <button class="btn warn mt8" onclick="resetAll()">전체 초기화</button>
+  </div>`;
+}
+
+// ---------------- 주간 리포트 (부모용) ----------------
+function weakTags(days) {
+  const from = addDays(todayKey(), -(days - 1));
+  const cnt = {};
+  for (const a of S.attempts) {
+    if (a.isCorrect || a.date.slice(0, 10) < from) continue;
+    const q = getQ(a.questionId);
+    if (!q) continue;
+    (q.tags || []).forEach(t => { cnt[t] = (cnt[t] || 0) + 1; });
+  }
+  return Object.entries(cnt).sort((x, y) => y[1] - x[1]).slice(0, 3);
+}
+function weeklyReportHTML() {
+  const ws = weekStartKey(), we = addDays(ws, 6);
+  const today = todayKey();
+  const thisAtt = attemptsBetween(ws, we);
+  const lastWs = addDays(ws, -7);
+  const lastAtt = attemptsBetween(lastWs, addDays(lastWs, 6));
+  const pct = list => list.length ? Math.round(list.filter(a => a.isCorrect).length / list.length * 100) : null;
+  const trackAtt = (list, tr) => list.filter(a => { const q = getQ(a.questionId); return q && q.track === tr; });
+
+  const dayNames = ["월", "화", "수", "목", "금", "토", "일"];
+  const cells = dayNames.map((nm, i) => {
+    const k = addDays(ws, i);
+    const s = S.dailySets[k];
+    let cls = "cal-cell";
+    if (s && s.completed) cls += " done";
+    else if (s && s.answers.length) cls += " partial";
+    if (k === today) cls += " today";
+    return `<div class="${cls}" title="${k}">${nm}</div>`;
+  }).join("");
+
+  const line = (name, att, lastPct) => {
+    const p = pct(att);
+    return `<div class="point-line"><span>${name}</span><span><b>${att.length}문제 · ${p == null ? "-" : p + "%"}</b>${lastPct != null ? ` <span class="sub small">(지난주 ${lastPct}%)</span>` : ""}</span></div>`;
+  };
+  const weak = weakTags(30);
+
+  return `<div class="card mt16">
+    <h3>📅 주간 리포트 <span class="sub small">(${ws.slice(5)} ~ ${we.slice(5)})</span></h3>
+    <div class="cal-grid mt12">${cells}</div>
+    <div class="mt12">
+      ${line("📚 전체", thisAtt, pct(lastAtt))}
+      ${line("🏝️ 어드벤처", trackAtt(thisAtt, "adventure"), pct(trackAtt(lastAtt, "adventure")))}
+      ${line("✏️ 문법·어휘", trackAtt(thisAtt, "lfm"), pct(trackAtt(lastAtt, "lfm")))}
+    </div>
+    <div class="divider"></div>
+    <h3 style="font-size:.9rem">🔎 최근 30일 자주 틀린 유형</h3>
+    ${weak.length ? `<div class="chips mt8">${weak.map(([t, n]) => `<span class="chip">${esc(TAG_KO[t] || t)} ${n}회</span>`).join("")}</div>`
+      : `<p class="sub small mt8">아직 데이터가 부족해요.</p>`}
   </div>`;
 }
 
