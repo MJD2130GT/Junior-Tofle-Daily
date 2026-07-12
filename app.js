@@ -281,6 +281,13 @@ function shuffle(arr) {
   }
   return a;
 }
+// 하루 목표 문제 수 → [어드벤처, LFM] 문항 수. 8문제는 어드벤처 3 + LFM 5로 고정 배분.
+function trackSplit(goal) {
+  if (goal === 8) return [3, 5];
+  const half = Math.max(1, Math.round(goal / 2));
+  return [half, half];
+}
+
 function ensureDailySet() {
   const key = todayKey();
   const existing = S.dailySets[key];
@@ -293,8 +300,8 @@ function ensureDailySet() {
     }
   }
   const goal = (S.profile && S.profile.dailyGoal) || 6;
-  const per = Math.max(1, Math.round(goal / 2));
-  const ids = pickForTrack("adventure", per).concat(pickForTrack("lfm", per));
+  const [advN, lfmN] = trackSplit(goal);
+  const ids = pickForTrack("adventure", advN).concat(pickForTrack("lfm", lfmN));
   S.dailySets[key] = { questionIds: ids, index: 0, answers: [], completed: false, perfect: false };
   save();
   return S.dailySets[key];
@@ -394,7 +401,7 @@ function viewOnboarding() {
       <select id="ob-goal">
         <option value="4">4문제 (어드벤처 2 + 문법·어휘 2)</option>
         <option value="6" selected>6문제 (어드벤처 3 + 문법·어휘 3) — 추천</option>
-        <option value="8">8문제 (어드벤처 4 + 문법·어휘 4)</option>
+        <option value="8">8문제 (어드벤처 3 + 문법·어휘 5)</option>
       </select>
     </div>
     <button class="btn primary mt16" onclick="finishOnboarding()">시작하기 🚀</button>
@@ -880,7 +887,7 @@ function viewSettings() {
     <div class="field">
       <label>하루 목표 문제 수</label>
       <select id="set-goal">
-        ${[4, 6, 8].map(n => `<option value="${n}" ${S.profile.dailyGoal === n ? "selected" : ""}>${n}문제 (각 유형 ${n / 2}문제)</option>`).join("")}
+        ${[4, 6, 8].map(n => { const [a, l] = trackSplit(n); return `<option value="${n}" ${S.profile.dailyGoal === n ? "selected" : ""}>${n}문제 (어드벤처 ${a} + 문법·어휘 ${l})</option>`; }).join("")}
       </select>
       <p class="sub small mt8">변경은 내일 세트부터 적용돼요.</p>
     </div>
