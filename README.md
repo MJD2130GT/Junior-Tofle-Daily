@@ -69,10 +69,21 @@ python -m http.server 8000
 모든 데이터는 브라우저 `localStorage`에만 저장됩니다 (외부 전송 없음).
 기기를 바꾸면 기록이 이전되지 않으니, 같은 기기·같은 브라우저로 사용하세요.
 
+## Google AdSense 승인 대비
+
+- **개인정보처리방침**: [privacy.html](privacy.html) — 로컬 저장 안내, Google AdSense 쿠키·맞춤광고 고지,
+  옵트아웃 링크(Google 광고 설정 / aboutads.info), 만 14세 미만 이용자 보호 문구 포함.
+- **문의하기**: [contact.html](contact.html) — 이메일(mailto) 연락처.
+- 두 페이지는 첫 화면(온보딩)과 설정 화면 하단에서 링크로 연결되어 있어 리뷰어가 쉽게 찾을 수 있습니다.
+- 실제 광고 스크립트(`adsbygoogle.js` 등)는 AdSense 승인 후 `index.html`의 `<head>`에 추가하면 됩니다.
+- 운영자·연락처 정보를 바꾸려면 `privacy.html`, `contact.html`을 직접 편집하세요.
+
 ## 파일 구조
 
 ```
 index.html                   앱 진입점
+privacy.html                 개인정보처리방침 (정적 페이지)
+contact.html                 문의하기 (정적 페이지)
 styles.css                   스타일
 app.js                       앱 로직 (상태/화면/보상 엔진)
 questions.js                 문항 데이터 1,000개 (부모가 편집 가능)

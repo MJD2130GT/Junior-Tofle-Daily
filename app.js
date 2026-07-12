@@ -312,7 +312,12 @@ function viewOnboarding() {
     </div>
     <button class="btn primary mt16" onclick="finishOnboarding()">시작하기 🚀</button>
     <p class="sub small mt12 center">모든 기록은 이 기기에만 저장돼요.</p>
-  </div>`;
+  </div>
+  <p class="sub small mt16 center">
+    <a class="link-btn" style="font-size:.8rem" href="privacy.html">개인정보처리방침</a>
+    &nbsp;·&nbsp;
+    <a class="link-btn" style="font-size:.8rem" href="contact.html">문의하기</a>
+  </p>`;
 }
 function finishOnboarding() {
   const name = document.getElementById("ob-name").value.trim() || "학생";
@@ -749,6 +754,10 @@ function viewSettings() {
   <div class="card mt16">
     <h3>ℹ️ 정보</h3>
     <p class="sub small mt8">Jr. TOEFL Daily v0.1 · 개인/가정용<br>모든 데이터는 이 기기(브라우저)에만 저장됩니다.<br>문항 수: ${questionBank().length}개 (어드벤처 ${questionBank().filter(q => q.track === "adventure").length} / 문법·어휘 ${questionBank().filter(q => q.track === "lfm").length})</p>
+    <div class="row mt12" style="gap:14px">
+      <a class="link-btn small" href="privacy.html">개인정보처리방침</a>
+      <a class="link-btn small" href="contact.html">문의하기</a>
+    </div>
   </div>`;
 }
 function saveProfile() {
