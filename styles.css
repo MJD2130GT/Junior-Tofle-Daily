@@ -342,6 +342,12 @@ input::placeholder { color: #9a9aa6; }
 .bar-track { height: 12px; margin-top: 7px; background: #ece9f7; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
 .bar-fill { height: 100%; min-width: 4px; border-radius: 999px; transition: width .6s cubic-bezier(.2, .8, .3, 1); }
 
+/* 난이도 별 */
+.diff-stars { font-size: .82rem; letter-spacing: 1px; white-space: nowrap; }
+.diff-on { color: var(--accent); }
+.diff-off { color: var(--line); }
+.diff-txt { font-family: var(--mono); font-weight: 700; font-size: .72rem; color: var(--sub); letter-spacing: 0; margin-left: 2px; }
+
 .spark { width: 100%; height: auto; display: block; overflow: visible; }
 .spark-grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 3; }
 .spark-gtext { fill: var(--sub); font-size: 9px; font-family: var(--mono); }

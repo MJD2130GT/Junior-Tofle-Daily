@@ -1,5 +1,5 @@
 /* Jr. TOEFL Daily - Service Worker (오프라인 캐시) */
-const CACHE = "jrtoefl-v4";
+const CACHE = "jrtoefl-v5";
 const ASSETS = [
   "./",
   "./index.html",

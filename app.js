@@ -280,16 +280,33 @@ function checkMissions() {
 }
 
 // ---------------- 데일리 세트 구성 ----------------
-// 규칙: 간격 반복(정복 후 3일 뒤 재확인, 하루 1문제) → 안 푼 문제 → 오답(미정복) → 랜덤 보충
+// 최근 정답률로 목표 난이도(밴드 중심)를 정한다. 잘 맞히면 어려운 문제를 더 준다.
+function targetDifficulty(track) {
+  const acc = accuracy(track, 14);
+  if (acc == null) return 2;      // 데이터 없으면 기본 Lv2
+  if (acc >= 90) return 4;        // 아주 잘하면 Lv4 중심
+  if (acc >= 80) return 3;
+  if (acc >= 65) return 2.5;
+  if (acc >= 50) return 2;
+  return 1.5;                     // 많이 틀리면 쉬운 쪽
+}
+// 목표 난이도에 가까운 문항을 앞으로 (±1 밴드는 셔플로 다양성 유지)
+function byDifficulty(list, target) {
+  const near = shuffle(list.filter(q => Math.abs((q.difficulty || 2) - target) <= 1));
+  const far = shuffle(list.filter(q => Math.abs((q.difficulty || 2) - target) > 1));
+  return near.concat(far);
+}
+// 규칙: 간격 반복(정복 후 3일 뒤 재확인, 하루 1문제) → 안 푼 문제(난이도 적응) → 오답(미정복) → 보충(난이도 적응)
 function pickForTrack(track, n) {
   const bank = questionBank().filter(q => q.track === track);
   const attemptedIds = new Set(S.attempts.map(a => a.questionId));
   const today = todayKey();
+  const target = targetDifficulty(track);
   const due = shuffle(bank.filter(q => S.meta.recheck[q.id] && S.meta.recheck[q.id] <= today)).slice(0, 1);
-  const unseen = shuffle(bank.filter(q => !attemptedIds.has(q.id)));
+  const unseen = byDifficulty(bank.filter(q => !attemptedIds.has(q.id)), target);
   const wrong = shuffle(bank.filter(q => attemptedIds.has(q.id) && S.meta.wrongCount[q.id] > 0 && !S.meta.conquered[q.id]));
   const usedIds = new Set(due.concat(unseen, wrong).map(q => q.id));
-  const rest = shuffle(bank.filter(q => !usedIds.has(q.id)));
+  const rest = byDifficulty(bank.filter(q => !usedIds.has(q.id)), target);
   return due.concat(unseen, wrong, rest).slice(0, n).map(q => q.id);
 }
 function shuffle(arr) {
@@ -581,12 +598,21 @@ function viewQuiz() {
   </div>
   <div class="progress-track mt8"><div class="progress-fill" style="width:${Math.round((num - (isGraded ? 0 : 1)) / total * 100)}%"></div></div>
   <div class="card mt16">
-    <span class="track-tag ${q.track}">${trackName}</span>
+    <div class="row between">
+      <span class="track-tag ${q.track}">${trackName}</span>
+      ${difficultyStars(q.difficulty)}
+    </div>
     ${q.passage ? `<div class="passage">${esc(q.passage)}</div>` : ""}
     <div class="stem">${esc(q.stem)}</div>
     <div class="choices">${choices}</div>
     ${gradeHTML}
   </div>`;
+}
+
+const DIFF_LABEL = { 1: "입문", 2: "기본", 3: "도전", 4: "어려움", 5: "최고난도" };
+function difficultyStars(d) {
+  d = Math.max(1, Math.min(5, d || 2));
+  return `<span class="diff-stars" title="난이도: ${DIFF_LABEL[d]}"><span class="diff-on">${"★".repeat(d)}</span><span class="diff-off">${"★".repeat(5 - d)}</span> <span class="diff-txt">${DIFF_LABEL[d]}</span></span>`;
 }
 
 function selectChoice(i) {
@@ -814,6 +840,10 @@ function viewStats() {
     <div class="mt12">${trendSparklineHTML()}</div>
   </div>
   <div class="card mt16">
+    <h3>난이도별 도전 현황</h3>
+    <div class="mt12">${difficultyStatsHTML()}</div>
+  </div>
+  <div class="card mt16">
     <h3>최근 14일 학습</h3>
     <div class="cal-grid mt12">${cal}</div>
     <p class="sub small mt8">🟩 완료 · 연한 초록 = 일부 진행</p>
@@ -835,6 +865,29 @@ function accuracyBarsHTML() {
       </div>
       <div class="bar-track"><div class="bar-fill" style="width:${all == null ? 0 : all}%;background:${color}"></div></div>
     </div>`).join("");
+}
+
+// 난이도별 도전 현황: 시도한 문항을 난이도별로 묶어 정답률 막대로 (단일 보라 = 크기 인코딩)
+function difficultyStatsHTML() {
+  const b = { 1: { n: 0, c: 0 }, 2: { n: 0, c: 0 }, 3: { n: 0, c: 0 }, 4: { n: 0, c: 0 }, 5: { n: 0, c: 0 } };
+  for (const a of S.attempts) {
+    const q = getQ(a.questionId);
+    if (!q) continue;
+    const d = Math.max(1, Math.min(5, q.difficulty || 2));
+    b[d].n++; if (a.isCorrect) b[d].c++;
+  }
+  const rows = [1, 2, 3, 4, 5].filter(d => b[d].n > 0);
+  if (!rows.length) return `<p class="sub small">아직 푼 문제가 없어요.</p>`;
+  return rows.map(d => {
+    const acc = Math.round(b[d].c / b[d].n * 100);
+    return `<div class="bar-row">
+      <div class="row between">
+        <span class="bar-label"><span class="diff-on" style="font-size:.85rem">${"★".repeat(d)}</span><span class="diff-off" style="font-size:.85rem">${"★".repeat(5 - d)}</span> ${DIFF_LABEL[d]}</span>
+        <span class="bar-val">${acc}%<span class="sub small" style="font-family:inherit"> · ${b[d].n}문제</span></span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:${acc}%;background:#6d4aff"></div></div>
+    </div>`;
+  }).join("");
 }
 
 // 최근 14일 일별 정답률 스파크라인 (단일 시계열 → 보라 단색, 범례 불필요)
