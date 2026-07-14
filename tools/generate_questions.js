@@ -954,6 +954,99 @@ function genLfmHard() {
   ];
   for (const [c, d, stem, note] of PREP2) add(c, d, stem, note, 3, ["preposition", "collocation"]);
 
+  // ---- 이하 30%대 상급 확충분 (기존 항목 뒤에 append — 기존 hard ID 순서 보존) ----
+
+  // 19) 관계부사 when/where/why/how
+  const RELADV = [
+    ["when", ["which", "where", "what"], "I still remember the day ___ we first met.", "시간 선행사(the day) + 완전한 절 → 관계부사 when."],
+    ["why", ["which", "where", "when"], "Nobody knows the reason ___ she left so early.", "이유 선행사(the reason) → 관계부사 why."],
+    ["how", ["what", "which", "why"], "Can you show me ___ you solved this puzzle?", "방법을 나타내는 관계부사 how. (the way how로는 같이 쓰지 않음)"],
+    ["where", ["which", "when", "why"], "This is the town ___ my father grew up.", "장소 선행사(the town) + 완전한 절 → 관계부사 where."],
+    ["when", ["where", "which", "why"], "Spring is the season ___ many flowers bloom.", "시간 선행사(the season) → 관계부사 when."],
+  ];
+  for (const [c, d, stem, note] of RELADV) add(c, d, stem, note, 4, ["relative-adverb", "relative-clause"]);
+
+  // 20) It is ~ that 강조구문
+  const CLEFT = [
+    ["that", ["what", "which", "whom"], "It was Mina ___ broke the classroom window, not me.", "It is/was ~ that 강조구문. 강조 대상이 사람이어도 that을 쓸 수 있다."],
+    ["that", ["which", "what", "where"], "It was in 2010 ___ our school was built.", "시간 부사구(in 2010)를 강조하는 It was ~ that 구문."],
+    ["that", ["what", "who", "whose"], "It is English ___ I find the most interesting.", "목적어(English)를 강조하는 It is ~ that 구문."],
+    ["that", ["which", "what", "who"], "It was at the library ___ I lost my wallet.", "장소 부사구를 강조하는 It was ~ that 구문."],
+  ];
+  for (const [c, d, stem, note] of CLEFT) add(c, d, stem, note, 4, ["cleft", "emphasis"]);
+
+  // 21) 간접의문문 어순 (의문사 + 주어 + 동사)
+  const INDQ = [
+    ["the bus stop is", ["is the bus stop", "does the bus stop", "the bus stop does"], "Excuse me, do you know where ___?", "간접의문문은 '의문사 + 주어 + 동사' 어순: where the bus stop is."],
+    ["the movie starts", ["does the movie start", "starts the movie", "the movie start"], "Can you tell me what time ___?", "간접의문문 어순: what time the movie starts."],
+    ["she was crying", ["was she crying", "she crying was", "was crying she"], "I wonder why ___ this morning.", "간접의문문 어순: why she was crying."],
+    ["this temple is", ["is this temple", "does this temple", "this temple does"], "Do you know how old ___?", "간접의문문 어순: how old this temple is."],
+    ["the next train leaves", ["does the next train leave", "leaves the next train", "the next train leave"], "Could you tell me when ___?", "간접의문문 어순: when the next train leaves."],
+  ];
+  for (const [c, d, stem, note] of INDQ) add(c, d, stem, note, 4, ["indirect-question", "word-order"]);
+
+  // 22) 지각동사 + 목적어 + 동사원형
+  const PERCEP = [
+    ["run", ["to run", "ran", "runs"], "I saw him ___ across the street.", "지각동사(see) + 목적어 + 동사원형: 동작 전체를 본 경우 원형 run."],
+    ["calling", ["to call", "calls", "to calling"], "She heard someone ___ her name in the hallway.", "지각동사(hear) + 목적어 + -ing: 진행 중인 동작을 들은 경우 calling."],
+    ["rise", ["to rise", "rose", "rises"], "We watched the sun ___ over the sea.", "지각동사(watch) + 목적어 + 동사원형: rise."],
+    ["touch", ["to touch", "touches", "to touching"], "I felt something ___ my shoulder.", "지각동사(feel) + 목적어 + 동사원형: touch."],
+    ["leave", ["to leave", "left", "leaves"], "Did you notice him ___ the room during the meeting?", "지각동사(notice) + 목적어 + 동사원형: leave."],
+  ];
+  for (const [c, d, stem, note] of PERCEP) add(c, d, stem, note, 4, ["perception-verb", "verb-pattern"]);
+
+  // 23) 비교 구문 고급
+  const COMPADV = [
+    ["higher", ["high", "highest", "more high"], "No other mountain in Korea is ___ than Hallasan.", "'No other + 단수명사 ~ 비교급 + than' = 최상급 의미."],
+    ["that", ["it", "one", "this"], "The population of Seoul is much larger than ___ of Busan.", "비교 대상의 반복을 피하는 대명사 that(= the population)."],
+    ["longer", ["long", "longest", "more long"], "This bridge is three times ___ than that one.", "배수사(three times) + 비교급 + than 구문."],
+    ["that", ["it", "one", "those"], "The climate of Jeju is milder than ___ of Seoul.", "단수 명사(the climate)의 반복을 피하는 that."],
+  ];
+  for (const [c, d, stem, note] of COMPADV) add(c, d, stem, note, 5, ["comparative", "advanced"]);
+
+  // 24) 접속사 고급
+  const CONJADV = [
+    ["As soon as", ["Even though", "Unless", "While"], "___ I get home, I will call you right away.", "'~하자마자'는 as soon as."],
+    ["unless", ["because", "although", "while"], "You won't pass the test ___ you study harder.", "unless = if ~ not: '더 열심히 공부하지 않으면'."],
+    ["Even though", ["Because", "Unless", "As soon as"], "___ it was very expensive, he bought the game.", "역접(비쌌지만 샀다)이므로 even though."],
+    ["whether", ["that", "what", "unless"], "I don't know ___ she will come to the party or not.", "'~인지 아닌지'는 whether (or not과 호응)."],
+    ["Unless", ["Although", "Whether", "As soon as"], "___ you practice every day, you cannot win the contest.", "unless = ~하지 않으면."],
+    ["even though", ["unless", "whether", "as soon as"], "He kept smiling ___ he was very tired.", "역접의 even though(매우 피곤했지만)."],
+  ];
+  for (const [c, d, stem, note] of CONJADV) add(c, d, stem, note, 3, ["conjunction", "advanced"]);
+
+  // 25) 수동태 고급 (조동사·진행·완료·4형식 수동)
+  const PASSADV = [
+    ["be finished", ["finish", "be finishing", "finished"], "The homework must ___ by Friday.", "조동사 + 수동태: must be p.p."],
+    ["being", ["been", "be", "to be"], "A new library is ___ built near the park right now.", "진행형 수동태: is being p.p. (지금 지어지고 있는 중)"],
+    ["asked", ["asking", "ask", "to ask"], "I was ___ a strange question by the reporter.", "4형식 동사의 수동태: be asked + 직접목적어."],
+    ["taken", ["taking", "take", "took"], "The children were ___ care of by their grandmother.", "구동사(take care of)의 수동태: be taken care of."],
+    ["been", ["being", "be", "to be"], "This song has ___ loved by Koreans for decades.", "완료형 수동태: have/has been p.p."],
+    ["is", ["does", "has", "be"], "English ___ spoken in many countries around the world.", "단순 현재 수동태: is spoken."],
+  ];
+  for (const [c, d, stem, note] of PASSADV) add(c, d, stem, note, 4, ["passive", "advanced"]);
+
+  // 26) 가주어 It / 의미상 주어 of·for
+  const ITSUBJ = [
+    ["of", ["for", "to", "with"], "It is very kind ___ you to help the old lady.", "사람의 성품 형용사(kind) 뒤 의미상 주어는 of + 목적격."],
+    ["for", ["of", "to", "with"], "It is difficult ___ me to get up early in winter.", "일반 형용사(difficult) 뒤 의미상 주어는 for + 목적격."],
+    ["for", ["of", "to", "with"], "It is important ___ children to eat a good breakfast.", "important 뒤 의미상 주어는 for."],
+    ["It", ["That", "This", "There"], "___ is no use crying over spilled milk.", "'~해도 소용없다'는 It is no use + -ing 관용 구문."],
+    ["to climb", ["climbing", "climb", "climbed"], "It took us three hours ___ the mountain.", "It takes (사람) 시간 + to부정사: ~하는 데 시간이 걸리다."],
+  ];
+  for (const [c, d, stem, note] of ITSUBJ) add(c, d, stem, note, 4, ["it-subject", "infinitive"]);
+
+  // 27) 동명사 관용 표현
+  const GERIDIOM = [
+    ["seeing", ["see", "to see", "saw"], "I'm really looking forward to ___ you again soon.", "look forward to + -ing: 이 to는 전치사이므로 동명사."],
+    ["reading", ["to read", "read", "reads"], "This novel is worth ___ twice.", "be worth + -ing: ~할 가치가 있다."],
+    ["laughing", ["to laugh", "laugh", "laughed"], "I couldn't help ___ when I saw his funny hat.", "cannot help + -ing: ~하지 않을 수 없다."],
+    ["getting", ["to get", "get", "gets"], "She is busy ___ ready for the school festival.", "be busy + -ing: ~하느라 바쁘다."],
+    ["taking", ["to take", "take", "takes"], "How about ___ a break for ten minutes?", "How about + -ing?: ~하는 게 어때?"],
+    ["hearing", ["hear", "to hear", "heard"], "On ___ the news, she jumped for joy.", "on + -ing: ~하자마자 (= as soon as she heard)."],
+  ];
+  for (const [c, d, stem, note] of GERIDIOM) add(c, d, stem, note, 5, ["gerund", "idiom"]);
+
   return out;
 }
 
@@ -1095,6 +1188,127 @@ function genAdvHard() {
         ["What does the teacher's comment suggest is most important?", "Having the courage to share your work", ["Winning first prize", "Building the fastest machine", "Being the loudest student"], "'The bravest thing isn't winning — it's showing the world what you can do'에서 알 수 있다.", 5, ["story", "inference"]],
       ]
     },
+    // ---- 이하 30%대 상급 확충분 ----
+    {
+      p: "A young shepherd grew bored watching sheep on the quiet hillside, so he shouted, \"Wolf! Wolf!\" just to see the villagers come running. They rushed up the hill, found no wolf, and went home annoyed. He played the trick twice more. Then one evening a real wolf crept out of the forest. The boy screamed with all his might, but this time nobody came. \"He's only joking again,\" the villagers said, shaking their heads.",
+      qs: [
+        ["What lesson does this story teach?", "If you lie repeatedly, people won't believe you when you tell the truth", ["Wolves are afraid of loud noises", "Shepherds should never feel bored", "Villagers should always run faster"], "거짓말을 반복하면 진실을 말해도 믿어주지 않는다는 이솝 우화의 교훈이다.", 4, ["story", "main-idea"]],
+        ["Why did nobody come when the real wolf appeared?", "The villagers thought the boy was joking again", ["The villagers were too far away", "The boy's voice was too quiet", "The wolf blocked the road"], "'He's only joking again'이라는 마을 사람들의 말에서 이유를 알 수 있다.", 3, ["story", "cause-effect"]],
+        ["Why did the boy first shout \"Wolf!\"?", "He was bored and wanted to see the villagers come running", ["He saw a wolf in the forest", "He wanted to protect the sheep", "He was practicing for a play"], "'grew bored ~ just to see the villagers come running'에서 알 수 있다.", 3, ["story", "detail"]],
+      ]
+    },
+    {
+      p: "Every autumn, millions of monarch butterflies leave Canada and fly nearly four thousand kilometers to the same forests in Mexico. What amazes scientists most is that no single butterfly makes the round trip. The journey takes several generations: the butterflies that return north in spring are the great-grandchildren of the ones that flew south. Yet somehow, without ever having been there, each new generation finds the very same trees its ancestors rested in.",
+      qs: [
+        ["What amazes scientists most about monarch butterflies?", "New generations find the same trees without ever having been there", ["They are the largest butterflies in the world", "They can fly faster than birds", "They live longer than most insects"], "'What amazes scientists most'에 이어 여러 세대에 걸친 여행임에도 같은 나무를 찾아간다는 내용이 나온다.", 4, ["nonfiction", "detail"]],
+        ["Why can't a single butterfly make the round trip?", "The journey takes several generations to complete", ["The distance changes every year", "Butterflies refuse to fly north", "Mexico is too warm for them"], "'The journey takes several generations'에서 왕복이 여러 세대에 걸쳐 이뤄짐을 알 수 있다.", 4, ["nonfiction", "cause-effect"]],
+        ["The word \"ancestors\" is closest in meaning to ______.", "family members who lived before them", ["enemies in the forest", "scientists who study insects", "leaders of the group"], "great-grandchildren(증손자)이 조상들이 쉬던 나무를 찾는다는 맥락에서 ancestors는 '조상'이다.", 5, ["nonfiction", "vocabulary"]],
+      ]
+    },
+    {
+      p: "Sena's first three tries on the bicycle ended the same way: a wobble, a crash, and scraped knees. Her older brother offered to keep holding the seat, but Sena shook her head. \"If you never let go, I'll never know if I can do it,\" she said. On the fourth try she wobbled again — then suddenly the bike straightened, the wind rushed past her ears, and the end of the alley arrived far sooner than she expected. Her brother was still standing at the starting line, arms folded, grinning.",
+      qs: [
+        ["Why did Sena ask her brother not to hold the seat?", "She wanted to find out if she could ride by herself", ["She was angry at him", "The seat was too hot to touch", "He was pushing her too fast"], "'If you never let go, I'll never know if I can do it'에서 스스로 해내고 싶은 마음을 알 수 있다.", 3, ["story", "cause-effect"]],
+        ["What does the brother's grin at the end suggest?", "He is proud that Sena succeeded on her own", ["He is planning another trick", "He wants his bike back", "He thinks Sena will crash again"], "출발선에서 팔짱을 낀 채 웃는 모습은 동생의 성공을 지켜본 자랑스러움을 나타낸다.", 5, ["story", "inference"]],
+        ["What is the main idea of this story?", "Real success sometimes requires letting go of help", ["Bicycles are dangerous for children", "Older brothers give the best advice", "Practice is less important than luck"], "도움을 놓아야 스스로 해낼 수 있음을 깨닫는 과정이 이야기의 핵심이다.", 4, ["story", "main-idea"]],
+      ]
+    },
+    {
+      p: "Last year, Hangang Elementary School started a \"no-waste Wednesday\" program. Every Wednesday, students tried to pack lunches without any plastic wrap or disposable containers. At first, only two classes joined, and some students complained that reusable boxes were heavy. But when the science club weighed the school's Wednesday trash, it had dropped from forty kilograms to nine. The numbers convinced people better than any poster had: by the end of the year, every class in the school was taking part.",
+      qs: [
+        ["What finally convinced most students to join the program?", "The measured drop in Wednesday trash", ["A new school rule", "Lighter lunch boxes", "A poster contest"], "'The numbers convinced people better than any poster had'에서 실제 측정 결과가 결정적이었음을 알 수 있다.", 4, ["nonfiction", "cause-effect"]],
+        ["How much did the Wednesday trash weigh after the program spread?", "Nine kilograms", ["Forty kilograms", "Two kilograms", "Ninety kilograms"], "'dropped from forty kilograms to nine'에서 알 수 있다.", 3, ["nonfiction", "detail"]],
+        ["What can be inferred from this passage?", "Showing real evidence can change people's behavior more than slogans", ["Plastic wrap keeps food fresher", "Science clubs dislike posters", "Heavy lunch boxes are dangerous"], "포스터보다 숫자(증거)가 사람들을 움직였다는 데서 추론할 수 있다.", 5, ["nonfiction", "inference"]],
+      ]
+    },
+    {
+      p: "The sandwich is named after John Montagu, the fourth Earl of Sandwich, an English noble who lived about 250 years ago. According to a famous story, he loved playing cards so much that he refused to stop for dinner. Instead, he asked his servant to bring meat between two slices of bread so he could eat with one hand and keep playing with the other. Whether or not the story is completely true, the name stuck, and today his title is spoken millions of times a day in lunchrooms around the world.",
+      qs: [
+        ["Why did the Earl ask for meat between two slices of bread?", "So he could eat with one hand and keep playing cards", ["Because bread was cheaper than plates", "Because his cook was on holiday", "Because he disliked hot food"], "'so he could eat with one hand and keep playing with the other'에서 이유를 알 수 있다.", 3, ["nonfiction", "detail"]],
+        ["What does \"the name stuck\" mean in this passage?", "People kept using the name until it became permanent", ["The name was hard to pronounce", "The name was written on the bread", "The name was quickly forgotten"], "stick(달라붙다)의 비유적 의미로, 이름이 굳어져 계속 쓰였다는 뜻이다.", 5, ["nonfiction", "vocabulary"]],
+        ["What does the phrase \"Whether or not the story is completely true\" suggest?", "The writer is not certain the story really happened", ["The writer saw the event personally", "The story has been proven false", "The Earl wrote the story himself"], "이야기의 사실 여부를 단정하지 않는 표현으로, 필자의 유보적 태도를 보여준다.", 4, ["nonfiction", "inference"]],
+      ]
+    },
+    {
+      p: "Jiwoo and Minseo had planned their science project together for weeks, but the day before the deadline they had a huge argument about whose idea should go on the poster. They worked in angry silence all afternoon. Finally Minseo slid a note across the table: \"Your volcano drawing is better than mine. Use yours.\" Jiwoo read it twice, then wrote back: \"But your title is better. Use yours.\" When they taped both onto the poster, they realized the project was stronger with the two ideas side by side — something neither had wanted to admit all day.",
+      qs: [
+        ["What ended the argument between Jiwoo and Minseo?", "Each one admitted the other had done something better", ["A teacher separated them", "They flipped a coin", "They started a new project"], "서로의 장점을 인정하는 쪽지를 주고받으며 갈등이 풀렸다.", 4, ["story", "cause-effect"]],
+        ["What is the main idea of this story?", "Combining different ideas can make a result stronger than either alone", ["Deadlines always cause fights", "Posters need only one idea", "Working alone is faster than teamwork"], "두 아이디어를 나란히 붙이자 프로젝트가 더 좋아졌다는 결말이 주제를 보여준다.", 4, ["story", "main-idea"]],
+        ["What does \"something neither had wanted to admit all day\" suggest?", "Both secretly knew the other's idea had value but were too proud to say it", ["They both hated the project", "They planned to argue again", "They forgot what the fight was about"], "온종일 인정하기 싫어했다는 표현에서 자존심 때문에 서로의 가치를 말하지 못했음을 추론할 수 있다.", 5, ["story", "inference"]],
+      ]
+    },
+    {
+      p: "Deep below the ocean surface, where sunlight never reaches, lives the anglerfish. From its head hangs a thin rod tipped with a glowing light, like a tiny lantern in the endless dark. Small fish swim toward the light out of curiosity — and swim straight into the anglerfish's enormous mouth. The light is not produced by the fish itself but by billions of glowing bacteria living inside the lure. The bacteria get a safe home; the anglerfish gets dinner delivered.",
+      qs: [
+        ["How does the anglerfish use its glowing lure?", "To attract curious fish toward its mouth", ["To light its way through caves", "To scare away larger fish", "To keep its body warm"], "작은 물고기들이 빛에 이끌려 입 쪽으로 헤엄쳐 온다는 내용에서 알 수 있다.", 3, ["nonfiction", "detail"]],
+        ["What do the glowing bacteria receive in this relationship?", "A safe place to live", ["Free food from the ocean floor", "Protection from sunlight", "Faster swimming speed"], "'The bacteria get a safe home'에서 알 수 있다.", 4, ["nonfiction", "detail"]],
+        ["What is the relationship between the anglerfish and the bacteria best described as?", "Both sides benefit from living together", ["The bacteria harm the fish", "The fish eats the bacteria", "They compete for the same food"], "박테리아는 집을, 아귀는 먹이를 얻는 상생(공생) 관계이다.", 5, ["nonfiction", "inference"]],
+      ]
+    },
+    {
+      p: "Every New Year, Dana's whole family gathers to make dumplings from her great-grandmother's recipe. The recipe card is so old that the ink has faded, but nobody really needs it anymore — the steps live in everyone's hands. Dana's grandmother says the secret ingredient isn't in the filling at all: \"A recipe is just paper. What makes it taste like home is everyone folding together around one table.\" This year, Dana taught her little cousin the fold, the same way her aunt once taught her.",
+      qs: [
+        ["What does the grandmother mean by her words about the recipe?", "The tradition of cooking together matters more than the written steps", ["The recipe card should be rewritten", "The filling needs more ingredients", "Old recipes taste better than new ones"], "'What makes it taste like home is everyone folding together'에서 함께하는 전통이 핵심임을 알 수 있다.", 4, ["story", "inference"]],
+        ["Why does nobody need the recipe card anymore?", "The steps have been memorized through years of practice together", ["The family stopped making dumplings", "The card was lost long ago", "A cookbook replaced it"], "'the steps live in everyone's hands'는 몸에 익었다는 뜻이다.", 4, ["story", "detail"]],
+        ["What does Dana teaching her cousin suggest?", "The family tradition is being passed to the next generation", ["Dana wants to open a restaurant", "The cousin dislikes dumplings", "The recipe will be sold"], "이모에게 배운 접기를 사촌에게 가르치는 장면은 전통의 대물림을 보여준다.", 5, ["story", "inference"]],
+      ]
+    },
+    {
+      p: "VOLUNTEERS WANTED: The school garden needs helpers for the spring planting season. Students may sign up in pairs, and each pair will care for one garden bed from March through June. Volunteers must attend a one-hour training on the first Saturday of March and water their bed at least twice a week. Students who complete the full season will receive a certificate and first pick of the summer vegetables. Sign-up sheets are outside the science room until Friday.",
+      qs: [
+        ["What must volunteers do to receive a certificate?", "Complete the full season from March through June", ["Attend only the training session", "Sign up before March", "Water the garden once a month"], "'Students who complete the full season will receive a certificate'에서 알 수 있다.", 3, ["notice", "detail"]],
+        ["How often must each pair water their garden bed?", "At least twice a week", ["Once a week", "Every day", "Twice a month"], "'water their bed at least twice a week'에서 알 수 있다.", 3, ["notice", "detail"]],
+        ["Who is this notice mainly written for?", "Students interested in taking care of a garden", ["Teachers planning science lessons", "Parents buying vegetables", "Gardeners looking for jobs"], "학생들이 짝을 지어 신청하는 봉사 안내이므로 대상은 관심 있는 학생들이다.", 4, ["notice", "purpose"]],
+      ]
+    },
+    {
+      p: "Why do we yawn — and why is a yawn so hard to resist when someone nearby does it first? Scientists still do not fully agree. One idea says yawning cools the brain, like a fan for an overheated computer. Another says it developed long ago to help groups stay alert together: when one member yawned, the others copied it and became more watchful. What researchers do know is that \"contagious\" yawning is stronger between friends and family than between strangers — which may mean that catching a yawn is connected to caring about others.",
+      qs: [
+        ["What is the passage mainly about?", "Possible explanations for why we yawn and copy yawns", ["How to stop yawning in class", "Why computers overheat", "How strangers become friends"], "하품의 원인과 전염성에 대한 여러 가설을 소개하는 글이다.", 4, ["nonfiction", "main-idea"]],
+        ["According to the passage, when is contagious yawning stronger?", "Between friends and family", ["Between strangers", "Between young children only", "Between people who are tired"], "'stronger between friends and family than between strangers'에서 알 수 있다.", 3, ["nonfiction", "detail"]],
+        ["What does the phrase \"scientists still do not fully agree\" tell the reader?", "The true cause of yawning remains an open question", ["Yawning has been completely explained", "Scientists refuse to study yawning", "Only one theory can be correct"], "과학자들 사이에 합의가 없다는 것은 아직 답이 확정되지 않았다는 뜻이다.", 5, ["nonfiction", "inference"]],
+      ]
+    },
+    {
+      p: "Tomas wanted to buy his mother a scarf for her birthday, so he did extra chores for two months and kept every coin in an old jam jar. The day before her birthday, he counted the money — enough for the blue scarf in the shop window, with three coins left over. But as he walked to the shop, he passed a stall selling small potted flowers, and he remembered how his mother always stopped to smell them. He stood there a long time, doing math in his head. In the end, his mother unwrapped a slightly cheaper gray scarf — wrapped around a tiny pot of lavender. She said it was the best present she had ever received.",
+      qs: [
+        ["Why did Tomas choose the gray scarf instead of the blue one?", "So he would have enough money to also buy the lavender", ["The blue one had been sold", "Gray was his mother's favorite color", "The gray scarf was warmer"], "꽃을 사려고 머릿속으로 계산한 뒤 '조금 더 싼' 회색 스카프를 골랐음을 알 수 있다.", 4, ["story", "inference"]],
+        ["How did Tomas get the money for the present?", "By doing extra chores for two months", ["By borrowing from his father", "By selling his toys", "By winning a contest"], "'did extra chores for two months and kept every coin'에서 알 수 있다.", 3, ["story", "detail"]],
+        ["Why was the present so special to Tomas's mother?", "It showed how carefully her son had thought about what she loves", ["It was the most expensive scarf in the shop", "It came from a famous store", "It matched her coat perfectly"], "아들이 자신이 꽃을 좋아하는 것까지 기억해 준비한 정성이 담겨 있기 때문이다.", 5, ["story", "inference"]],
+      ]
+    },
+    {
+      p: "Field Trip Report by Class 5-2: On Tuesday we visited Cheongun Pond to study its ecosystem. We recorded twelve kinds of living things, from water striders skating on the surface to tadpoles hiding under lily pads. Our guide explained that everything in the pond is connected: the plants make oxygen for the fish, the fish eat mosquito larvae, and fallen leaves feed the tiny creatures at the bottom. When one part disappears, she said, the whole pond feels it. That is why the city asks visitors not to release pet turtles into the pond — a single new species can upset the balance.",
+      qs: [
+        ["What is the main idea of the guide's explanation?", "All living things in the pond depend on one another", ["Tadpoles are hard to find", "Ponds need more visitors", "Fish are the most important animals"], "'everything in the pond is connected'가 설명의 핵심이다.", 4, ["nonfiction", "main-idea"]],
+        ["Why does the city ask visitors not to release pet turtles?", "A new species can upset the pond's balance", ["Turtles cannot swim in ponds", "Turtles scare away visitors", "The pond is too cold for turtles"], "'a single new species can upset the balance'에서 이유를 알 수 있다.", 3, ["nonfiction", "cause-effect"]],
+        ["The word \"ecosystem\" is closest in meaning to ______.", "a community of living things and their environment", ["a kind of water plant", "a swimming lesson", "a park cleaning program"], "연못의 생물들과 환경이 서로 연결된 체계를 공부했다는 맥락에서 뜻을 알 수 있다.", 4, ["nonfiction", "vocabulary"]],
+      ]
+    },
+    {
+      p: "Interviewer: You've been a firefighter for twenty years. What's the hardest part of the job?\nCaptain Ryu: People think it's entering burning buildings. Honestly? It's the waiting — staying calm and sharp through quiet nights so you're ready in the ten seconds after the alarm rings.\nInterviewer: How do you train for that?\nCaptain Ryu: We drill the same movements hundreds of times, until our hands know what to do even when our minds are startled. In an emergency you don't rise to the occasion — you fall back on your training.",
+      qs: [
+        ["According to Captain Ryu, what is the hardest part of his job?", "Staying calm and ready during long quiet periods", ["Entering burning buildings", "Carrying heavy equipment", "Working with new recruits"], "'It's the waiting — staying calm and sharp'에서 알 수 있다.", 4, ["dialogue", "detail"]],
+        ["What does \"you fall back on your training\" mean?", "In emergencies, you rely on what you practiced repeatedly", ["You fall down during training", "You quit when things get hard", "You train less as you get older"], "놀란 순간에도 수백 번 반복한 훈련이 몸을 움직인다는 의미이다.", 5, ["dialogue", "vocabulary"]],
+        ["Why do firefighters drill the same movements hundreds of times?", "So their bodies act correctly even when their minds are startled", ["To pass yearly fitness tests", "To impress the interviewer", "To avoid using equipment"], "'until our hands know what to do even when our minds are startled'에서 이유를 알 수 있다.", 4, ["dialogue", "cause-effect"]],
+      ]
+    },
+    {
+      p: "More than two thousand years ago, the city of Alexandria in Egypt built the greatest library of the ancient world. Its goal was breathtaking: to collect a copy of every book in existence. Ships entering the harbor were searched, and any scrolls on board were copied by hand for the library's shelves. Scholars traveled from distant lands to study there, sharing discoveries in mathematics, medicine, and astronomy. Though the library was eventually lost, its dream — gathering all human knowledge in one place — lives on today in every public library and even in the internet itself.",
+      qs: [
+        ["What was the goal of the Library of Alexandria?", "To collect a copy of every book in existence", ["To train ship captains", "To sell scrolls to travelers", "To build the tallest building in Egypt"], "'to collect a copy of every book in existence'에서 알 수 있다.", 3, ["nonfiction", "detail"]],
+        ["How did the library get copies of books from ships?", "Scrolls found on ships were copied by hand", ["Sailors donated books willingly", "The library bought them at high prices", "Scholars wrote them from memory"], "'Ships entering the harbor were searched, and any scrolls ~ were copied by hand'에서 알 수 있다.", 3, ["nonfiction", "detail"]],
+        ["What does the writer suggest in the last sentence?", "The library's dream continues in modern libraries and the internet", ["The library will be rebuilt soon", "The internet destroyed libraries", "Ancient books were never important"], "'its dream ~ lives on today'에서 그 정신이 오늘날까지 이어진다는 뜻을 알 수 있다.", 5, ["nonfiction", "inference"]],
+      ]
+    },
+    {
+      p: "Dear Mom and Dad,\nCamp is... different from what I expected. The first night I nearly called you to come get me — the cabin was cold, and I missed my own bed. But yesterday something changed. Our team got lost on the trail hike, and instead of panicking, we figured out the map together and found our way back before sunset. Everyone cheered like we'd won a trophy. The cabin is still cold, and I still miss home. But now, in a strange way, I think I'd be a little sad to leave early.\nYour daughter, Hana",
+      qs: [
+        ["How have Hana's feelings about camp changed?", "She still misses home but no longer wants to leave early", ["She now hates camp completely", "She has forgotten her family", "She wants to move to the cabin forever"], "첫날엔 데리러 오라고 할 뻔했지만 이제 일찍 떠나면 아쉬울 것 같다고 썼다.", 4, ["letter", "inference"]],
+        ["What event changed how Hana felt?", "Her team got lost but found the way back together", ["The cabin got warmer", "She won a trophy", "Her parents visited the camp"], "'yesterday something changed'에 이어 길을 잃었다가 함께 돌아온 경험이 소개된다.", 3, ["letter", "cause-effect"]],
+        ["What does \"in a strange way\" suggest about Hana's feelings?", "Her feelings are mixed and surprise even herself", ["She is angry at her parents", "She is pretending to be happy", "She dislikes writing letters"], "집이 그립지만 떠나기 아쉽다는 모순된 감정을 스스로도 낯설어하는 표현이다.", 5, ["letter", "inference"]],
+      ]
+    },
   ];
   for (const s of SETS) for (const [stem, cor, ds, expl, diff, tags] of s.qs)
     add(s.p, cor, ds, stem, expl, diff, tags);
@@ -1190,7 +1404,8 @@ function main() {
   const lfmCnt = all.filter(q => q.track === "lfm").length;
   if (all.length !== TARGET_PER_TRACK * 2) throw new Error(`총 개수 오류 ${all.length} (${TARGET_PER_TRACK * 2} 기대)`);
   if (advCnt < 300 || lfmCnt < 300) throw new Error(`트랙 개수 부족 adv=${advCnt} lfm=${lfmCnt}`);
-  if (all.filter(q => q.difficulty >= 3).length !== 217) console.warn(`⚠ Lv3-5 개수 변화: ${all.filter(q => q.difficulty >= 3).length} (예상 217)`);
+  const upper = all.filter(q => q.difficulty >= 3).length;
+  if (upper < 300) console.warn(`⚠ Lv3-5 비율 목표(30%) 미달: ${upper}개 (${(upper / all.length * 100).toFixed(1)}%)`);
   // 정답 위치 분포 & 난이도 분포
   const dist = [0, 0, 0, 0];
   const diff = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
