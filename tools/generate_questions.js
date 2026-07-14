@@ -1154,18 +1154,23 @@ function main() {
 
   let all = [...handAdv, ...pickedAdv, ...hardAdv, ...handLfm, ...pickedLfm, ...hardLfm];
 
-  // 전체 1000개로 감축: Lv3~5는 전부 유지, 자동생성 Lv1/Lv2에서만 제거.
-  // 트랙을 각 500개로 맞춘다(어드벤처는 Lv1, LFM은 Lv2 과다 → 그쪽에서 감축).
+  // 전체 1000개로 감축(중·상급 위주): Lv2 이상(중급~상급)은 전부 유지하고 Lv1(입문)에서만 제거한다.
+  // 두 트랙 개수를 최대한 균형 맞추되, LFM은 Lv1이 적어 대부분 어드벤처 Lv1에서 줄어든다.
   // 제거되는 문항의 ID는 비게 되지만, 남는 문항의 ID·내용은 그대로 보존된다.
   {
+    const need = all.length - TARGET_PER_TRACK * 2; // 1143 - 1000 = 143 제거
     const byIdDesc = (a, b) => b.id.localeCompare(a.id); // 높은 번호(후반 생성)부터 제거
     const advLv1 = all.filter(q => q.track === "adventure" && q.difficulty === 1 && !isHand(q)).sort(byIdDesc);
-    const lfmLv2 = all.filter(q => q.track === "lfm" && q.difficulty === 2 && !isHand(q)).sort(byIdDesc);
-    const dropAdv = all.filter(q => q.track === "adventure").length - TARGET_PER_TRACK; // 548-500=48
-    const dropLfm = all.filter(q => q.track === "lfm").length - TARGET_PER_TRACK;       // 595-500=95
-    const remove = new Set(advLv1.slice(0, Math.max(0, dropAdv)).concat(lfmLv2.slice(0, Math.max(0, dropLfm))).map(q => q.id));
+    const lfmLv1 = all.filter(q => q.track === "lfm" && q.difficulty === 1 && !isHand(q)).sort(byIdDesc);
+    const advCnt0 = all.filter(q => q.track === "adventure").length;
+    const lfmCnt0 = all.filter(q => q.track === "lfm").length;
+    let dropAdv = Math.round((need + (advCnt0 - lfmCnt0)) / 2); // 두 트랙을 균형 맞추는 지점
+    let dropLfm = need - dropAdv;
+    if (dropLfm > lfmLv1.length) { dropLfm = lfmLv1.length; dropAdv = need - dropLfm; } // LFM Lv1 부족분은 어드벤처로
+    if (dropAdv > advLv1.length) { dropAdv = advLv1.length; dropLfm = need - dropAdv; }
+    const remove = new Set(advLv1.slice(0, dropAdv).concat(lfmLv1.slice(0, dropLfm)).map(q => q.id));
     all = all.filter(q => !remove.has(q.id));
-    console.log(`1000개 감축: 어드벤처 Lv1 -${Math.max(0, dropAdv)}, LFM Lv2 -${Math.max(0, dropLfm)} (제거 ${remove.size}개)`);
+    console.log(`1000개 감축(중·상급 위주, Lv1만 제거): 어드벤처 Lv1 -${dropAdv}, LFM Lv1 -${dropLfm} (제거 ${remove.size}개)`);
   }
 
   // 검증
@@ -1183,8 +1188,8 @@ function main() {
   }
   const advCnt = all.filter(q => q.track === "adventure").length;
   const lfmCnt = all.filter(q => q.track === "lfm").length;
-  if (advCnt !== TARGET_PER_TRACK || lfmCnt !== TARGET_PER_TRACK) throw new Error(`개수 오류 adv=${advCnt} lfm=${lfmCnt} (각 ${TARGET_PER_TRACK} 기대)`);
-  if (all.length !== TARGET_PER_TRACK * 2) throw new Error(`총 개수 오류 ${all.length}`);
+  if (all.length !== TARGET_PER_TRACK * 2) throw new Error(`총 개수 오류 ${all.length} (${TARGET_PER_TRACK * 2} 기대)`);
+  if (advCnt < 300 || lfmCnt < 300) throw new Error(`트랙 개수 부족 adv=${advCnt} lfm=${lfmCnt}`);
   if (all.filter(q => q.difficulty >= 3).length !== 217) console.warn(`⚠ Lv3-5 개수 변화: ${all.filter(q => q.difficulty >= 3).length} (예상 217)`);
   // 정답 위치 분포 & 난이도 분포
   const dist = [0, 0, 0, 0];
