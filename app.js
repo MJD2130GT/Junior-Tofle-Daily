@@ -134,7 +134,7 @@ function defaultState() {
     badges: [],    // {id, earnedAt}
     rewards: DEFAULT_REWARDS.map(r => ({ ...r })),
     redemptions: [], // {id, rewardId, name, cost, status, requestedAt, decidedAt}
-    settings: { rules: { ...DEFAULT_RULES }, parentPin: null },
+    settings: { rules: { ...DEFAULT_RULES }, parentPin: null, extraPractice: false },
     // conquered: 정복한 날짜(구버전은 true), recheck: 간격 반복 재출제 예정일
     meta: { firstCorrect: {}, wrongCount: {}, conquered: {}, recheck: {} },
     missions: {}, // 주차키 -> {미션id: true}
@@ -147,6 +147,7 @@ function load() {
     if (raw) {
       S = Object.assign(defaultState(), JSON.parse(raw));
       S.settings.rules = Object.assign({ ...DEFAULT_RULES }, S.settings.rules || {});
+      if (S.settings.extraPractice == null) S.settings.extraPractice = false;
       if (!S.meta) S.meta = { firstCorrect: {}, wrongCount: {}, conquered: {}, recheck: {} };
       if (!S.meta.recheck) S.meta.recheck = {};
       if (!S.missions) S.missions = {};
@@ -478,6 +479,7 @@ function viewHome() {
     cta = `<div class="row" style="gap:6px;margin-top:14px">
       <div class="grow center" style="background:rgba(255,255,255,.18);border-radius:12px;padding:12px;font-weight:800">✅ 오늘 학습 완료!</div>
     </div>
+    ${S.settings.extraPractice ? `<button class="btn ghost mt8" onclick="startExtra()">🎯 추가 문제 풀기</button>` : ""}
     ${wrongs ? `<button class="btn" onclick="go('review')">📕 오답 ${wrongs}개 복습하기</button>` : ""}`;
   } else if (done > 0) {
     cta = `<button class="btn" onclick="startDaily()">이어서 풀기 (${done}/${total}) ▶</button>`;
@@ -557,6 +559,20 @@ function startReview(ids) {
   go("quiz");
 }
 
+// 오늘 목표를 다 채운 뒤에도 계속 풀 수 있는 추가 학습 (설정에서 켠 경우에만 노출)
+function startExtra() {
+  const set = ensureDailySet();
+  if (!set.completed) { toast("오늘 목표를 먼저 완료해 주세요!"); return; }
+  const goal = (S.profile && S.profile.dailyGoal) || 6;
+  const [advN, lfmN] = trackSplit(goal);
+  const usedToday = new Set(set.questionIds);
+  let ids = pickForTrack("adventure", advN).concat(pickForTrack("lfm", lfmN)).filter(id => !usedToday.has(id));
+  if (!ids.length) ids = pickForTrack("adventure", advN).concat(pickForTrack("lfm", lfmN));
+  if (!ids.length) { toast("풀 수 있는 문제가 더 없어요!"); return; }
+  quiz = { mode: "extra", qids: ids, idx: 0, phase: "answer", selected: null, results: [], startLevelIdx: levelIndex(S.points.total) };
+  go("quiz");
+}
+
 function viewQuiz() {
   if (!quiz) return fallbackHome();
   const q = getQ(quiz.qids[quiz.idx]);
@@ -593,7 +609,7 @@ function viewQuiz() {
   return `
   <div class="row between">
     <button class="back-btn" onclick="quitQuiz()">✕</button>
-    <span class="sub" style="font-weight:700">${quiz.mode === "review" ? "오답 복습" : "오늘의 학습"} · ${num}/${total}</span>
+    <span class="sub" style="font-weight:700">${quiz.mode === "review" ? "오답 복습" : quiz.mode === "extra" ? "추가 학습" : "오늘의 학습"} · ${num}/${total}</span>
     <span style="width:34px"></span>
   </div>
   <div class="progress-track mt8"><div class="progress-fill" style="width:${Math.round((num - (isGraded ? 0 : 1)) / total * 100)}%"></div></div>
@@ -630,11 +646,13 @@ function gradeCurrent() {
   S.attempts.push({ id: uid(), questionId: q.id, selected: quiz.selected, isCorrect: ok, date: nowISO(), mode: quiz.mode });
   quiz.results.push({ qid: q.id, selected: quiz.selected, isCorrect: ok });
 
-  if (quiz.mode === "daily") {
-    const set = S.dailySets[todayKey()];
-    if (set) {
-      set.answers.push({ qid: q.id, selected: quiz.selected, isCorrect: ok });
-      set.index = set.answers.length;
+  if (quiz.mode === "daily" || quiz.mode === "extra") {
+    if (quiz.mode === "daily") {
+      const set = S.dailySets[todayKey()];
+      if (set) {
+        set.answers.push({ qid: q.id, selected: quiz.selected, isCorrect: ok });
+        set.index = set.answers.length;
+      }
     }
     let earned = r.solve;
     addPoints(r.solve, "문제 풀이", { silent: true });
@@ -724,16 +742,17 @@ function viewResult() {
   const wrong = total - correct;
   const r = S.settings.rules;
   const isDaily = quiz.mode === "daily";
+  const isExtra = quiz.mode === "extra";
 
   const pv = n => `+<span class="countup" data-to="${n}">0</span>P`;
   let lines = "";
-  if (isDaily) {
+  if (isDaily || isExtra) {
     const solved = quiz.sessionSolve || 0;
     const bonus = quiz.sessionBonus || 0;
     lines = `
       <div class="point-line"><span>문제 풀이 ×${solved}</span><span class="p">${pv(r.solve * solved)}</span></div>
       ${bonus ? `<div class="point-line"><span>첫 정답 보너스 ×${bonus}</span><span class="p">${pv(r.correct * bonus)}</span></div>` : ""}
-      <div class="point-line"><span>오늘 학습 완료</span><span class="p">${pv(r.daily)}</span></div>`;
+      ${isDaily ? `<div class="point-line"><span>오늘 학습 완료</span><span class="p">${pv(r.daily)}</span></div>` : ""}`;
   } else {
     lines = `<div class="point-line"><span>오답 정복 ×${correct}</span><span class="p">${pv(r.review * correct)}</span></div>`;
   }
@@ -741,7 +760,7 @@ function viewResult() {
   return `
   <div class="center" style="padding-top:5vh">
     <div class="result-emoji">${correct === total ? "🏆" : correct >= total / 2 ? "🎉" : "💪"}</div>
-    <h1 class="mt8">${isDaily ? "오늘 학습 완료!" : "복습 완료!"}</h1>
+    <h1 class="mt8">${isDaily ? "오늘 학습 완료!" : isExtra ? "추가 학습 완료!" : "복습 완료!"}</h1>
     <div class="result-score mt8"><span class="countup" data-to="${correct}">0</span><span class="sub" style="font-size:1.2rem"> / ${total}</span></div>
     ${isDaily ? `<p class="sub mt8">🔥 연속 학습 ${displayedStreak()}일째!</p>` : ""}
   </div>
@@ -1017,6 +1036,13 @@ function viewSettings() {
       </select>
       <p class="sub small mt8">변경은 내일 세트부터 적용돼요.</p>
     </div>
+    <div class="field">
+      <label class="row" style="align-items:center;gap:8px;cursor:pointer">
+        <input type="checkbox" id="set-extra" ${S.settings.extraPractice ? "checked" : ""}>
+        <span>목표 완료 후에도 추가로 문제 풀기 허용</span>
+      </label>
+      <p class="sub small mt8">켜두면 오늘 목표를 다 채운 뒤에도 다음 문제를 계속 풀 수 있어요. (포인트는 계속 쌓이고, 연속 학습일에는 영향 없어요)</p>
+    </div>
     <button class="btn ghost mt12" onclick="saveProfile()">저장</button>
   </div>
   <div class="card mt16">
@@ -1084,6 +1110,7 @@ function saveProfile() {
   const goal = parseInt(document.getElementById("set-goal").value, 10);
   if (name) S.profile.name = name;
   S.profile.dailyGoal = goal;
+  S.settings.extraPractice = document.getElementById("set-extra").checked;
   save();
   toast("저장했어요 ✅");
   render();
