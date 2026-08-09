@@ -22,6 +22,8 @@
   --adventure-soft: rgba(234, 88, 12, .10);
   --lfm: #0e7490;
   --lfm-soft: rgba(14, 116, 144, .10);
+  --listening: #7c3aed;
+  --listening-soft: rgba(124, 58, 237, .10);
   --radius: 14px;
   --shadow: 0 1px 2px rgba(20, 20, 40, .04), 0 4px 16px rgba(20, 20, 40, .06);
   --mono: "JetBrains Mono", "Cascadia Code", Consolas, ui-monospace, monospace;
@@ -139,6 +141,42 @@ nav.bottom button.active { color: var(--primary-dark); }
 }
 .track-tag.adventure { background: var(--adventure-soft); color: var(--adventure); border-color: rgba(234, 88, 12, .3); }
 .track-tag.lfm { background: var(--lfm-soft); color: var(--lfm); border-color: rgba(14, 116, 144, .3); }
+.track-tag.listening { background: var(--listening-soft); color: var(--listening); border-color: rgba(124, 58, 237, .3); }
+
+/* ---------- 리스닝 재생 ---------- */
+.audio-box {
+  margin-top: 14px; padding: 16px; border-radius: 14px;
+  background: var(--listening-soft); border: 1px solid rgba(124, 58, 237, .22);
+  text-align: center;
+}
+.audio-btn {
+  width: 100%; padding: 15px 18px; border: 0; border-radius: 12px;
+  background: var(--listening); color: #fff; font-size: 1.05rem; font-weight: 700;
+  font-family: inherit; cursor: pointer; transition: transform .08s, opacity .15s;
+}
+.audio-btn:active { transform: scale(.98); }
+.audio-btn:disabled { cursor: default; opacity: .55; }
+.audio-btn.playing { opacity: 1; background: #6d28d9; animation: audio-pulse 1.4s ease-in-out infinite; }
+@keyframes audio-pulse { 0%, 100% { opacity: 1 } 50% { opacity: .72 } }
+.audio-bar {
+  height: 6px; margin-top: 12px; border-radius: 999px; overflow: hidden;
+  background: rgba(124, 58, 237, .18);
+}
+.audio-fill { height: 100%; width: 0; border-radius: 999px; background: var(--listening); transition: width .2s linear; }
+.audio-meta { margin-top: 9px; font-size: .8rem; font-weight: 600; color: var(--listening); }
+
+/* ---------- 채점 후 스크립트 ---------- */
+.transcript {
+  margin-top: 16px; padding: 14px 16px; border-radius: 12px;
+  background: rgba(124, 58, 237, .07); border: 1px solid rgba(124, 58, 237, .18);
+  font-size: .9rem;
+}
+.transcript > b { color: var(--listening); font-size: .85rem; }
+.transcript-body { margin-top: 8px; white-space: pre-wrap; line-height: 1.7; }
+.transcript-mark {
+  margin-top: 10px; padding: 9px 12px; border-radius: 9px;
+  background: rgba(124, 58, 237, .13); font-weight: 600; line-height: 1.6;
+}
 
 .passage {
   background: #f7f6ff;

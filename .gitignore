@@ -1,0 +1,2 @@
+# 리스닝 빌드 캐시 — 어떤 문항을 다시 뽑아야 하는지 판단하는 로컬 상태
+tools/.listening_cache.json
