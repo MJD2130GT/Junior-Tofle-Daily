@@ -1,0 +1,634 @@
+{
+  "_note": [
+    "억양(intonation) 문항. 끝을 올리는가 내리는가로 같은 말이 질문도 되고 진술도 된다.",
+    "Azure는 문장부호로 억양을 만들므로 '?'는 올림조, '.'는 내림조, '...'는 미완결 억양을 낸다.",
+    "스크립트는 채점 뒤에만 보이므로 물음표가 드러나도 시험에는 영향이 없다.",
+    "오히려 채점 후 ↗ ↘ 표기와 함께 보여 주면 억양 규칙을 배우는 자료가 된다."
+  ],
+  "items": [
+    {
+      "id": "lis_0045",
+      "kind": "prosody",
+      "difficulty": 2,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_f",
+          "t": "You're coming with us?"
+        }
+      ],
+      "stem": "What is the speaker doing?",
+      "choices": [
+        "Telling the listener what to do",
+        "Checking something she is unsure about",
+        "Refusing to go along",
+        "Complaining about the plan"
+      ],
+      "answer": 1,
+      "transcriptMarked": "You're coming with us↗  ← 끝을 올림 = 확인 질문",
+      "explanation": "어순은 평서문이지만 끝을 올리면 질문이 된다. 내려 읽었다면 '너도 같이 가는 거야'라는 통보가 된다."
+    },
+    {
+      "id": "lis_0046",
+      "kind": "prosody",
+      "difficulty": 2,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_f",
+          "t": "You're coming with us."
+        }
+      ],
+      "stem": "What is the speaker doing?",
+      "choices": [
+        "Asking whether the listener will come",
+        "Apologizing for the change",
+        "Treating it as already decided",
+        "Offering the listener a choice"
+      ],
+      "answer": 2,
+      "transcriptMarked": "You're coming with us↘  ← 끝을 내림 = 진술",
+      "explanation": "앞 문항과 단어는 완전히 같지만 끝을 내려 읽었다. 질문이 아니라 이미 정해진 일을 알리는 말이다."
+    },
+    {
+      "id": "lis_0047",
+      "kind": "prosody",
+      "difficulty": 2,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "teacher_m",
+          "t": "For the trip you'll need a hat, sunscreen, water..."
+        }
+      ],
+      "stem": "What does the intonation tell you?",
+      "choices": [
+        "Only three things are needed",
+        "More items are still to come",
+        "The speaker is unsure the trip will happen",
+        "The listener already has these items"
+      ],
+      "answer": 1,
+      "transcriptMarked": "a hat↗, sunscreen↗, water↗  ← 마지막 항목도 올림 = 목록 계속",
+      "explanation": "영어 목록에서 마지막 항목은 내림조로 끝나 완결을 알린다. 여기서는 'water'까지 올라가므로 아직 더 남았다는 신호다."
+    },
+    {
+      "id": "lis_0048",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "teacher_m",
+          "t": "For the trip you'll need a hat, sunscreen, water."
+        }
+      ],
+      "stem": "What does the intonation tell you?",
+      "choices": [
+        "The list is complete",
+        "The speaker forgot something",
+        "More items will be added later",
+        "The items are only suggestions"
+      ],
+      "answer": 0,
+      "transcriptMarked": "a hat↗, sunscreen↗, water↘  ← 마지막만 내림 = 목록 끝",
+      "explanation": "앞 문항과 항목은 같지만 마지막 'water'가 내림조다. 목록이 여기서 끝났다는 뜻이며, 이것이 영어 목록 억양의 기본 규칙이다."
+    },
+    {
+      "id": "lis_0049",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_m",
+          "t": "That was the right bus, wasn't it?"
+        }
+      ],
+      "stem": "What does the speaker's intonation show?",
+      "choices": [
+        "He genuinely does not know and is worried",
+        "He is certain and just wants agreement",
+        "He is annoyed at the other person",
+        "He is giving directions"
+      ],
+      "answer": 0,
+      "transcriptMarked": "That was the right bus, wasn't it↗  ← 부가의문문을 올림 = 진짜 몰라서 묻는 것",
+      "explanation": "부가의문문의 끝을 올리면 정말 확신이 없어 묻는 것이다. 내려 읽으면 '맞지?' 하고 동의를 구하는 것에 가깝다."
+    },
+    {
+      "id": "lis_0050",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_m",
+          "t": "That was the right bus, wasn't it."
+        }
+      ],
+      "stem": "What does the speaker's intonation show?",
+      "choices": [
+        "He is not sure and needs an answer",
+        "He thinks they took the wrong bus",
+        "He is asking for directions",
+        "He is fairly sure and expects agreement"
+      ],
+      "answer": 3,
+      "transcriptMarked": "That was the right bus, wasn't it↘  ← 부가의문문을 내림 = 동의 구하기",
+      "explanation": "같은 부가의문문이라도 내림조면 이미 확신이 있고 상대의 맞장구를 기대하는 것이다."
+    },
+    {
+      "id": "lis_0051",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "teacher_f",
+          "t": "She finished all of it?",
+          "style": "excited",
+          "styledegree": "1.5",
+          "pitch": "+25Hz"
+        }
+      ],
+      "stem": "What is the speaker expressing?",
+      "choices": [
+        "Surprise that it was all done",
+        "Disappointment at slow work",
+        "A request for more work",
+        "Doubt that the work was done well"
+      ],
+      "answer": 0,
+      "transcriptMarked": "She finished ALL of it↗↗  ← 높이 치솟는 올림조 = 놀람",
+      "explanation": "평범한 확인 질문보다 훨씬 높이 올라가는 억양은 놀라움을 나타낸다. 예상보다 많이 했다는 뜻."
+    },
+    {
+      "id": "lis_0052",
+      "kind": "prosody",
+      "difficulty": 2,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_f",
+          "t": "He's already home."
+        }
+      ],
+      "stem": "What is the speaker doing?",
+      "choices": [
+        "Expressing disbelief",
+        "Simply reporting a fact",
+        "Asking where he is",
+        "Warning the listener"
+      ],
+      "answer": 1,
+      "transcriptMarked": "He's already home↘  ← 평탄한 내림조 = 단순 진술",
+      "explanation": "끝이 담담하게 내려가면 감정이 실리지 않은 사실 전달이다. 놀랐다면 끝이 크게 올라갔을 것."
+    },
+    {
+      "id": "lis_0053",
+      "kind": "prosody",
+      "difficulty": 2,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "teacher_f",
+          "t": "Would you like some help?",
+          "style": "friendly",
+          "styledegree": "1.2"
+        }
+      ],
+      "stem": "What is the speaker doing?",
+      "choices": [
+        "Insisting that the listener accept help",
+        "Offering help in a friendly way",
+        "Complaining about the listener's work",
+        "Explaining how to do the task"
+      ],
+      "answer": 1,
+      "transcriptMarked": "Would you like some help↗  ← 부드러운 올림조 = 권유",
+      "explanation": "올림조에 부드러운 어조가 얹히면 상대가 거절할 여지를 남기는 정중한 권유가 된다."
+    },
+    {
+      "id": "lis_0054",
+      "kind": "prosody",
+      "difficulty": 2,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_m",
+          "t": "Could you say that again?"
+        }
+      ],
+      "stem": "What is the speaker doing?",
+      "choices": [
+        "Politely asking for a repeat",
+        "Correcting what was said",
+        "Refusing to answer",
+        "Agreeing with the speaker"
+      ],
+      "answer": 0,
+      "transcriptMarked": "Could you say that again↗  ← 올림조 = 정중한 요청",
+      "explanation": "'Could you ~?'를 올림조로 말하면 부탁이 된다. 내림조로 딱 잘라 말하면 지시에 가까워진다."
+    },
+    {
+      "id": "lis_0055",
+      "kind": "prosody",
+      "difficulty": 4,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "teacher_m",
+          "t": "Do you want the red one, or the blue one?"
+        }
+      ],
+      "stem": "What kind of answer does the speaker expect?",
+      "choices": [
+        "Yes or no",
+        "A choice between the two",
+        "A reason for the choice",
+        "No answer at all"
+      ],
+      "answer": 1,
+      "transcriptMarked": "the red one↗, or the blue one↘  ← 올렸다가 내림 = 둘 중 택일",
+      "explanation": "선택의문문은 앞 항목을 올리고 마지막을 내린다. 둘 다 올리면 '뭐든 원하는 게 있나요?'라는 예/아니오 질문이 된다."
+    },
+    {
+      "id": "lis_0056",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "teacher_m",
+          "t": "Do you want anything to drink?"
+        }
+      ],
+      "stem": "What kind of answer does the speaker expect?",
+      "choices": [
+        "A yes or no",
+        "A choice among several drinks",
+        "An explanation",
+        "A promise"
+      ],
+      "answer": 0,
+      "transcriptMarked": "anything to drink↗  ← 끝까지 올림 = 예/아니오 질문",
+      "explanation": "끝이 계속 올라가면 예/아니오를 묻는 것이다. 앞 문항처럼 올렸다 내렸다면 선택을 묻는 질문이 된다."
+    },
+    {
+      "id": "lis_0057",
+      "kind": "prosody",
+      "difficulty": 2,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "teacher_f",
+          "t": "That's all for today."
+        }
+      ],
+      "stem": "What does the intonation signal?",
+      "choices": [
+        "One more thing is coming",
+        "The speaker is asking a question",
+        "The lesson is finished",
+        "The speaker is unhappy"
+      ],
+      "answer": 2,
+      "transcriptMarked": "That's all for today↘  ← 확실한 내림조 = 마무리",
+      "explanation": "끝을 분명히 내리는 것은 '여기서 끝'이라는 신호다. 올렸다면 뭔가 더 이어질 것 같은 느낌을 준다."
+    },
+    {
+      "id": "lis_0058",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "teacher_f",
+          "t": "First, we'll go over the notes..."
+        }
+      ],
+      "stem": "What does the intonation suggest?",
+      "choices": [
+        "This is the only step",
+        "The plan has been canceled",
+        "The notes are missing",
+        "More steps will follow"
+      ],
+      "answer": 3,
+      "transcriptMarked": "go over the notes↗  ← 끝을 올린 채 멈춤 = 다음 단계 예고",
+      "explanation": "'First'로 시작하고 끝을 올린 채 멈추면 뒤에 둘째·셋째가 이어진다는 신호다."
+    },
+    {
+      "id": "lis_0059",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_f",
+          "t": "I left my project on the bus."
+        },
+        {
+          "v": "student_m",
+          "t": "You did what?",
+          "style": "excited",
+          "styledegree": "1.6",
+          "pitch": "+30Hz"
+        }
+      ],
+      "stem": "Why does the boy speak that way?",
+      "choices": [
+        "He did not hear and wants a repeat",
+        "He is bored by the story",
+        "He is shocked by what she said",
+        "He is correcting her grammar"
+      ],
+      "answer": 2,
+      "transcriptMarked": "You did WHAT↗↗  ← 크게 치솟는 억양 = 충격",
+      "explanation": "되묻는 말을 아주 높은 올림조로 말하면 못 들어서가 아니라 믿기지 않아서 되묻는 것이다."
+    },
+    {
+      "id": "lis_0060",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_m",
+          "t": "They moved the deadline to next week."
+        },
+        {
+          "v": "student_f",
+          "t": "Really?"
+        }
+      ],
+      "stem": "What does the girl mean?",
+      "choices": [
+        "She already knew about the change",
+        "She thinks the boy is lying",
+        "She is not interested",
+        "She is surprised and wants confirmation"
+      ],
+      "answer": 3,
+      "transcriptMarked": "Really↗  ← 올림조 = 놀람 섞인 확인",
+      "explanation": "'Really'를 올려 말하면 '정말?' 하고 놀라며 확인하는 것이다. 내려 말하면 '그렇구나' 하는 담담한 반응이 된다."
+    },
+    {
+      "id": "lis_0061",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_m",
+          "t": "They moved the deadline to next week."
+        },
+        {
+          "v": "student_f",
+          "t": "Really."
+        }
+      ],
+      "stem": "What does the girl's tone show?",
+      "choices": [
+        "Excitement about the news",
+        "A flat reaction without surprise",
+        "Confusion about the date",
+        "Anger at the change"
+      ],
+      "answer": 1,
+      "transcriptMarked": "Really↘  ← 내림조 = 무덤덤한 반응",
+      "explanation": "같은 단어라도 내림조면 놀라움이 없다. 이미 알고 있었거나 별 관심이 없다는 뜻이다."
+    },
+    {
+      "id": "lis_0062",
+      "kind": "prosody",
+      "difficulty": 2,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_f",
+          "t": "You're new here?"
+        }
+      ],
+      "stem": "What is the speaker doing?",
+      "choices": [
+        "Telling the listener where to go",
+        "Complaining about a newcomer",
+        "Introducing herself",
+        "Making a guess and checking it"
+      ],
+      "answer": 3,
+      "transcriptMarked": "You're new here↗  ← 올림조 = 짐작한 것을 확인",
+      "explanation": "평서문을 올림조로 말하면 '내 짐작이 맞나?' 하고 확인하는 것이다. 대화를 트는 흔한 방식이다."
+    },
+    {
+      "id": "lis_0063",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_m",
+          "t": "Okay...",
+          "rate": "-20%",
+          "pitch": "-5Hz"
+        }
+      ],
+      "stem": "How does the speaker feel?",
+      "choices": [
+        "Not entirely convinced",
+        "Fully convinced and ready",
+        "Excited about the plan",
+        "Angry about the decision"
+      ],
+      "answer": 0,
+      "transcriptMarked": "Okay...↗  ← 끌면서 끝을 흐림 = 미심쩍은 동의",
+      "explanation": "'Okay'를 끌면서 끝을 흐리면 완전한 동의가 아니다. 짧고 분명하게 내려 말했다면 확실한 수락이 된다."
+    },
+    {
+      "id": "lis_0064",
+      "kind": "prosody",
+      "difficulty": 2,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "teacher_m",
+          "t": "Anything else?"
+        }
+      ],
+      "stem": "What is the speaker doing?",
+      "choices": [
+        "Ending the conversation firmly",
+        "Refusing to answer more questions",
+        "Repeating an earlier question",
+        "Inviting the listener to add something"
+      ],
+      "answer": 3,
+      "transcriptMarked": "Anything else↗  ← 올림조 = 더 말해도 된다는 초대",
+      "explanation": "올림조로 물으면 상대에게 발언 기회를 열어 주는 것이다. 내려 말하면 '이제 그만'에 가깝게 들린다."
+    },
+    {
+      "id": "lis_0065",
+      "kind": "prosody",
+      "difficulty": 4,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "teacher_f",
+          "t": "So you'd rather present on Friday."
+        },
+        {
+          "v": "student_f",
+          "t": "If that's okay?"
+        }
+      ],
+      "stem": "What does the girl's intonation show?",
+      "choices": [
+        "She is asking permission, not stating a decision",
+        "She has already made the change",
+        "She disagrees with the teacher",
+        "She did not understand the question"
+      ],
+      "answer": 0,
+      "transcriptMarked": "If that's okay↗  ← 조건절만 남기고 올림 = 조심스러운 허락 요청",
+      "explanation": "문장을 끝맺지 않고 조건절만 올림조로 남기면 결정을 상대에게 넘기는 정중한 표현이 된다."
+    },
+    {
+      "id": "lis_0066",
+      "kind": "prosody",
+      "difficulty": 3,
+      "replayLimit": 3,
+      "tags": [
+        "listening",
+        "prosody",
+        "intonation"
+      ],
+      "turns": [
+        {
+          "v": "student_m",
+          "t": "Is there anything I should bring?"
+        },
+        {
+          "v": "teacher_m",
+          "t": "Just yourself."
+        }
+      ],
+      "stem": "What does the teacher's intonation signal?",
+      "choices": [
+        "He is still thinking of other items",
+        "He wants the student to ask again",
+        "He is unhappy with the question",
+        "That is the complete answer"
+      ],
+      "answer": 3,
+      "transcriptMarked": "Just yourself↘  ← 짧고 분명한 내림조 = 답 끝",
+      "explanation": "짧게 내려 끝맺으면 더 보탤 말이 없다는 뜻이다. 끝을 올렸다면 뭔가 더 떠올리는 중처럼 들렸을 것."
+    }
+  ]
+}
