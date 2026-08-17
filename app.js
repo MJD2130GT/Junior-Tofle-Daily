@@ -8,15 +8,23 @@
 const STORE_KEY = "jrtoefl.state.v1";
 const BANK_KEY = "jrtoefl.customBank.v1";
 
+// 화폐 사다리: 정답 → 코인 → 다이아몬드 → 포인트
+// 코인 10개 = 다이아몬드 1개, 다이아몬드 5개 = 10,000P (= 정답 50개)
+// 정답 1개가 200P에 해당하므로, 아래 레벨·배지·보상 가격은 모두 이 규모에 맞춰져 있다.
+const COINS_PER_DIAMOND = 10;
+const DIAMONDS_PER_PAYOUT = 5;
+const PAYOUT_POINTS = 10000;
+
 const LEVELS = [
-  { min: 0,    title: "새싹",     icon: "🌱" },
-  { min: 200,  title: "브론즈",   icon: "🥉" },
-  { min: 500,  title: "실버",     icon: "🥈" },
-  { min: 1000, title: "골드",     icon: "🥇" },
-  { min: 2000, title: "플래티넘", icon: "💠" },
-  { min: 3500, title: "다이아",   icon: "💎" },
-  { min: 5000, title: "마스터",   icon: "👑" },
+  { min: 0,      title: "새싹",     icon: "🌱" },
+  { min: 4000,   title: "브론즈",   icon: "🥉" },
+  { min: 10000,  title: "실버",     icon: "🥈" },
+  { min: 20000,  title: "골드",     icon: "🥇" },
+  { min: 40000,  title: "플래티넘", icon: "💠" },
+  { min: 70000,  title: "다이아",   icon: "💎" },
+  { min: 100000, title: "마스터",   icon: "👑" },
 ];
+const RICH_BADGE_AT = 20000;
 
 const BADGES = [
   { id: "first_done",  icon: "🎉", name: "첫 학습 완료",  desc: "데일리 세트를 처음으로 완료" },
@@ -26,15 +34,17 @@ const BADGES = [
   { id: "streak_100",  icon: "🏆", name: "100일 연속",    desc: "100일 연속 학습" },
   { id: "perfect_day", icon: "💯", name: "올백 데이",     desc: "하루 전 문제 정답" },
   { id: "review_10",   icon: "🛡️", name: "오답 정복자",   desc: "오답 10개 정복" },
-  { id: "points_1000", icon: "💰", name: "포인트 부자",   desc: "누적 1,000P 달성" },
+  { id: "points_1000", icon: "💰", name: "포인트 부자",   desc: "누적 20,000P 달성" },
+  { id: "diamond_1",   icon: "💎", name: "첫 다이아몬드", desc: "코인 10개를 모아 다이아몬드 획득" },
+  { id: "payout_1",    icon: "🏦", name: "첫 정산",       desc: "다이아몬드 5개를 10,000P로 교환" },
   { id: "solve_100",   icon: "📚", name: "100문제 돌파",  desc: "누적 100문제 풀이" },
 ];
 
 // 주간 미션 (월요일 시작 주 단위, 달성 시 1회 보너스)
 const MISSIONS = [
-  { id: "m_days", name: "이번 주 5일 학습 완료", target: 5, points: 50, prog: () => completedDaysThisWeek() },
-  { id: "m_correct", name: "이번 주 정답 20개 모으기", target: 20, points: 40, prog: () => correctThisWeek() },
-  { id: "m_conquer", name: "이번 주 오답 5개 정복", target: 5, points: 30, prog: () => conqueredThisWeek() },
+  { id: "m_days", name: "이번 주 5일 학습 완료", target: 5, coins: 5, prog: () => completedDaysThisWeek() },
+  { id: "m_correct", name: "이번 주 정답 20개 모으기", target: 20, coins: 4, prog: () => correctThisWeek() },
+  { id: "m_conquer", name: "이번 주 오답 5개 정복", target: 5, coins: 3, prog: () => conqueredThisWeek() },
 ];
 
 // 오늘의 어휘 사전 (오늘 푼 문항의 지문에 등장한 단어만 노출)
@@ -96,19 +106,20 @@ const TRACKS = [
 const TRACK = Object.fromEntries(TRACKS.map(t => [t.id, t]));
 const trackLabel = id => { const t = TRACK[id]; return t ? `${t.icon} ${t.name}` : id; };
 
+// 모든 활동은 '코인'으로 보상한다 (포인트는 다이아몬드 정산으로만 들어온다).
+// 화폐를 하나로 묶어 두면 아이가 보는 진행 막대도 하나뿐이라 이해하기 쉽다.
 const DEFAULT_RULES = {
-  solve: 5,      // 문제 1개 제출(시도 보상)
-  correct: 5,    // 첫 정답 보너스
-  daily: 30,     // 하루치 완료 보너스
-  streak3: 10,   // 3일 단위 연속 보너스
-  streak7: 30,   // 7일 단위 연속 보너스
-  review: 3,     // 오답 복습 정복 1문제당
+  correct: 1,    // 정답 1개 (같은 문항의 첫 정답에만 — 반복 풀이로 쌓는 것 방지)
+  daily: 3,      // 하루치 완료
+  streak3: 2,    // 3일 단위 연속
+  streak7: 5,    // 7일 단위 연속
+  review: 1,     // 오답 정복 1문제당
 };
 
 const DEFAULT_REWARDS = [
-  { id: "rw_game30",  name: "게임 30분",          cost: 300, active: true },
-  { id: "rw_snack",   name: "좋아하는 간식",      cost: 150, active: true },
-  { id: "rw_outing",  name: "주말 외출 선택권",   cost: 800, active: true },
+  { id: "rw_game30",  name: "게임 30분",          cost: 6000,  active: true },
+  { id: "rw_snack",   name: "좋아하는 간식",      cost: 3000,  active: true },
+  { id: "rw_outing",  name: "주말 외출 선택권",   cost: 16000, active: true },
 ];
 
 // ---------------- 상태 ----------------
@@ -117,6 +128,7 @@ let view = { name: "home" };   // 현재 화면
 let quiz = null;       // 진행 중 퀴즈 세션(메모리): {mode, qids, idx, phase, selected, results[]}
 let parentUnlocked = false;    // 부모님 공간 잠금 해제 (세션 한정)
 let pendingLevelUp = null;     // 레벨업 발생 시 결과 화면에서 띄울 모달 정보
+let pendingPayout = null;      // 다이아몬드 정산 축하 모달 정보
 
 function prefersReduced() {
   return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -137,12 +149,14 @@ function addDays(key, n) {
 
 function defaultState() {
   return {
-    version: 1,
+    version: 2,
     profile: null, // {name, dailyGoal, createdAt}
     attempts: [],  // {id, questionId, selected, isCorrect, date, mode}
     dailySets: {}, // dateKey -> {questionIds, index, answers[], completed, perfect}
     streak: { current: 0, longest: 0, lastActiveDate: null },
     points: { balance: 0, total: 0 },
+    // coins/diamonds는 '다음 단계까지 남은 양'이고, *Total은 누적 기록용이다
+    wallet: { coins: 0, diamonds: 0, coinsTotal: 0, diamondsTotal: 0 },
     pointLog: [],  // {id, delta, reason, date}
     badges: [],    // {id, earnedAt}
     rewards: DEFAULT_REWARDS.map(r => ({ ...r })),
@@ -159,11 +173,13 @@ function load() {
     const raw = localStorage.getItem(STORE_KEY);
     if (raw) {
       S = Object.assign(defaultState(), JSON.parse(raw));
+      migrate();
       S.settings.rules = Object.assign({ ...DEFAULT_RULES }, S.settings.rules || {});
       if (S.settings.extraPractice == null) S.settings.extraPractice = false;
       if (!S.meta) S.meta = { firstCorrect: {}, wrongCount: {}, conquered: {}, recheck: {} };
       if (!S.meta.recheck) S.meta.recheck = {};
       if (!S.missions) S.missions = {};
+      if (!S.wallet) S.wallet = { coins: 0, diamonds: 0, coinsTotal: 0, diamondsTotal: 0 };
     } else {
       S = defaultState();
     }
@@ -173,6 +189,27 @@ function load() {
   }
 }
 function save() { localStorage.setItem(STORE_KEY, JSON.stringify(S)); }
+
+// v1 → v2: 포인트 단위가 20배로 바뀌었다 (정답 1개 = 200P 규모).
+// 레벨·보상 가격을 함께 20배로 올렸으므로, 기존 잔액도 같이 올려야 아이가
+// 쌓아 둔 레벨과 구매력이 그대로 유지된다. 안 올리면 하루아침에 빈털터리가 된다.
+function migrate() {
+  if ((S.version || 1) >= 2) return;
+  const SCALE = 20;
+  const before = S.points.balance;
+  S.points.balance = Math.round(S.points.balance * SCALE);
+  S.points.total = Math.round(S.points.total * SCALE);
+  (S.rewards || []).forEach(r => { r.cost = Math.round((r.cost || 0) * SCALE); });
+  (S.redemptions || []).forEach(r => { r.cost = Math.round((r.cost || 0) * SCALE); });
+  // 옛 규칙값은 포인트 단위라 코인 규칙으로 그대로 쓸 수 없다. 기본값으로 되돌린다.
+  S.settings.rules = { ...DEFAULT_RULES };
+  S.wallet = { coins: 0, diamonds: 0, coinsTotal: 0, diamondsTotal: 0 };
+  if (before > 0) {
+    S.pointLog.unshift({ id: uid(), delta: S.points.balance - before,
+                         reason: "보상 체계 개편 (포인트 단위 조정)", date: nowISO() });
+  }
+  S.version = 2;
+}
 
 // ---------------- 문항 은행 ----------------
 function questionBank() {
@@ -195,6 +232,53 @@ function addPoints(delta, reason, opts) {
   if (S.pointLog.length > 500) S.pointLog.length = 500;
   if (delta > 0 && !(opts && opts.silent)) toast(`+${delta}P ${reason}`, "coin");
   checkBadges();
+}
+
+// ---------------- 코인 / 다이아몬드 ----------------
+// 코인이 10개 차면 다이아몬드로, 다이아몬드가 5개 차면 10,000P로 자동 정산된다.
+// while로 도는 이유: 한 번에 여러 개가 들어와도(미션 보너스 등) 단계를 건너뛰지 않게 하려고.
+function addCoins(n, reason, opts) {
+  if (!n) return;
+  S.wallet.coins += n;
+  S.wallet.coinsTotal += n;
+
+  let gotDiamond = 0, gotPayout = 0;
+  while (S.wallet.coins >= COINS_PER_DIAMOND) {
+    S.wallet.coins -= COINS_PER_DIAMOND;
+    S.wallet.diamonds += 1;
+    S.wallet.diamondsTotal += 1;
+    gotDiamond++;
+  }
+  while (S.wallet.diamonds >= DIAMONDS_PER_PAYOUT) {
+    S.wallet.diamonds -= DIAMONDS_PER_PAYOUT;
+    gotPayout++;
+  }
+
+  if (!(opts && opts.silent)) toast(`+${n} 🪙 ${reason}`, "coin");
+  if (gotDiamond) {
+    earnBadge("diamond_1");
+    toast(`💎 다이아몬드 ${gotDiamond > 1 ? gotDiamond + "개 " : ""}획득!`);
+    burstConfetti();
+  }
+  if (gotPayout) {
+    const gain = PAYOUT_POINTS * gotPayout;
+    addPoints(gain, `다이아몬드 ${DIAMONDS_PER_PAYOUT * gotPayout}개 정산`, { silent: true });
+    earnBadge("payout_1");
+    pendingPayout = { diamonds: DIAMONDS_PER_PAYOUT * gotPayout, points: gain };
+    showPayoutModal(pendingPayout);
+  }
+  checkBadges();
+}
+// 다음 단계까지의 진행률 (진행 막대·칩 표시에 함께 쓴다)
+function walletProgress() {
+  const w = S.wallet;
+  return {
+    coins: w.coins, diamonds: w.diamonds,
+    coinPct: Math.round(w.coins / COINS_PER_DIAMOND * 100),
+    diaPct: Math.round(w.diamonds / DIAMONDS_PER_PAYOUT * 100),
+    toDiamond: COINS_PER_DIAMOND - w.coins,
+    toPayout: DIAMONDS_PER_PAYOUT - w.diamonds,
+  };
 }
 
 function levelInfo(total) {
@@ -230,7 +314,7 @@ function checkBadges() {
   if (S.streak.current >= 100) earnBadge("streak_100");
   if (Object.values(S.dailySets).some(s => s.completed && s.perfect)) earnBadge("perfect_day");
   if (conqueredCount() >= 10) earnBadge("review_10");
-  if (S.points.total >= 1000) earnBadge("points_1000");
+  if (S.points.total >= RICH_BADGE_AT) earnBadge("points_1000");
   if (S.attempts.length >= 100) earnBadge("solve_100");
 }
 
@@ -252,8 +336,8 @@ function bumpStreak() {
   // 연속 보너스: 7일 단위 우선, 아니면 3일 단위
   const r = S.settings.rules, c = S.streak.current;
   if (c > 1) {
-    if (c % 7 === 0) addPoints(r.streak7, `${c}일 연속 보너스`);
-    else if (c % 3 === 0) addPoints(r.streak3, `${c}일 연속 보너스`);
+    if (c % 7 === 0) addCoins(r.streak7, `${c}일 연속 보너스`);
+    else if (c % 3 === 0) addCoins(r.streak3, `${c}일 연속 보너스`);
   }
   checkBadges();
 }
@@ -287,7 +371,7 @@ function checkMissions() {
   for (const m of MISSIONS) {
     if (!S.missions[wk][m.id] && m.prog() >= m.target) {
       S.missions[wk][m.id] = true;
-      addPoints(m.points, `주간 미션 완료: ${m.name}`);
+      addCoins(m.coins, `주간 미션 완료: ${m.name}`);
       burstConfetti();
     }
   }
@@ -460,11 +544,65 @@ function navHTML() {
 
 function headerChips() {
   const lv = levelInfo(S.points.total);
+  const w = S.wallet;
   return `<div class="chips">
-    <span class="chip">🪙 ${S.points.balance.toLocaleString()}P</span>
+    <span class="chip">🪙 ${w.coins}/${COINS_PER_DIAMOND}</span>
+    <span class="chip">💎 ${w.diamonds}/${DIAMONDS_PER_PAYOUT}</span>
+    <span class="chip">${S.points.balance.toLocaleString()}P</span>
     <span class="chip">${lv.icon} ${lv.title}</span>
     <span class="chip">🔥 ${displayedStreak()}일</span>
   </div>`;
+}
+
+// 코인 → 다이아몬드 → 포인트 사다리를 한 카드에 보여 준다.
+// 아이가 "몇 개만 더 모으면 되는지"를 항상 눈으로 확인할 수 있게 하는 것이 핵심.
+function walletCardHTML() {
+  const p = walletProgress();
+  const dots = (filled, totalDots, icon) =>
+    Array.from({ length: totalDots }, (_, i) =>
+      `<span class="wallet-dot${i < filled ? " on" : ""}">${i < filled ? icon : "·"}</span>`).join("");
+  return `<div class="card mt16 wallet-card">
+    <div class="row between">
+      <h3>🪙 내 지갑</h3>
+      <span class="sub small">${S.points.balance.toLocaleString()}P 사용 가능</span>
+    </div>
+    <div class="wallet-row mt12">
+      <div class="row between">
+        <span class="wallet-label">🪙 코인</span>
+        <span class="wallet-need">다이아몬드까지 ${p.toDiamond}개</span>
+      </div>
+      <div class="wallet-dots mt8">${dots(p.coins, COINS_PER_DIAMOND, "🪙")}</div>
+    </div>
+    <div class="wallet-row mt12">
+      <div class="row between">
+        <span class="wallet-label">💎 다이아몬드</span>
+        <span class="wallet-need">정산까지 ${p.toPayout}개</span>
+      </div>
+      <div class="wallet-dots mt8">${dots(p.diamonds, DIAMONDS_PER_PAYOUT, "💎")}</div>
+    </div>
+    <p class="sub small mt12">정답 1개 = 코인 1개 · 코인 ${COINS_PER_DIAMOND}개 = 💎 1개
+      · 💎 ${DIAMONDS_PER_PAYOUT}개 = <b>${PAYOUT_POINTS.toLocaleString()}P</b></p>
+  </div>`;
+}
+
+// 다이아몬드 5개가 모여 포인트로 바뀌는 순간의 축하 모달
+function showPayoutModal(info) {
+  if (!document.body) return;
+  const back = document.createElement("div");
+  back.className = "modal-back";
+  back.innerHTML = `<div class="modal levelup center">
+    <div class="lv-ring">💎</div>
+    <div class="lv-tag mt12">DIAMOND PAYOUT</div>
+    <h2 class="mt8">다이아몬드 ${info.diamonds}개 정산!</h2>
+    <p class="sub mt8">+${info.points.toLocaleString()}P 를 받았어요. 상점에서 써 보세요! 🎉</p>
+    <button class="btn primary mt16" id="payout-ok">좋아요!</button>
+  </div>`;
+  const close = () => { back.remove(); pendingPayout = null; };
+  back.addEventListener("click", e => { if (e.target === back) close(); });
+  document.body.appendChild(back);
+  const ok = document.getElementById("payout-ok");
+  if (ok) ok.addEventListener("click", close);
+  burstConfetti();
 }
 
 // ---------------- 온보딩 ----------------
@@ -540,9 +678,10 @@ function viewHome() {
   </div>
   <div class="stat-grid mt16">
     <div class="stat-tile"><div class="v">🔥 ${displayedStreak()}</div><div class="k">연속 학습일</div></div>
-    <div class="stat-tile"><div class="v">🪙 ${S.points.total.toLocaleString()}</div><div class="k">누적 포인트</div></div>
+    <div class="stat-tile"><div class="v">💎 ${S.wallet.diamondsTotal}</div><div class="k">모은 다이아몬드</div></div>
     <div class="stat-tile"><div class="v">📕 ${wrongs}</div><div class="k">오답 대기</div></div>
   </div>
+  ${walletCardHTML()}
   <div class="card mt16">
     <h3>🎯 주간 미션</h3>
     ${missionRowsHTML()}
@@ -565,7 +704,7 @@ function missionRowsHTML() {
     return `<div class="mt8">
       <div class="row between">
         <span class="small" style="font-weight:600">${m.name}</span>
-        <span class="small" style="font-weight:800;color:${done ? "var(--green)" : "var(--sub)"}">${done ? `✅ +${m.points}P` : `${p}/${m.target}`}</span>
+        <span class="small" style="font-weight:800;color:${done ? "var(--green)" : "var(--sub)"}">${done ? `✅ +${m.coins} 🪙` : `${p}/${m.target}`}</span>
       </div>
       <div class="progress-track mt8" style="height:7px"><div class="progress-fill${done ? " gold" : ""}" style="width:${Math.round(p / m.target * 100)}%"></div></div>
     </div>`;
@@ -753,23 +892,26 @@ function gradeCurrent() {
         set.index = set.answers.length;
       }
     }
-    let earned = r.solve;
-    addPoints(r.solve, "문제 풀이", { silent: true });
     quiz.sessionSolve = (quiz.sessionSolve || 0) + 1;
+    // 코인은 '그 문항을 처음 맞혔을 때'만 준다. 같은 문제를 반복해서 코인을 쌓는 걸 막는다.
     if (ok && !S.meta.firstCorrect[q.id]) {
       S.meta.firstCorrect[q.id] = true;
-      addPoints(r.correct, "첫 정답 보너스", { silent: true });
-      earned += r.correct;
-      quiz.sessionBonus = (quiz.sessionBonus || 0) + 1;
+      addCoins(r.correct, "정답", { silent: true });
+      quiz.sessionCoins = (quiz.sessionCoins || 0) + r.correct;
+      toast(`+${r.correct} 🪙 정답!`, "coin");
+    } else if (ok) {
+      toast("정답이에요! (이미 맞힌 문제라 코인은 없어요)");
+    } else {
+      toast("아쉬워요! 다시 도전해 봐요 💪");
     }
-    toast(`+${earned}P ${ok ? "획득!" : "(도전 보상)"} 🪙`, "coin");
     // 간격 반복 재확인 문항: 이번 답으로 재확인 완료 (틀리면 아래에서 오답노트로 복귀)
     if (S.meta.recheck[q.id]) delete S.meta.recheck[q.id];
   } else { // review
     if (ok) {
       S.meta.conquered[q.id] = todayKey();
       S.meta.recheck[q.id] = addDays(todayKey(), 3); // 3일 뒤 데일리 세트에서 재확인
-      addPoints(r.review, "오답 정복");
+      addCoins(r.review, "오답 정복");
+      quiz.sessionCoins = (quiz.sessionCoins || 0) + r.review;
     }
   }
 
@@ -806,7 +948,8 @@ function finishQuiz() {
     if (set && !set.completed) {
       set.completed = true;
       set.perfect = set.answers.length > 0 && set.answers.every(a => a.isCorrect);
-      addPoints(r.daily, "오늘 학습 완료");
+      addCoins(r.daily, "오늘 학습 완료");
+      quiz.sessionCoins = (quiz.sessionCoins || 0) + r.daily;
       bumpStreak();
       burstConfetti();
     }
@@ -846,17 +989,15 @@ function viewResult() {
   const isDaily = quiz.mode === "daily";
   const isExtra = quiz.mode === "extra";
 
-  const pv = n => `+<span class="countup" data-to="${n}">0</span>P`;
+  const cv = n => `+<span class="countup" data-to="${n}">0</span> 🪙`;
   let lines = "";
   if (isDaily || isExtra) {
-    const solved = quiz.sessionSolve || 0;
-    const bonus = quiz.sessionBonus || 0;
+    const newly = Math.max(0, (quiz.sessionCoins || 0) - (isDaily ? r.daily : 0));
     lines = `
-      <div class="point-line"><span>문제 풀이 ×${solved}</span><span class="p">${pv(r.solve * solved)}</span></div>
-      ${bonus ? `<div class="point-line"><span>첫 정답 보너스 ×${bonus}</span><span class="p">${pv(r.correct * bonus)}</span></div>` : ""}
-      ${isDaily ? `<div class="point-line"><span>오늘 학습 완료</span><span class="p">${pv(r.daily)}</span></div>` : ""}`;
+      <div class="point-line"><span>정답 코인</span><span class="p">${cv(newly)}</span></div>
+      ${isDaily ? `<div class="point-line"><span>오늘 학습 완료</span><span class="p">${cv(r.daily)}</span></div>` : ""}`;
   } else {
-    lines = `<div class="point-line"><span>오답 정복 ×${correct}</span><span class="p">${pv(r.review * correct)}</span></div>`;
+    lines = `<div class="point-line"><span>오답 정복 ×${correct}</span><span class="p">${cv(r.review * correct)}</span></div>`;
   }
 
   return `
@@ -867,9 +1008,10 @@ function viewResult() {
     ${isDaily ? `<p class="sub mt8">🔥 연속 학습 ${displayedStreak()}일째!</p>` : ""}
   </div>
   <div class="card mt16">
-    <h3>🪙 획득 포인트</h3>
+    <h3>🪙 획득 코인</h3>
     <div class="mt8">${lines}</div>
   </div>
+  ${walletCardHTML()}
   ${vocabCardHTML()}
   ${wrong ? `<button class="btn ghost mt16" onclick="go('review')">📕 틀린 문제 ${wrong}개 확인하기</button>` : ""}
   <button class="btn primary mt12" onclick="quiz=null;go('home')">홈으로</button>`;
@@ -914,7 +1056,7 @@ function viewReview() {
 
   return `
   <h1>📕 오답노트</h1>
-  <p class="sub mt8">틀린 문제를 다시 풀어 정복하면 +${S.settings.rules.review}P!</p>
+  <p class="sub mt8">틀린 문제를 다시 풀어 정복하면 +${S.settings.rules.review} 🪙!</p>
   ${list.length ? `
     <button class="btn primary mt16" onclick="startReview(${esc(JSON.stringify(list.map(x => x.q.id)))})">전체 다시 풀기 (${list.length}문제) ▶</button>
     ${focus.length ? `<button class="btn warn mt8" onclick="startReview(${esc(JSON.stringify(focus.map(x => x.q.id)))})">🚨 집중 복습만 (${focus.length}문제)</button>` : ""}
@@ -1100,6 +1242,7 @@ function viewRewards() {
     <div class="progress-track mt8"><div class="progress-fill gold" style="width:${lv.pct}%"></div></div>
     <p class="sub small mt8">누적 ${S.points.total.toLocaleString()}P · 사용 가능 ${S.points.balance.toLocaleString()}P</p>
   </div>
+  ${walletCardHTML()}
   <div class="tabs mt16">
     <button class="${tab === "shop" ? "active" : ""}" onclick="go('rewards',{tab:'shop'})">🛍️ 상점</button>
     <button class="${tab === "badges" ? "active" : ""}" onclick="go('rewards',{tab:'badges'})">🏅 배지</button>
@@ -1157,7 +1300,7 @@ function viewSettings() {
   </div>
   <div class="card mt16">
     <h3>👨‍👩‍👧 부모님 공간</h3>
-    <p class="sub small mt8">보상 등록 · 교환 승인 · 포인트 규칙 · 문항 관리 · 주간 리포트</p>
+    <p class="sub small mt8">보상 등록 · 교환 승인 · 코인 규칙 · 문항 관리 · 주간 리포트</p>
     <button class="btn primary mt12" onclick="parentUnlocked=false;go('parent')">들어가기 🔒</button>
   </div>
   <div class="card mt16">
@@ -1263,6 +1406,8 @@ function viewParent() {
       <div class="point-line"><span>전체 정답률</span><span><b>${accuracy(null) == null ? "-" : accuracy(null) + "%"}</b></span></div>
       <div class="point-line"><span>오답 대기 / 정복</span><span><b>${wrongs.length} / ${conqueredCount()}</b></span></div>
       <div class="point-line"><span>포인트 (잔액/누적)</span><span><b>${S.points.balance.toLocaleString()} / ${S.points.total.toLocaleString()}P</b></span></div>
+      <div class="point-line"><span>지갑</span><span><b>🪙 ${S.wallet.coins}/${COINS_PER_DIAMOND} · 💎 ${S.wallet.diamonds}/${DIAMONDS_PER_PAYOUT}</b></span></div>
+      <div class="point-line"><span>누적 다이아몬드</span><span><b>💎 ${S.wallet.diamondsTotal}개</b> <span class="sub small">(정답 ${S.wallet.coinsTotal}회분)</span></span></div>
     </div>
   </div>
 
@@ -1294,13 +1439,15 @@ function viewParent() {
   </div>
 
   <div class="card mt16">
-    <h3>🪙 포인트 규칙</h3>
+    <h3>🪙 코인 규칙</h3>
+    <p class="sub small mt8">모든 활동은 <b>코인</b>으로 보상합니다.
+      코인 ${COINS_PER_DIAMOND}개 → 💎 1개, 💎 ${DIAMONDS_PER_PAYOUT}개 → ${PAYOUT_POINTS.toLocaleString()}P로 자동 정산돼요.
+      (정답 코인은 그 문항을 <b>처음 맞혔을 때</b>만 지급됩니다)</p>
     ${[
-      ["rule-solve", "문제 1개 풀이", r.solve],
-      ["rule-correct", "첫 정답 보너스", r.correct],
-      ["rule-daily", "하루치 완료 보너스", r.daily],
-      ["rule-streak3", "3일 단위 연속 보너스", r.streak3],
-      ["rule-streak7", "7일 단위 연속 보너스", r.streak7],
+      ["rule-correct", "정답 1개", r.correct],
+      ["rule-daily", "하루치 완료", r.daily],
+      ["rule-streak3", "3일 단위 연속", r.streak3],
+      ["rule-streak7", "7일 단위 연속", r.streak7],
       ["rule-review", "오답 정복 1문제당", r.review],
     ].map(([id, label, val]) => `
       <div class="row between mt8">
@@ -1421,11 +1568,11 @@ function deleteReward(id) {
 function saveRules() {
   const g = id => Math.max(0, parseInt(document.getElementById(id).value, 10) || 0);
   S.settings.rules = {
-    solve: g("rule-solve"), correct: g("rule-correct"), daily: g("rule-daily"),
+    correct: g("rule-correct"), daily: g("rule-daily"),
     streak3: g("rule-streak3"), streak7: g("rule-streak7"), review: g("rule-review"),
   };
   save();
-  toast("포인트 규칙을 저장했어요 ✅");
+  toast("코인 규칙을 저장했어요 ✅");
 }
 function changePin() {
   const v = document.getElementById("new-pin").value.trim();

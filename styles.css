@@ -143,6 +143,26 @@ nav.bottom button.active { color: var(--primary-dark); }
 .track-tag.lfm { background: var(--lfm-soft); color: var(--lfm); border-color: rgba(14, 116, 144, .3); }
 .track-tag.listening { background: var(--listening-soft); color: var(--listening); border-color: rgba(124, 58, 237, .3); }
 
+/* ---------- 지갑 (코인 → 다이아몬드 → 포인트) ---------- */
+.wallet-card { background: linear-gradient(160deg, rgba(255, 200, 60, .10), rgba(124, 58, 237, .10)); }
+.wallet-row { padding: 2px 0; }
+.wallet-label { font-weight: 700; font-size: .92rem; }
+.wallet-need { font-size: .78rem; font-weight: 600; opacity: .7; }
+.wallet-dots { display: flex; flex-wrap: wrap; gap: 5px; }
+/* 채워진 칸은 아이콘, 빈 칸은 점 — 색이 아니라 모양으로도 구분되게 한다 */
+.wallet-dot {
+  width: 26px; height: 26px; line-height: 26px; text-align: center;
+  border-radius: 50%; font-size: .82rem;
+  background: rgba(128, 128, 128, .12); color: rgba(128, 128, 128, .5);
+  border: 1.5px solid transparent;
+}
+.wallet-dot.on {
+  background: rgba(255, 200, 60, .26); border-color: rgba(214, 158, 0, .45);
+  color: inherit; animation: wallet-pop .28s ease-out;
+}
+@keyframes wallet-pop { from { transform: scale(.6) } to { transform: scale(1) } }
+@media (prefers-reduced-motion: reduce) { .wallet-dot.on { animation: none } }
+
 /* ---------- 리스닝 재생 ---------- */
 .audio-box {
   margin-top: 14px; padding: 16px; border-radius: 14px;
