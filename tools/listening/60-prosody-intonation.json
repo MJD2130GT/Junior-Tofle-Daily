@@ -25,11 +25,11 @@
       "stem": "What is the speaker doing?",
       "choices": [
         "Telling the listener what to do",
-        "Checking something she is unsure about",
         "Refusing to go along",
-        "Complaining about the plan"
+        "Complaining about the plan",
+        "Checking something she is unsure about"
       ],
-      "answer": 1,
+      "answer": 3,
       "transcriptMarked": "You're coming with us↗  ← 끝을 올림 = 확인 질문",
       "explanation": "어순은 평서문이지만 끝을 올리면 질문이 된다. 내려 읽었다면 '너도 같이 가는 거야'라는 통보가 된다."
     },
@@ -78,12 +78,12 @@
       ],
       "stem": "What does the intonation tell you?",
       "choices": [
-        "Only three things are needed",
         "More items are still to come",
+        "Only three things are needed",
         "The speaker is unsure the trip will happen",
         "The listener already has these items"
       ],
-      "answer": 1,
+      "answer": 0,
       "transcriptMarked": "a hat↗, sunscreen↗, water↗  ← 마지막 항목도 올림 = 목록 계속",
       "explanation": "영어 목록에서 마지막 항목은 내림조로 끝나 완결을 알린다. 여기서는 'water'까지 올라가므로 아직 더 남았다는 신호다."
     },
@@ -105,12 +105,12 @@
       ],
       "stem": "What does the intonation tell you?",
       "choices": [
-        "The list is complete",
         "The speaker forgot something",
         "More items will be added later",
+        "The list is complete",
         "The items are only suggestions"
       ],
-      "answer": 0,
+      "answer": 2,
       "transcriptMarked": "a hat↗, sunscreen↗, water↘  ← 마지막만 내림 = 목록 끝",
       "explanation": "앞 문항과 항목은 같지만 마지막 'water'가 내림조다. 목록이 여기서 끝났다는 뜻이며, 이것이 영어 목록 억양의 기본 규칙이다."
     },
@@ -132,12 +132,12 @@
       ],
       "stem": "What does the speaker's intonation show?",
       "choices": [
-        "He genuinely does not know and is worried",
         "He is certain and just wants agreement",
+        "He genuinely does not know and is worried",
         "He is annoyed at the other person",
         "He is giving directions"
       ],
-      "answer": 0,
+      "answer": 1,
       "transcriptMarked": "That was the right bus, wasn't it↗  ← 부가의문문을 올림 = 진짜 몰라서 묻는 것",
       "explanation": "부가의문문의 끝을 올리면 정말 확신이 없어 묻는 것이다. 내려 읽으면 '맞지?' 하고 동의를 구하는 것에 가깝다."
     },
@@ -159,12 +159,12 @@
       ],
       "stem": "What does the speaker's intonation show?",
       "choices": [
+        "He is fairly sure and expects agreement",
         "He is not sure and needs an answer",
         "He thinks they took the wrong bus",
-        "He is asking for directions",
-        "He is fairly sure and expects agreement"
+        "He is asking for directions"
       ],
-      "answer": 3,
+      "answer": 0,
       "transcriptMarked": "That was the right bus, wasn't it↘  ← 부가의문문을 내림 = 동의 구하기",
       "explanation": "같은 부가의문문이라도 내림조면 이미 확신이 있고 상대의 맞장구를 기대하는 것이다."
     },
@@ -189,12 +189,12 @@
       ],
       "stem": "What is the speaker expressing?",
       "choices": [
-        "Surprise that it was all done",
         "Disappointment at slow work",
         "A request for more work",
-        "Doubt that the work was done well"
+        "Doubt that the work was done well",
+        "Surprise that it was all done"
       ],
-      "answer": 0,
+      "answer": 3,
       "transcriptMarked": "She finished ALL of it↗↗  ← 높이 치솟는 올림조 = 놀람",
       "explanation": "평범한 확인 질문보다 훨씬 높이 올라가는 억양은 놀라움을 나타낸다. 예상보다 많이 했다는 뜻."
     },
@@ -217,11 +217,11 @@
       "stem": "What is the speaker doing?",
       "choices": [
         "Expressing disbelief",
-        "Simply reporting a fact",
         "Asking where he is",
+        "Simply reporting a fact",
         "Warning the listener"
       ],
-      "answer": 1,
+      "answer": 2,
       "transcriptMarked": "He's already home↘  ← 평탄한 내림조 = 단순 진술",
       "explanation": "끝이 담담하게 내려가면 감정이 실리지 않은 사실 전달이다. 놀랐다면 끝이 크게 올라갔을 것."
     },
@@ -246,11 +246,11 @@
       "stem": "What is the speaker doing?",
       "choices": [
         "Insisting that the listener accept help",
-        "Offering help in a friendly way",
         "Complaining about the listener's work",
+        "Offering help in a friendly way",
         "Explaining how to do the task"
       ],
-      "answer": 1,
+      "answer": 2,
       "transcriptMarked": "Would you like some help↗  ← 부드러운 올림조 = 권유",
       "explanation": "올림조에 부드러운 어조가 얹히면 상대가 거절할 여지를 남기는 정중한 권유가 된다."
     },
@@ -272,12 +272,12 @@
       ],
       "stem": "What is the speaker doing?",
       "choices": [
-        "Politely asking for a repeat",
         "Correcting what was said",
         "Refusing to answer",
-        "Agreeing with the speaker"
+        "Agreeing with the speaker",
+        "Politely asking for a repeat"
       ],
-      "answer": 0,
+      "answer": 3,
       "transcriptMarked": "Could you say that again↗  ← 올림조 = 정중한 요청",
       "explanation": "'Could you ~?'를 올림조로 말하면 부탁이 된다. 내림조로 딱 잘라 말하면 지시에 가까워진다."
     },
@@ -326,12 +326,12 @@
       ],
       "stem": "What kind of answer does the speaker expect?",
       "choices": [
-        "A yes or no",
         "A choice among several drinks",
         "An explanation",
-        "A promise"
+        "A promise",
+        "A yes or no"
       ],
-      "answer": 0,
+      "answer": 3,
       "transcriptMarked": "anything to drink↗  ← 끝까지 올림 = 예/아니오 질문",
       "explanation": "끝이 계속 올라가면 예/아니오를 묻는 것이다. 앞 문항처럼 올렸다 내렸다면 선택을 묻는 질문이 된다."
     },
@@ -354,11 +354,11 @@
       "stem": "What does the intonation signal?",
       "choices": [
         "One more thing is coming",
-        "The speaker is asking a question",
         "The lesson is finished",
+        "The speaker is asking a question",
         "The speaker is unhappy"
       ],
-      "answer": 2,
+      "answer": 1,
       "transcriptMarked": "That's all for today↘  ← 확실한 내림조 = 마무리",
       "explanation": "끝을 분명히 내리는 것은 '여기서 끝'이라는 신호다. 올렸다면 뭔가 더 이어질 것 같은 느낌을 준다."
     },
@@ -380,12 +380,12 @@
       ],
       "stem": "What does the intonation suggest?",
       "choices": [
+        "More steps will follow",
         "This is the only step",
         "The plan has been canceled",
-        "The notes are missing",
-        "More steps will follow"
+        "The notes are missing"
       ],
-      "answer": 3,
+      "answer": 0,
       "transcriptMarked": "go over the notes↗  ← 끝을 올린 채 멈춤 = 다음 단계 예고",
       "explanation": "'First'로 시작하고 끝을 올린 채 멈추면 뒤에 둘째·셋째가 이어진다는 신호다."
     },
@@ -446,11 +446,11 @@
       "stem": "What does the girl mean?",
       "choices": [
         "She already knew about the change",
+        "She is surprised and wants confirmation",
         "She thinks the boy is lying",
-        "She is not interested",
-        "She is surprised and wants confirmation"
+        "She is not interested"
       ],
-      "answer": 3,
+      "answer": 1,
       "transcriptMarked": "Really↗  ← 올림조 = 놀람 섞인 확인",
       "explanation": "'Really'를 올려 말하면 '정말?' 하고 놀라며 확인하는 것이다. 내려 말하면 '그렇구나' 하는 담담한 반응이 된다."
     },
@@ -477,11 +477,11 @@
       "stem": "What does the girl's tone show?",
       "choices": [
         "Excitement about the news",
-        "A flat reaction without surprise",
         "Confusion about the date",
-        "Anger at the change"
+        "Anger at the change",
+        "A flat reaction without surprise"
       ],
-      "answer": 1,
+      "answer": 3,
       "transcriptMarked": "Really↘  ← 내림조 = 무덤덤한 반응",
       "explanation": "같은 단어라도 내림조면 놀라움이 없다. 이미 알고 있었거나 별 관심이 없다는 뜻이다."
     },
@@ -505,10 +505,10 @@
       "choices": [
         "Telling the listener where to go",
         "Complaining about a newcomer",
-        "Introducing herself",
-        "Making a guess and checking it"
+        "Making a guess and checking it",
+        "Introducing herself"
       ],
-      "answer": 3,
+      "answer": 2,
       "transcriptMarked": "You're new here↗  ← 올림조 = 짐작한 것을 확인",
       "explanation": "평서문을 올림조로 말하면 '내 짐작이 맞나?' 하고 확인하는 것이다. 대화를 트는 흔한 방식이다."
     },
@@ -532,12 +532,12 @@
       ],
       "stem": "How does the speaker feel?",
       "choices": [
-        "Not entirely convinced",
         "Fully convinced and ready",
+        "Not entirely convinced",
         "Excited about the plan",
         "Angry about the decision"
       ],
-      "answer": 0,
+      "answer": 1,
       "transcriptMarked": "Okay...↗  ← 끌면서 끝을 흐림 = 미심쩍은 동의",
       "explanation": "'Okay'를 끌면서 끝을 흐리면 완전한 동의가 아니다. 짧고 분명하게 내려 말했다면 확실한 수락이 된다."
     },
@@ -590,12 +590,12 @@
       ],
       "stem": "What does the girl's intonation show?",
       "choices": [
-        "She is asking permission, not stating a decision",
         "She has already made the change",
+        "She is asking permission, not stating a decision",
         "She disagrees with the teacher",
         "She did not understand the question"
       ],
-      "answer": 0,
+      "answer": 1,
       "transcriptMarked": "If that's okay↗  ← 조건절만 남기고 올림 = 조심스러운 허락 요청",
       "explanation": "문장을 끝맺지 않고 조건절만 올림조로 남기면 결정을 상대에게 넘기는 정중한 표현이 된다."
     },

@@ -71,10 +71,10 @@
       "choices": [
         "She is looking forward to the test",
         "She has already finished studying",
-        "She thinks the test was canceled",
-        "She is dreading the test"
+        "She is dreading the test",
+        "She thinks the test was canceled"
       ],
-      "answer": 3,
+      "answer": 2,
       "transcriptMarked": "Wonderful.  ← 가라앉은 평탄한 어조 = 비꼼",
       "explanation": "긍정적인 단어를 무표정하게 말하면 반어가 된다. 진심이었다면 밝고 빠르게 올라가는 억양이었을 것."
     },
@@ -137,12 +137,12 @@
       ],
       "stem": "How does the boy mean his comment?",
       "choices": [
+        "He is not being sincere",
         "He is genuinely impressed",
         "He wants to help with the poster",
-        "He did not see the poster",
-        "He is not being sincere"
+        "He did not see the poster"
       ],
-      "answer": 3,
+      "answer": 0,
       "transcriptMarked": "Nice work.  ← 느리고 낮은 어조 = 진심 아님",
       "explanation": "앞 문항과 대사가 완전히 같지만 어조가 반대다. 소리를 듣지 않으면 절대 구분할 수 없는 문항이다."
     },
@@ -171,12 +171,12 @@
       ],
       "stem": "What does the boy's tone show?",
       "choices": [
-        "He accepts it but is not pleased",
         "He is glad to go first",
         "He does not understand the change",
-        "He refuses to present"
+        "He refuses to present",
+        "He accepts it but is not pleased"
       ],
-      "answer": 0,
+      "answer": 3,
       "transcriptMarked": "Oh. ⟨0.5초⟩ Okay, sure.  ← 'Oh' 뒤의 멈칫 + 가라앉은 어조",
       "explanation": "'Okay, sure'는 수락이지만 앞의 'Oh'와 짧은 멈칫, 그리고 힘 빠진 어조가 내키지 않음을 드러낸다."
     },
@@ -237,12 +237,12 @@
       ],
       "stem": "How does the girl feel?",
       "choices": [
+        "Willing but clearly reluctant",
         "Genuinely excited about it",
         "Confused about the project",
-        "Angry at the teacher",
-        "Willing but clearly reluctant"
+        "Angry at the teacher"
       ],
-      "answer": 3,
+      "answer": 0,
       "transcriptMarked": "Yes. ⟨0.7초⟩ I'd love to.  ← 대답 뒤 긴 멈춤 + 느린 속도",
       "explanation": "말은 앞 문항과 똑같지만 중간의 긴 휴지와 느린 속도가 진심이 아님을 알려 준다."
     },
@@ -271,12 +271,12 @@
       ],
       "stem": "How does the girl feel about the result?",
       "choices": [
+        "Disappointed by the result",
         "Proud of second place",
         "Surprised they placed at all",
-        "Disappointed by the result",
         "Unsure of the final score"
       ],
-      "answer": 2,
+      "answer": 0,
       "transcriptMarked": "We came in second.  ← 가라앉은 어조 = 실망",
       "explanation": "2등은 좋은 성적일 수도 있지만, 힘없이 내려가는 어조는 기대에 못 미쳤다는 뜻이다."
     },
@@ -304,12 +304,12 @@
       ],
       "stem": "How does the girl feel about the result?",
       "choices": [
+        "Delighted with the result",
         "Embarrassed by the result",
         "Indifferent to the result",
-        "Confused about the scoring",
-        "Delighted with the result"
+        "Confused about the scoring"
       ],
-      "answer": 3,
+      "answer": 0,
       "transcriptMarked": "We came in second!  ← 밝고 높은 어조 = 기쁨",
       "explanation": "같은 사실도 어조에 따라 평가가 달라진다. 밝게 올라가는 억양이면 기대 이상의 좋은 결과였다는 뜻."
     },
@@ -372,10 +372,10 @@
       "choices": [
         "He is happy about the new time",
         "He is asking for directions",
-        "He has already been attending",
-        "He is doubtful and a little put out"
+        "He is doubtful and a little put out",
+        "He has already been attending"
       ],
-      "answer": 3,
+      "answer": 2,
       "transcriptMarked": "Since when?  ← 날 선 어조 = 의심 섞인 불만",
       "explanation": "'Since when?'을 퉁명스럽게 말하면 단순한 질문이 아니라 '그런 얘기 못 들었는데'라는 불만이 담긴다."
     },
@@ -435,12 +435,12 @@
       ],
       "stem": "How does the girl feel?",
       "choices": [
+        "Discouraged by the amount of work",
         "Pleased to have another chance",
         "Certain the teacher is wrong",
-        "Discouraged by the amount of work",
         "Eager to begin again"
       ],
-      "answer": 2,
+      "answer": 0,
       "transcriptMarked": "All of it?  ← 힘 빠진 어조 = 낙담",
       "explanation": "같은 질문도 밝게 물으면 확인이지만, 가라앉은 어조로 물으면 '그렇게까지?' 하는 낙담이 담긴다."
     },
@@ -602,12 +602,12 @@
       ],
       "stem": "How does the girl feel?",
       "choices": [
-        "Nervous about the results",
         "Excited to see the results",
         "Certain she did well",
+        "Nervous about the results",
         "Unaware of the test"
       ],
-      "answer": 0,
+      "answer": 2,
       "transcriptMarked": "Tomorrow.  ← 떨리고 조심스러운 어조 = 긴장",
       "explanation": "단어 하나를 조심스럽게 되뇌는 것은 그 일이 부담스럽다는 뜻이다. 기대였다면 밝게 올라갔을 것."
     },
@@ -637,10 +637,10 @@
       "choices": [
         "The writing looks careless",
         "She wants it rewritten again",
-        "The effort shows in a good way",
-        "She did not read the ending"
+        "She did not read the ending",
+        "The effort shows in a good way"
       ],
-      "answer": 2,
+      "answer": 3,
       "transcriptMarked": "I can tell.  ← 따뜻하게 올라가는 어조 = 긍정적 인정",
       "explanation": "'I can tell'은 어조에 따라 칭찬도 지적도 된다. 밝고 따뜻하면 '노력이 보인다'는 칭찬이다."
     },
@@ -669,12 +669,12 @@
       ],
       "stem": "What does the teacher mean?",
       "choices": [
-        "The rushed work is obvious",
         "She is impressed by the speed",
         "She wants to hear more about it",
-        "She did not receive the work"
+        "She did not receive the work",
+        "The rushed work is obvious"
       ],
-      "answer": 0,
+      "answer": 3,
       "transcriptMarked": "I can tell.  ← 느리고 냉랭한 어조 = 지적",
       "explanation": "앞 문항과 똑같은 말이지만 차갑고 느린 어조다. '급하게 쓴 티가 난다'는 부정적 평가가 된다."
     },
@@ -702,12 +702,12 @@
       ],
       "stem": "How does the boy feel?",
       "choices": [
-        "Frustrated that it keeps happening",
         "Relieved to have a free afternoon",
+        "Frustrated that it keeps happening",
         "Confused about the schedule",
         "Glad the weather is bad"
       ],
-      "answer": 0,
+      "answer": 1,
       "transcriptMarked": "Again?  ← 날카롭게 튀어 오르는 어조 = 짜증",
       "explanation": "'Again?'을 날카롭게 말하면 반복되는 상황에 대한 짜증이다. 안도였다면 부드럽게 내려갔을 것."
     },
@@ -768,12 +768,12 @@
       ],
       "stem": "How confident is the boy?",
       "choices": [
+        "Not at all sure",
         "Completely sure of his answer",
         "Sure but unwilling to say",
-        "Not at all sure",
         "He is joking"
       ],
-      "answer": 2,
+      "answer": 0,
       "transcriptMarked": "I think... maybe it's the temperature↗  ← 머뭇거림 + 끝을 올림",
       "explanation": "'I think', 'maybe'에 머뭇거림과 올라가는 끝이 겹치면 자신 없음이 분명하다. 확신이 있으면 끝을 내려 단정한다."
     },
@@ -801,12 +801,12 @@
       ],
       "stem": "How confident is the boy?",
       "choices": [
-        "Clearly confident",
         "Uncertain and guessing",
+        "Clearly confident",
         "Reluctant to answer",
         "Asking rather than answering"
       ],
-      "answer": 0,
+      "answer": 1,
       "transcriptMarked": "It's the temperature↘  ← 망설임 없이 내려 끝맺음",
       "explanation": "머뭇거림 없이 끝을 내려 단정하면 확신이 있다는 뜻이다. 앞 문항과 정보는 같지만 태도가 정반대다."
     },
@@ -834,12 +834,12 @@
       ],
       "stem": "What does the girl's delivery suggest?",
       "choices": [
-        "The plan is firmly settled",
         "She has a doubt she is not stating",
+        "The plan is firmly settled",
         "She cannot come at all",
         "She wants to meet somewhere else"
       ],
-      "answer": 1,
+      "answer": 0,
       "transcriptMarked": "That works. ⟨0.6초⟩ I think.  ← 동의 뒤 덧붙인 유보",
       "explanation": "먼저 동의해 놓고 잠시 뒤 'I think'를 덧붙이면 확신이 흔들린다는 신호다. 말하지 않은 걸림돌이 있을 수 있다."
     },
@@ -902,10 +902,10 @@
       "choices": [
         "Making fun of her",
         "Blaming her for it",
-        "Sympathizing with her",
-        "Changing the subject"
+        "Changing the subject",
+        "Sympathizing with her"
       ],
-      "answer": 2,
+      "answer": 3,
       "transcriptMarked": "That's rough.  ← 부드럽고 따뜻한 어조 = 공감",
       "explanation": "부드럽게 내려가는 공감의 어조다. 같은 말을 밝고 가볍게 던졌다면 놀리는 것으로 들렸을 것."
     },
@@ -931,10 +931,10 @@
       "choices": [
         "Gentle and joking",
         "Sad and disappointed",
-        "Firm and slightly impatient",
-        "Uncertain and questioning"
+        "Uncertain and questioning",
+        "Firm and slightly impatient"
       ],
-      "answer": 2,
+      "answer": 3,
       "transcriptMarked": "put your phones away↘  ← 단호하게 내려 끝맺음",
       "explanation": "'please'가 붙어 있어도 단호하게 내려 끝맺으면 부탁이 아니라 지시다. 이미 한 번 말했을 가능성이 크다."
     },
@@ -959,11 +959,11 @@
       "stem": "What is the teacher's tone?",
       "choices": [
         "Angry and scolding",
-        "Worried and rushed",
         "Pleasant and routine",
+        "Worried and rushed",
         "Sarcastic and cold"
       ],
-      "answer": 2,
+      "answer": 1,
       "transcriptMarked": "put your phones away  ← 부드럽고 밝은 어조",
       "explanation": "같은 문장이라도 부드러운 어조면 늘 하는 안내에 가깝다. 앞 문항과 비교해 들으면 차이가 분명하다."
     },
@@ -1027,11 +1027,11 @@
       "stem": "What does the girl's tone suggest?",
       "choices": [
         "She is glad it is so soon",
+        "The date may be a problem for her",
         "She has already paid the fee",
-        "She does not want to go",
-        "The date may be a problem for her"
+        "She does not want to go"
       ],
-      "answer": 3,
+      "answer": 1,
       "transcriptMarked": "Friday.  ← 가라앉게 되뇜 = 곤란함",
       "explanation": "날짜를 무겁게 되뇌는 것은 그 조건이 부담스럽다는 신호다. 가고 싶지 않다면 관심 자체를 보이지 않았을 것."
     },
@@ -1092,11 +1092,11 @@
       "stem": "What does the boy think of the movie?",
       "choices": [
         "He is being polite about a bad film",
+        "He really enjoyed it",
         "He is unsure what he thought",
-        "He has not seen it yet",
-        "He really enjoyed it"
+        "He has not seen it yet"
       ],
-      "answer": 3,
+      "answer": 1,
       "transcriptMarked": "It was great!  ← 즉각적이고 밝은 대답",
       "explanation": "망설임 없이 밝게 대답하면 진심이다. 앞 문항의 머뭇거리는 'fine'과 나란히 들어 보면 차이가 뚜렷하다."
     },
@@ -1126,11 +1126,11 @@
       "stem": "What does the boy's tone suggest?",
       "choices": [
         "He is genuinely doing well",
-        "Something may be bothering him",
         "He did not hear the teacher",
+        "Something may be bothering him",
         "He is annoyed by the question"
       ],
-      "answer": 1,
+      "answer": 2,
       "transcriptMarked": "I'm fine.  ← 힘없이 내려가는 어조",
       "explanation": "'I'm fine'을 힘없이 말하면 대개 괜찮지 않다는 뜻이다. 말의 내용보다 어조가 진실에 가깝다."
     },
@@ -1192,12 +1192,12 @@
       ],
       "stem": "What does the girl actually feel?",
       "choices": [
+        "She genuinely does not mind",
         "She is hiding her annoyance",
         "She is confused by the apology",
-        "She wants the book back today",
-        "She genuinely does not mind"
+        "She wants the book back today"
       ],
-      "answer": 3,
+      "answer": 0,
       "transcriptMarked": "It's okay!  ← 밝고 따뜻하게 = 진심",
       "explanation": "같은 말이라도 밝고 따뜻하면 진짜 괜찮다는 뜻이다. 어조 하나로 정반대가 되는 표현이다."
     },
@@ -1226,12 +1226,12 @@
       ],
       "stem": "How does the boy react?",
       "choices": [
-        "He is dismayed by how long it is",
         "He is pleased by the news",
         "He did not understand the notice",
+        "He is dismayed by how long it is",
         "He rarely uses the gym"
       ],
-      "answer": 0,
+      "answer": 2,
       "transcriptMarked": "All week.  ← 느리고 무겁게 되뇜 = 낙담",
       "explanation": "기간을 무겁게 되뇌는 것은 그 길이가 뜻밖이고 달갑지 않다는 뜻이다."
     },
@@ -1294,10 +1294,10 @@
       "choices": [
         "He has definitely decided to come",
         "He has already bought a ticket",
-        "He is not really committing",
-        "He refuses to come"
+        "He refuses to come",
+        "He is not really committing"
       ],
-      "answer": 2,
+      "answer": 3,
       "transcriptMarked": "I'll try to make it.  ← 느리고 낮게 = 확답 회피",
       "explanation": "'try'라는 단어 자체가 여지를 남기는데, 느리고 낮은 어조까지 겹치면 사실상 확답을 피하는 것이다."
     },
@@ -1359,11 +1359,11 @@
       "stem": "What is the girl really saying?",
       "choices": [
         "She fully agrees with the idea",
-        "She would rather not, but is being polite",
         "She has already started over",
-        "She does not understand the plan"
+        "She does not understand the plan",
+        "She would rather not, but is being polite"
       ],
-      "answer": 1,
+      "answer": 3,
       "transcriptMarked": "We could do that.  ← 느리고 낮은 어조 = 완곡한 반대",
       "explanation": "'could'로 여지만 남기고 어조까지 가라앉으면 사실상 반대다. 찬성이었다면 'Yes, let's!'처럼 밝게 답했을 것."
     },

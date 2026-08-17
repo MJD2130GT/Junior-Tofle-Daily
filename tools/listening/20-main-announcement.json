@@ -1,0 +1,510 @@
+{
+  "_note": [
+    "main idea — 교내 안내방송. 1인 발화 30~45초.",
+    "안내방송은 세부 정보가 많아 '무엇이 이 방송의 목적인가'를 놓치기 쉽다.",
+    "그 점을 노려, 오답은 전부 방송에 실제로 나온 세부사항으로 만든다.",
+    "가장 좋은 함정은 '첫 문장에 나왔다가 바로 넘어가는 화제'다 (lis_0005 방식)."
+  ],
+  "items": [
+    {
+      "id": "lis_0144",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_m",
+          "t": "Good morning. We'll hold a fire drill on Wednesday at ten. Now, most of you know the drill is coming, and honestly, that's not the part I care about. Last time, every class walked out on time, but three classes used the main staircase because that's the way they always go. If there were a real fire on the first floor, that staircase is exactly where you would not want to be. Your evacuation route is posted by the door of every room. It is not always the way you came in. Look at it before Wednesday, and walk it once with your homeroom teacher. Thank you."
+        }
+      ],
+      "stem": "What is the main purpose of the announcement?",
+      "choices": [
+        "To announce the date and time of the drill",
+        "To praise students for leaving on time last year",
+        "To make sure students use the correct evacuation route",
+        "To explain how fires start on the first floor"
+      ],
+      "answer": 2,
+      "explanation": "날짜는 첫 문장에서 말하고 바로 '그 부분은 중요하지 않다'고 넘어간다. 요지는 늘 다니던 계단이 아니라 게시된 대피 경로를 확인하라는 것."
+    },
+    {
+      "id": "lis_0145",
+      "kind": "announcement",
+      "difficulty": 2,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_f",
+          "t": "Attention, students. Starting Monday the cafeteria will have two serving lines instead of one. The line by the window is for the set menu, and the line by the wall is for the vegetarian and allergy-free menu. Both lines open at the same time, and both have the same soup. Please do not switch lines once you have picked up a tray - that's what caused the crowding last term. If you're not sure which line is yours, the menu board at the entrance lists it by class. Thank you."
+        }
+      ],
+      "stem": "What is the announcement mainly about?",
+      "choices": [
+        "How the new two-line lunch system works",
+        "That the soup will be the same every day",
+        "Why crowding happened last term",
+        "That the cafeteria will open earlier"
+      ],
+      "answer": 0,
+      "explanation": "국·혼잡·게시판은 모두 새 배식 방식의 하위 항목이다. 개점 시각이 빨라진다는 내용은 나오지 않는다."
+    },
+    {
+      "id": "lis_0146",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_m",
+          "t": "This is an update about the afternoon buses. Yes, the four o'clock bus is still running - I've had about twenty people ask me that today. What has changed is the stop. Because of the road work on Maple Street, buses will now pick up at the side gate, not the front. The side gate is the one behind the gym. If you walk out the front door at four o'clock expecting a bus, you will watch it leave from somewhere you cannot see. This starts tomorrow and lasts about three weeks. Thank you."
+        }
+      ],
+      "stem": "What is the main point of the announcement?",
+      "choices": [
+        "The bus stop has moved to the side gate",
+        "The four o'clock bus has been canceled",
+        "Road work will last about three weeks",
+        "Twenty students asked about the bus today"
+      ],
+      "answer": 0,
+      "explanation": "4시 버스 운행 여부는 첫 문장에서 확인해 주고 넘어간다. 방송의 목적은 승차 장소가 옆문으로 바뀌었다는 것."
+    },
+    {
+      "id": "lis_0147",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_f",
+          "t": "The library will stay open until eight during exam week. Before you cheer, there are conditions, and if they're broken we go back to five o'clock. After six, the library is silent - not quiet, silent. No group work, no phone calls in the stairwell, no eating at the tables. A teacher will be on duty, but only one, and that teacher cannot chase twelve people at once. Last year we tried this and stopped after two days. Whether it lasts this time is entirely up to you. Thank you."
+        }
+      ],
+      "stem": "What is the announcement mainly about?",
+      "choices": [
+        "That the library now closes at eight every day",
+        "How many teachers will be on duty",
+        "Why the library closed early last year",
+        "Rules that decide whether the extended hours continue"
+      ],
+      "answer": 3,
+      "explanation": "연장 자체보다 '지키지 않으면 되돌린다'는 조건이 방송의 무게중심이다. 마지막 문장이 이를 확인한다."
+    },
+    {
+      "id": "lis_0148",
+      "kind": "announcement",
+      "difficulty": 2,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_m",
+          "t": "Class photos are on Thursday. Wear your full uniform, including the tie, and bring a comb if you want one. Here's the part people forget every year: there is no retake day. The photographer comes once. If you're absent, your space in the class photo stays empty, and if your hair is a disaster, that's the picture your family gets. I say this every year and every year about ten students find out the hard way. Thursday. One chance. Thank you."
+        }
+      ],
+      "stem": "What is the announcer mainly emphasizing?",
+      "choices": [
+        "The uniform must include a tie",
+        "The photographer arrives on Thursday morning",
+        "There is only one chance to be photographed",
+        "About ten students are absent each year"
+      ],
+      "answer": 2,
+      "explanation": "복장·날짜는 세부 안내이고, 반복해서 강조하는 것은 '재촬영이 없다'는 점이다."
+    },
+    {
+      "id": "lis_0149",
+      "kind": "announcement",
+      "difficulty": 4,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_f",
+          "t": "A word about snow days. Every winter I get messages at six in the morning asking whether school is open. Here is how it works, and it is not about how much snow you see out your window. The decision depends on whether the school buses can run their routes safely, and some of those routes go over hills that stay icy long after your street is clear. So your street looking fine tells you almost nothing. We post the decision by six thirty on the school website and send a text. Please check those, not the sky. Thank you."
+        }
+      ],
+      "stem": "What is the main message?",
+      "choices": [
+        "School will close whenever it snows heavily",
+        "Buses cannot drive on icy hills",
+        "Students should check the official notice rather than judge by their own street",
+        "The decision is made at six thirty in the morning"
+      ],
+      "answer": 2,
+      "explanation": "버스 경로와 발표 시각은 근거와 절차이고, 요지는 '창밖이 아니라 공식 공지를 보라'는 마지막 문장이다."
+    },
+    {
+      "id": "lis_0150",
+      "kind": "announcement",
+      "difficulty": 2,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_m",
+          "t": "The gym floor is being refinished from the fifteenth to the twenty-second. During that week, PE classes move outdoors, and if it rains, to the auditorium. The basketball team will practice at Hanmi Middle School, and a bus leaves at four. Club activities that normally use the gym are canceled for that week only - not moved, canceled - so please don't wait around for them. Everything returns to normal on the twenty-third. Thank you."
+        }
+      ],
+      "stem": "What is the announcement mainly about?",
+      "choices": [
+        "How the basketball team will practice",
+        "That the auditorium will be used for PE",
+        "That club activities are canceled permanently",
+        "Where activities go while the gym is closed"
+      ],
+      "answer": 3,
+      "explanation": "농구부·강당은 각각의 대체 장소일 뿐이고, 동아리는 '그 주만' 취소다. 전체를 묶는 것은 체육관 공사 기간의 대체 안내다."
+    },
+    {
+      "id": "lis_0151",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_f",
+          "t": "About phones found around the school. We used to keep them in the office until someone came looking, and that worked when it was one phone a month. Last month it was nineteen. So from now on, a found phone goes into the locked box outside the nurse's room, and you claim it by describing the lock screen - not the case, the lock screen. Anyone can describe a case. Phones not claimed within two weeks go home with a note to your family. Thank you."
+        }
+      ],
+      "stem": "What is the main purpose of this announcement?",
+      "choices": [
+        "To report that nineteen phones were lost last month",
+        "To explain a new procedure for claiming lost phones",
+        "To ask students to stop bringing phones to school",
+        "To announce that the nurse's room has moved"
+      ],
+      "answer": 1,
+      "explanation": "19대라는 숫자는 방식을 바꾼 이유이고, 요지는 새 보관·수령 절차 자체다."
+    },
+    {
+      "id": "lis_0152",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_m",
+          "t": "Club registration closes Friday at four. A reminder about how spaces are given out, because there is a rumor going around that it's first come, first served. It is not. Every application received before the deadline is treated the same. If a club has more applicants than spaces, we draw names, and we do it in front of two student representatives. So submitting at nine in the morning gives you no advantage over submitting at three in the afternoon. Submitting at four fifteen gives you nothing at all. Thank you."
+        }
+      ],
+      "stem": "What is the announcer mainly clarifying?",
+      "choices": [
+        "That applying early gives no advantage",
+        "That club registration closes on Friday",
+        "That two student representatives run the clubs",
+        "That most clubs have too many applicants"
+      ],
+      "answer": 0,
+      "explanation": "마감 시각은 첫 문장의 사실 전달이고, 방송의 목적은 '선착순이라는 소문'을 바로잡는 것이다."
+    },
+    {
+      "id": "lis_0153",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_f",
+          "t": "The cafeteria allergy labels are changing. Until now, a dish was marked only if it contained a common allergen. Starting next week, every dish lists all of its ingredients, even the small ones - the sauce, the oil, the garnish. This makes the board longer and slower to read, and some of you will find that annoying. But two students last term reacted to something that was in a sauce and did not appear on the label. That is why. Please give yourself an extra minute at the board. Thank you."
+        }
+      ],
+      "stem": "What is the main point?",
+      "choices": [
+        "The cafeteria will serve fewer sauces",
+        "Two students had allergic reactions last term",
+        "The menu board will be moved to the entrance",
+        "The label change trades convenience for safety"
+      ],
+      "answer": 3,
+      "explanation": "사고 사례는 이유이고, '읽기 번거로워지지만 그만한 값어치가 있다'는 교환 관계가 방송 전체를 관통한다."
+    },
+    {
+      "id": "lis_0154",
+      "kind": "announcement",
+      "difficulty": 4,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_m",
+          "t": "We're looking for festival volunteers, and I want to be honest about what we actually need. Every year about sixty students sign up for the fun jobs - running games, handing out prizes, taking photos. Those fill in a day. What never fills is the hour before the doors open and the hour after they close. Setting up tables. Sweeping. Carrying boxes to the storage room in the dark. Nobody remembers who did that, and the festival cannot happen without it. If you sign up for one thing this year, sign up for the boring hour. Thank you."
+        }
+      ],
+      "stem": "What is the announcer mainly asking for?",
+      "choices": [
+        "More students to run the festival games",
+        "Students to remember who helped last year",
+        "Volunteers for the unglamorous setup and cleanup work",
+        "Fewer volunteers overall to reduce crowding"
+      ],
+      "answer": 2,
+      "explanation": "재미있는 자리는 이미 넘친다고 직접 말한다. 요지는 '아무도 하지 않으려는 준비·정리 시간에 지원하라'는 마지막 문장."
+    },
+    {
+      "id": "lis_0155",
+      "kind": "announcement",
+      "difficulty": 2,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_f",
+          "t": "For students who ride bicycles: the racks behind the science building are now the only place to park. Bikes left against the fence by the front gate will be moved, not removed - moved to the racks, and you will have to look for them. The reason is that the fence area is where the delivery truck turns, and last week the driver had to stop and move six bikes himself before he could back in. There is space for about eighty bicycles at the racks, which is more than we have riders. Thank you."
+        }
+      ],
+      "stem": "What is the announcement mainly about?",
+      "choices": [
+        "That a delivery truck comes every week",
+        "That there are eighty bicycle riders at school",
+        "That bicycles will be removed from school",
+        "Where bicycles must now be parked"
+      ],
+      "answer": 3,
+      "explanation": "트럭 이야기는 이유, 80대는 여유 공간을 보여 주는 수치다. 'removed'가 아니라 'moved'라고 직접 정정한 점도 확인할 것."
+    },
+    {
+      "id": "lis_0156",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_m",
+          "t": "The spring field study is next Thursday. The bus leaves at eight and returns by four, and lunch is provided. Now, the weather. The forecast says sunny and eighteen degrees, and I know what you're going to do with that information - you're going to wear a T-shirt. The site is a river valley, and the valley is in shadow until eleven and windy all day. Every year students spend the morning shivering because they trusted the forecast for the city. Bring a jacket you can tie around your waist. Thank you."
+        }
+      ],
+      "stem": "What is the announcer mainly warning about?",
+      "choices": [
+        "The city forecast does not describe the site",
+        "The bus will leave exactly at eight",
+        "Lunch may not be enough for everyone",
+        "The field study may be canceled by rain"
+      ],
+      "answer": 0,
+      "explanation": "출발·점심은 사무적인 안내다. 방송의 힘이 실린 부분은 '도시 예보를 믿고 옷을 얇게 입지 말라'는 경고다."
+    },
+    {
+      "id": "lis_0157",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_f",
+          "t": "The library is ending late fees. Before anyone celebrates too hard, listen to what replaces them. Fees never got books back - our records show overdue books came back just as slowly whether we charged or not. What did happen is that students who owed money stopped coming in at all. So instead: no fee, but if a book is more than three weeks overdue, your borrowing is paused until it's returned. You lose access, not money. Thank you."
+        }
+      ],
+      "stem": "What is the main idea?",
+      "choices": [
+        "The library is losing money on overdue books",
+        "Students should return books within three weeks",
+        "Late fees are being replaced by a borrowing pause",
+        "Fewer students are visiting the library"
+      ],
+      "answer": 2,
+      "explanation": "연체료 폐지만 듣고 끝내면 요지를 놓친다. 핵심은 '돈 대신 대출 정지로 바꾼다'는 대체 방식이다."
+    },
+    {
+      "id": "lis_0158",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_m",
+          "t": "Ninth graders, we need mentors for next year's new students. It is one lunch a week for the first month. I'll be honest about who we want, because last year I asked for volunteers and got mostly the students with the highest grades. That is not what a nervous twelve-year-old needs. What they need is someone who remembers being lost, who can say 'the second floor bathroom is always crowded, use the one by the music room.' If you had a hard first month here, you are exactly the person I'm looking for. Thank you."
+        }
+      ],
+      "stem": "What kind of mentors is the announcer looking for?",
+      "choices": [
+        "Students with the highest grades",
+        "Students who are free during lunch every day",
+        "Students who live near the school",
+        "Students who found their own first month difficult"
+      ],
+      "answer": 3,
+      "explanation": "성적 우수자는 오히려 지난해의 실패로 언급된다. 요지는 '헤매 본 경험이 있는 학생'을 찾는다는 마지막 문장이다."
+    },
+    {
+      "id": "lis_0159",
+      "kind": "announcement",
+      "difficulty": 2,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_f",
+          "t": "About classroom temperature. We've had complaints that some rooms are freezing and others are too warm, and both are true - the system controls two floors at once. Here's what helps and what doesn't. Opening a window while the heating is on does not cool your room; it makes the system work harder and heats the floor above you. What does help is telling the office which room and which period, so we can see the pattern. Three reports about room 204 at second period tells us something. One angry report about 'the school' tells us nothing. Thank you."
+        }
+      ],
+      "stem": "What is the announcer mainly asking students to do?",
+      "choices": [
+        "Stop complaining about the temperature",
+        "Report the specific room and period",
+        "Open windows when a room is too warm",
+        "Move to a different classroom when it is cold"
+      ],
+      "answer": 1,
+      "explanation": "창문 열기는 도움이 안 된다고 직접 부정한다. 요청 사항은 '어느 교실 몇 교시인지 구체적으로 알려 달라'는 것."
+    },
+    {
+      "id": "lis_0160",
+      "kind": "announcement",
+      "difficulty": 2,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_m",
+          "t": "During vacation the school building will be open from nine to five on weekdays only. The library and one computer room are available; the gym and science labs are not. You must sign in at the front desk with your student ID - no ID, no entry, and I have been asked to say that twice. If you're coming for club practice, your club adviser has to be here with you. Coming just to study is fine and you don't need anyone with you. Thank you."
+        }
+      ],
+      "stem": "What is the announcement mainly about?",
+      "choices": [
+        "How students may use the school during vacation",
+        "That the gym will be closed all vacation",
+        "Which club activities are allowed",
+        "That student IDs are being reissued"
+      ],
+      "answer": 0,
+      "explanation": "체육관 폐쇄와 동아리 조건은 모두 '방학 중 학교 이용 방법'의 하위 항목이다."
+    },
+    {
+      "id": "lis_0161",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_f",
+          "t": "Next week is food waste measuring week. Every day at the end of lunch we weigh what's left in the bins and post the number on the board by the door. Nobody gets in trouble, nobody's name goes up, and there is no prize. Some of you are already wondering what the point is then. The point is that right now nobody, including us, has any idea how much is thrown away. You cannot change a number you have never seen. That's the whole exercise. Thank you."
+        }
+      ],
+      "stem": "What is the purpose of the measuring week?",
+      "choices": [
+        "To punish classes that waste the most food",
+        "To award a prize to the best class",
+        "To reduce the amount of food served at lunch",
+        "To make the amount of waste visible for the first time"
+      ],
+      "answer": 3,
+      "explanation": "벌도 상도 없다고 직접 부정한다. 요지는 '본 적 없는 숫자는 바꿀 수 없다'는 마지막 두 문장이다."
+    },
+    {
+      "id": "lis_0162",
+      "kind": "announcement",
+      "difficulty": 3,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_m",
+          "t": "Sports day is Saturday, and everyone wants to know about rain. So here is the rule, and please stop asking me on Friday night. If it is raining at seven in the morning, we move indoors - we do not cancel. Indoors means a shorter program: no relay, no tug of war, but the class games still happen. If it starts raining after we begin outdoors, we finish the event in progress and then move in. The only thing that cancels sports day is a storm warning. Thank you."
+        }
+      ],
+      "stem": "What is the main point of the announcement?",
+      "choices": [
+        "Sports day will probably be canceled",
+        "Rain moves the event indoors rather than canceling it",
+        "The relay is the most popular event",
+        "Students should ask on Friday night"
+      ],
+      "answer": 1,
+      "explanation": "취소되는 유일한 경우는 폭풍 경보라고 못 박는다. 요지는 '비가 오면 취소가 아니라 실내로 옮긴다'는 것."
+    },
+    {
+      "id": "lis_0163",
+      "kind": "announcement",
+      "difficulty": 4,
+      "tags": [
+        "listening",
+        "main-idea",
+        "announcement"
+      ],
+      "turns": [
+        {
+          "v": "announcer_f",
+          "t": "Student ID cards. If you've lost yours, the replacement costs three thousand won and takes about a week. But before you pay, check the box at the front desk. We currently have forty-one cards in it that students reported lost. Forty-one. Most of them turned up in a coat pocket or under a seat within a few days, and by then the student had already ordered a new one. So the order is: look in the box, then look in your bag one more time, then pay. In that order. Thank you."
+        }
+      ],
+      "stem": "What is the announcer mainly advising?",
+      "choices": [
+        "That replacement cards now cost three thousand won",
+        "To check for the lost card before paying for a new one",
+        "That the front desk has moved to a new location",
+        "That students lose too many cards each year"
+      ],
+      "answer": 1,
+      "explanation": "가격과 41장이라는 숫자는 근거다. 요지는 '먼저 찾아보고 그다음에 돈을 내라'는 순서 조언이다."
+    }
+  ]
+}

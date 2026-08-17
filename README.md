@@ -28,10 +28,10 @@ python -m http.server 8000
 
 > `index.html`을 더블클릭해 `file://`로 열어도 동작합니다 (PWA/오프라인 캐시만 비활성).
 
-## 문항 (총 1,016개 · 중·상급 위주)
+## 문항 (총 1,200개 · 중·상급 위주)
 
 `questions.js`에 **어드벤처 400 + LFM(문법·어휘) 600 = 1,000문항**,
-`questions_listening.js`에 **리스닝 16문항**(파일럿)이 들어 있습니다.
+`questions_listening.js`에 **리스닝 200문항**이 들어 있습니다.
 - `adv/lfm_0001~0018`: 수작업 문항
 - `~0500`: 기본 문항 (Lv1~2)
 - `0501~`: **상위 난이도(Lv3~5)** — 독해는 장문 지문 + 추론·주제·어휘·지시어, 문법은 가정법·분사·사역·도치·관계사·강조구문·간접의문문·지각동사·고급 수동태·동명사 관용 등
@@ -68,10 +68,18 @@ python -m http.server 8000
 
 `track`은 `adventure`(지문 독해·어휘), `lfm`(문법·어휘), `listening`(듣기). `answer`는 0~3 인덱스.
 
-## 리스닝 (파일럿 16문항)
+## 리스닝 (200문항)
 
-아이가 약한 **main idea(주제 파악) 8문항 + prosody(강세·억양·어조) 8문항**으로 구성했습니다.
-음원은 총 6.5분 / 2.2MB이며 `audio/lis_XXXX.m4a`에 들어 있습니다.
+아이가 약한 **main idea(주제 파악) 100문항 + prosody(강세·억양·어조) 100문항**으로 구성했습니다.
+음원은 총 70분 / 23MB이며 `audio/lis_XXXX.m4a`에 들어 있습니다.
+하루 2문제 기준 **100일치**이고, 정답 위치는 A~D에 정확히 50개씩 분산돼 있습니다.
+
+| 초점 | 세부 유형 | 문항 |
+|---|---|---|
+| main idea | 학교생활 대화 38 · 교내 안내방송 22 · 짧은 학술 토크 40 | 100 |
+| prosody | 어조·태도 46 · 대비 강세 30 · 억양 24 | 100 |
+
+난이도는 Lv2 61 · Lv3 104 · Lv4 35입니다.
 
 - prosody 문항은 **스크립트를 읽어서는 풀 수 없습니다** — 소리를 들어야만 답이 나옵니다.
   그래서 채점 후 평문 스크립트와 함께 **강세 표기본**을 따로 보여 줍니다.
@@ -81,7 +89,8 @@ python -m http.server 8000
 
 ### 음원 다시 만들기
 
-문항·대본은 `tools/listening_source.json` 한 파일에 있고, 여기서 음원과 문항 데이터를 함께 생성합니다.
+대본·문항은 `tools/listening/*.json`(주제별)과 `tools/listening_source.json`(배역·기본값)에 있고,
+여기서 음원과 문항 데이터를 함께 생성합니다. 내용 해시로 **바뀐 문항만** 다시 뽑습니다.
 
 ```
 setx AZURE_SPEECH_KEY "<Azure Speech 키>"
@@ -91,8 +100,23 @@ python tools/build_listening.py --force    # 전부 재생성
 python tools/build_listening.py --only lis_0009
 ```
 
-Azure Speech **무료 F0 티어**(월 50만 자)로 충분합니다 — 16문항 전체가 4,637자(약 0.9%)입니다.
+Azure Speech **무료 F0 티어**(월 50만 자)로 충분합니다 — 200문항 전체를 한 번 뽑는 데
+약 7만 6천 자(월 한도의 15%)가 듭니다. 과금 문자에는 `<speak>`·`<voice>`를 뺀 SSML 태그도
+포함되므로 대본 원문보다 약 1.3배 잡으면 됩니다.
+
 `ffmpeg`가 PATH에 있어야 합니다. **키를 저장소에 커밋하지 마세요** (환경 변수로만 씁니다).
+
+정답 위치가 앞쪽(A·B)으로 쏠리면 아이가 내용이 아니라 위치로 찍는 법을 배웁니다.
+문항을 추가한 뒤에는 균등화 도구를 돌리세요 — 보기 순서만 바꾸므로 음원은 재생성되지 않습니다.
+
+```
+python tools/balance_answers.py          # 현재 분포 확인만
+python tools/balance_answers.py --apply  # 실제로 균등화
+python tools/build_listening.py          # questions_listening.js 갱신
+```
+
+> 해설에서 보기를 'A', 'D' 같은 **문자로 지칭하지 마세요.** 순서를 섞는 순간 해설이 틀려집니다.
+> 보기 '내용'으로 쓰면 됩니다. 균등화 도구가 문자 지칭을 발견하면 실행을 거부합니다.
 
 대본에서 쓸 수 있는 마크업:
 
@@ -129,11 +153,13 @@ contact.html                 문의하기 (정적 페이지)
 styles.css                   스타일
 app.js                       앱 로직 (상태/화면/보상 엔진)
 questions.js                 문항 데이터 1,000개 (부모가 편집 가능)
-questions_listening.js       리스닝 문항 16개 — 자동 생성물, 직접 편집 금지
-audio/lis_XXXX.m4a           리스닝 음원 16개 (2.2MB)
+questions_listening.js       리스닝 문항 200개 — 자동 생성물, 직접 편집 금지
+audio/lis_XXXX.m4a           리스닝 음원 200개 (23MB)
 tools/generate_questions.js  문항 생성기 (node로 실행)
-tools/listening_source.json  리스닝 원본 (대본 + 문항 + 배역) ← 여기를 편집
+tools/listening_source.json  리스닝 배역·기본값 (+ 초기 16문항)
+tools/listening/*.json       리스닝 대본·문항 (주제별) ← 여기를 편집
 tools/build_listening.py     리스닝 빌드 (Azure TTS + ffmpeg)
+tools/balance_answers.py     정답 위치 균등화
 manifest.webmanifest         PWA 매니페스트
 sw.js                        서비스 워커 (오프라인 캐시)
 icon.svg                     앱 아이콘

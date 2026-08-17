@@ -88,12 +88,12 @@
       ],
       "stem": "What are the students mainly discussing?",
       "choices": [
+        "Changing the way they will present their project",
         "Which colors to use on their poster",
         "Asking Ms. Park for more time",
-        "Changing the way they will present their project",
         "Deciding what topic to research"
       ],
-      "answer": 2,
+      "answer": 0,
       "explanation": "포스터 색·마감일·Ms. Park는 모두 언급되지만 곁가지다. 대화의 중심은 '같은 연구를 포스터가 아니라 실연으로 보여주자'는 발표 방식 변경이다."
     },
     {
@@ -138,11 +138,11 @@
       "stem": "What is the conversation mainly about?",
       "choices": [
         "How the student improved his math grades",
-        "How to prepare for the spring auditions",
         "A scheduling conflict that delays the student's plan",
+        "How to prepare for the spring auditions",
         "Why the student wants to stop his tutoring"
       ],
-      "answer": 2,
+      "answer": 1,
       "explanation": "성적·오디션은 언급만 될 뿐이고, '과외를 그만두고 싶어한다'는 선택지는 오히려 반대다(그만두고 싶지 않다고 직접 말한다). 전체를 관통하는 것은 '하고 싶지만 시간이 겹쳐 이번 학기는 미룬다'는 일정 충돌이다."
     },
     {
@@ -186,12 +186,12 @@
       ],
       "stem": "What is the main point the boy makes?",
       "choices": [
-        "The extra sources explain things the chapter does not",
         "The reading assignment is too long for one night",
         "Mr. Cho asks questions that are unfair",
+        "The extra sources explain things the chapter does not",
         "The girl should spend two hours on homework"
       ],
-      "answer": 0,
+      "answer": 2,
       "explanation": "두 시간·Mr. Cho의 질문은 근거로 든 세부사항이다. 소년의 요지는 '시험에 안 나오는 1차 자료에 교과서가 답하지 못하는 내용이 들어 있다'는 것."
     },
     {
@@ -212,11 +212,11 @@
       "stem": "What is the main purpose of the announcement?",
       "choices": [
         "To remind students to return overdue books",
+        "To explain how library service changes during the work",
         "To announce that the library will close completely",
-        "To introduce new computers on the first floor",
-        "To explain how library service changes during the work"
+        "To introduce new computers on the first floor"
       ],
-      "answer": 3,
+      "answer": 1,
       "explanation": "연체·컴퓨터·스터디룸은 모두 '공사 기간 중 이용 방법'의 하위 항목이다. '도서관이 완전히 닫힌다'는 1층은 계속 연다고 했으므로 사실과 다르고, 컴퓨터는 새것이 아니라 1층으로 옮겨진 것이다."
     },
     {
@@ -286,12 +286,12 @@
       ],
       "stem": "What is the speaker's main point?",
       "choices": [
-        "Paper money began among merchants before governments took it over",
         "Copper coins were too heavy to carry on long journeys",
         "Chinese merchants often traveled between distant cities",
+        "Paper money began among merchants before governments took it over",
         "The Chinese government printed the first paper receipts"
       ],
-      "answer": 0,
+      "answer": 2,
       "explanation": "동전의 무거움은 계기, 상인의 이동은 배경 설명이다. '정부가 최초의 지폐를 찍었다'는 정부가 나중에야 개입했다는 내용과 정반대다. 요지는 마지막 문장의 '위에서 내려온 게 아니라 아래에서 발명되어 나중에 접수되었다'이다."
     },
     {
@@ -311,12 +311,12 @@
       ],
       "stem": "What is the speaker mainly arguing?",
       "choices": [
+        "Flood defenses can create a false sense of safety",
         "Town B was simply luckier than Town A during the storm",
         "Concrete walls are usually built too weak to hold",
-        "Towns should never be built beside a river",
-        "Flood defenses can create a false sense of safety"
+        "Towns should never be built beside a river"
       ],
-      "answer": 3,
+      "answer": 0,
       "explanation": "'the wall wasn't badly built'이라고 직접 부정했으므로 '벽이 부실했다'는 오답이고, 마지막 두 문장이 요지다 — 벽은 '물은 오지 않는다'고 가르쳐서 대비를 멈추게 만든다. '운이 좋았다'가 아니라 구조적 문제를 말하고 있다."
     },
     {
@@ -338,11 +338,11 @@
       "stem": "What does the speaker most likely mean?",
       "choices": [
         "She may have taken something other than the book",
-        "Someone other than her may have taken the book",
         "The speaker never mentioned the book at all",
+        "Someone other than her may have taken the book",
         "She borrowed the book rather than took it"
       ],
-      "answer": 1,
+      "answer": 2,
       "transcriptMarked": "I didn't say **SHE** took the book.  ← 'she'에 강세",
       "explanation": "글자는 같아도 강세 위치가 뜻을 정한다. 'she'를 강조하면 '그 애가 가져갔다고는 안 했다' = 다른 사람일 수 있다는 뜻. 'book'을 강조했다면 '책이 아닌 다른 것을 가져갔다'가 답이 된다."
     },
@@ -365,11 +365,11 @@
       "stem": "What mistake is the speaker correcting?",
       "choices": [
         "The wrong color folder was brought",
-        "The folder was taken from someone else's desk",
         "The folder was not on a desk at all",
+        "The folder was taken from someone else's desk",
         "More than one folder was brought"
       ],
-      "answer": 1,
+      "answer": 2,
       "transcriptMarked": "I asked for the blue folder on **MY** desk.  ← 'my'에 강세",
       "explanation": "'my'에 강세가 놓였으므로 대조되는 것은 '내 책상 vs 다른 사람 책상'이다. 색깔이 문제였다면 'blue'에 강세가 왔을 것."
     },
@@ -399,11 +399,11 @@
       "stem": "How does the girl feel about the change?",
       "choices": [
         "She is pleased that practice will be earlier",
-        "She is unhappy about the new time",
         "She is surprised no one told her sooner",
-        "She thinks the new time is fair to everyone"
+        "She thinks the new time is fair to everyone",
+        "She is unhappy about the new time"
       ],
-      "answer": 1,
+      "answer": 3,
       "transcriptMarked": "Oh, that's just great.  ← 평탄하고 느린 내림조 = 비꼼",
       "explanation": "단어만 보면 칭찬이지만 어조가 반대를 말한다. 느리고 낮게 깔리는 평탄한 억양은 영어에서 전형적인 비꼼(sarcasm) 신호다."
     },
@@ -433,11 +433,11 @@
       "stem": "What does the boy's tone suggest?",
       "choices": [
         "He did not hear which concert she meant",
-        "He is less pleased than his words suggest",
         "He is genuinely delighted with the seat",
+        "He is less pleased than his words suggest",
         "He is confused about where to sit"
       ],
-      "answer": 1,
+      "answer": 2,
       "transcriptMarked": "Thank you. ⟨0.6초 휴지⟩ That's very kind.  ← 예의는 갖추되 가라앉은 어조",
       "explanation": "'감사합니다'라는 말과 달리 휴지와 가라앉은 억양이 반가움 없음을 드러낸다. 말의 내용과 어조가 어긋날 때는 어조 쪽이 진심이다."
     },
@@ -465,12 +465,12 @@
       ],
       "stem": "How does the girl feel about the deadline?",
       "choices": [
-        "She is reluctant and not at all sure",
         "She is confident she will finish in time",
+        "She is reluctant and not at all sure",
         "She has already finished the report",
         "She did not understand the question"
       ],
-      "answer": 0,
+      "answer": 1,
       "transcriptMarked": "Well, ⟨0.5초⟩ I suppose ⟨0.32초⟩ I could try.  ← 휴지 + 느린 속도",
       "explanation": "'할 수 있다'가 아니라 '해 볼 수는 있을 것 같다'에 긴 휴지가 겹쳤다. 휴지와 채움말(well)은 내키지 않음·자신 없음의 신호다."
     },
@@ -498,11 +498,11 @@
       "stem": "What does the boy's pause suggest?",
       "choices": [
         "He did not hear her question clearly",
+        "He is looking for a polite way to avoid criticizing it",
         "He is genuinely impressed by the painting",
-        "He wants her to ask the question again",
-        "He is looking for a polite way to avoid criticizing it"
+        "He wants her to ask the question again"
       ],
-      "answer": 3,
+      "answer": 1,
       "transcriptMarked": "⟨0.9초 침묵⟩ It's really... interesting.  ← 답 앞의 긴 침묵",
       "explanation": "칭찬이 진심이면 즉시 나온다. 대답 앞의 긴 침묵과 'interesting' 앞의 머뭇거림은 부정적인 평가를 돌려 말하려는 신호다."
     },
@@ -554,12 +554,12 @@
       ],
       "stem": "What does the speaker's intonation tell you?",
       "choices": [
+        "The list is not finished yet",
         "These three items are the only ones needed",
         "The speaker is unsure the items are necessary",
-        "The list is not finished yet",
         "The speaker is asking someone to bring the items"
       ],
-      "answer": 2,
+      "answer": 0,
       "transcriptMarked": "paper↗, scissors↗, glue↗  ← 마지막 항목도 올림조 = 목록 계속됨",
       "explanation": "영어 목록에서 마지막 항목은 내림조로 끝나 완결을 알린다. 여기서는 'glue'까지 올림조라 항목이 더 남았다는 신호."
     }
