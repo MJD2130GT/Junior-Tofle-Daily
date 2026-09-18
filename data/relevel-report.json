@@ -1,0 +1,7130 @@
+{
+  "target": "800–900L (editorial target only; not measured)",
+  "lexileMeasured": false,
+  "methodology": "Connected prose, familiar school and daily-life vocabulary, contextual definitions, moderate clause complexity. Task difficulty reviewed independently. No conversion of word counts or app difficulty to Lexile.",
+  "before": {
+    "total": 1000,
+    "tracks": {
+      "adventure": 400,
+      "lfm": 600
+    },
+    "difficulty": {
+      "1": 83,
+      "2": 609,
+      "3": 145,
+      "4": 114,
+      "5": 49
+    },
+    "uniquePassages": 212,
+    "passageWords": {
+      "min": 23,
+      "median": 42,
+      "max": 117,
+      "mean": 46.6
+    },
+    "answers": [
+      249,
+      225,
+      260,
+      266
+    ]
+  },
+  "after": {
+    "total": 1000,
+    "tracks": {
+      "adventure": 400,
+      "lfm": 600
+    },
+    "difficulty": {
+      "2": 762,
+      "3": 238
+    },
+    "uniquePassages": 212,
+    "passageWords": {
+      "min": 74,
+      "median": 96,
+      "max": 117,
+      "mean": 93.8
+    },
+    "answers": [
+      249,
+      225,
+      260,
+      266
+    ]
+  },
+  "changedQuestions": 691,
+  "contentChangedQuestions": 558,
+  "exactDuplicates": [],
+  "changes": [
+    {
+      "id": "adv_0001",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0002",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0003",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0004",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0005",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0006",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0007",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0008",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0009",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0010",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0011",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0012",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0013",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0014",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0015",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0016",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0017",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0018",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0019",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0020",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0021",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0022",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0023",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0024",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0025",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0026",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0027",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0028",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0029",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0030",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0031",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0032",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0033",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0034",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0035",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0036",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0037",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0038",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0039",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0040",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0041",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0042",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0043",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0044",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0045",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0046",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0047",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0048",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0049",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0050",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0051",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0052",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0053",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0054",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0055",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0056",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0057",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0058",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0059",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0060",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0061",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0062",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0063",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0064",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0065",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0066",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0067",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0068",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0069",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0070",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0071",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0072",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0073",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0074",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0075",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0076",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0077",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0078",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0079",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0080",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0081",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0082",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0083",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0084",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0085",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0086",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0087",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0088",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0089",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0090",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0091",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0092",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0093",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0094",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0095",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0096",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0097",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0098",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0099",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0100",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0101",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0102",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0103",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0104",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0105",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0106",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0107",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0108",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0109",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0110",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0111",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0112",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0113",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0114",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0115",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0116",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0117",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0118",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0119",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0120",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0121",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0122",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0123",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0124",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0125",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0126",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0127",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0128",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0129",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0130",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0131",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0132",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0133",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0134",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0135",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0136",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0137",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0138",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0139",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0141",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0142",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0148",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0149",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0152",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0154",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0155",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0156",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0159",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0160",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0161",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0162",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0163",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0164",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0166",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0171",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0174",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0175",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0183",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0186",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0187",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0189",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0191",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0192",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0195",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0196",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0200",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0201",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0202",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0203",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0211",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0212",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0213",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0214",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0216",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0217",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0218",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0223",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0226",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0227",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0231",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0232",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0233",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0237",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0238",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0240",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0243",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0249",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0250",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0251",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0253",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0254",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0256",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0258",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0261",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0266",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0269",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0273",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0277",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0278",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0279",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0286",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0287",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0288",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0289",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0290",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0292",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0293",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0294",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0295",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0296",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0300",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0301",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0302",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0303",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0304",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0307",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0309",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0310",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0312",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0313",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0314",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0315",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0316",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0318",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0320",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0321",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0323",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0327",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0329",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0332",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0335",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0336",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0339",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0340",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0342",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0344",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0347",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0348",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0351",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0353",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0354",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0359",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0360",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0365",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0367",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0368",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0369",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0371",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0372",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0373",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0380",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0382",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0384",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0385",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0387",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0389",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0390",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0391",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0396",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0397",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0398",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0400",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0401",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0403",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0404",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0407",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0408",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0410",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0411",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0413",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0414",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0416",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0417",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0419",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0423",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0425",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0432",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0435",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0437",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0438",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0439",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0445",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0449",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0450",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0451",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0453",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0454",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0459",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0460",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0463",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0464",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0469",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0470",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0473",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0476",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0478",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0479",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0480",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0484",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0485",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0487",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0488",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0489",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0493",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0494",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0498",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0499",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0501",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0502",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0503",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0504",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0505",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0506",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0507",
+      "fields": [
+        "passage"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정"
+      ]
+    },
+    {
+      "id": "adv_0508",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0509",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0510",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0512",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0514",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0515",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0516",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0517",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0518",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0519",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0520",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0521",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0523",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0524",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0525",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0526",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0527",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0528",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0530",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0531",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0532",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0533",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0534",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0536",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0537",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0538",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0539",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0540",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0542",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0543",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0545",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0546",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0547",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0548",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0549",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0551",
+      "fields": [
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0552",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0553",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0554",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0556",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0557",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0558",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0559",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0560",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0561",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0562",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0563",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0564",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0565",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0566",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0567",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0568",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0569",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0570",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0571",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0572",
+      "fields": [
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0573",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0574",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0575",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0576",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0577",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0578",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0579",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0580",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0581",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0582",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0583",
+      "fields": [
+        "passage",
+        "explanation"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설"
+      ]
+    },
+    {
+      "id": "adv_0584",
+      "fields": [
+        "passage",
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "adv_0585",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0586",
+      "fields": [
+        "passage",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0587",
+      "fields": [
+        "passage",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "지문 어휘·구문·문맥 조정",
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0588",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0589",
+      "fields": [
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0590",
+      "fields": [
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "수정 지문에 맞춘 근거 해설",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0591",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "adv_0593",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0001",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0002",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0004",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0008",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0012",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0014",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0020",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0021",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0026",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0027",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0032",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0037",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0043",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0046",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0047",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0048",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0051",
+      "fields": [
+        "explanation"
+      ],
+      "reasons": [
+        "한국어 문법 해설 보완"
+      ]
+    },
+    {
+      "id": "lfm_0054",
+      "fields": [
+        "stem",
+        "choices"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0056",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0059",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0060",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0062",
+      "fields": [
+        "explanation"
+      ],
+      "reasons": [
+        "한국어 문법 해설 보완"
+      ]
+    },
+    {
+      "id": "lfm_0066",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0071",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0072",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0075",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0082",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0083",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0090",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0094",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0095",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0098",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0099",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0100",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0104",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0107",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0109",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0111",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0112",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0117",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0125",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0129",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0130",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0136",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0139",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0147",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0149",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0152",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0153",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0156",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0158",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0162",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0163",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0164",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0167",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0173",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0184",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0187",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0188",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0189",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0190",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0196",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0199",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0200",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0202",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0213",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0217",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0219",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0221",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0225",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0234",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0239",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0240",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0241",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0243",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0246",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0257",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0261",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0262",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0263",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0265",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0267",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0270",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0271",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0276",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0282",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0284",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0285",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0286",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0288",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0292",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0294",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0299",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0303",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0308",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0311",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0315",
+      "fields": [
+        "explanation"
+      ],
+      "reasons": [
+        "한국어 문법 해설 보완"
+      ]
+    },
+    {
+      "id": "lfm_0317",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0320",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0322",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0331",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0341",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0344",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0345",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0349",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0353",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0363",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0364",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0365",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0367",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0368",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0369",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0370",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0371",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0372",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0373",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0376",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0378",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0379",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0380",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0381",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0382",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0384",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0390",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0392",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0397",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0398",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0406",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0408",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0410",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0411",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0413",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0414",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0415",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0417",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0418",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0420",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0423",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0426",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0432",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0434",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0436",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0440",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0441",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0448",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0453",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0456",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0457",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0458",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0460",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0461",
+      "fields": [
+        "choices"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0463",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0464",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0466",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0470",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0471",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0479",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0481",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0486",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0487",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0489",
+      "fields": [
+        "explanation"
+      ],
+      "reasons": [
+        "한국어 문법 해설 보완"
+      ]
+    },
+    {
+      "id": "lfm_0494",
+      "fields": [
+        "stem"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0499",
+      "fields": [
+        "stem",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0500",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation"
+      ],
+      "reasons": [
+        "문법 문맥·어순 오류 수정"
+      ]
+    },
+    {
+      "id": "lfm_0501",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0502",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0503",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0504",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0505",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0506",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0507",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0508",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0509",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0510",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0511",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0512",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0513",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0514",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0515",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0516",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0517",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0518",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0519",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0520",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0521",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0522",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0523",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0524",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0525",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0526",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0527",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0528",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0529",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0530",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0531",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0532",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0533",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0534",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0535",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0536",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0537",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0538",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0539",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0540",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0541",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0542",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0543",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0544",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0545",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0546",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0547",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0548",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0549",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0550",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0551",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0552",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0553",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0554",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0555",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0556",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0557",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0558",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0559",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0560",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0561",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0562",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0563",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0564",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0565",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0566",
+      "fields": [
+        "choices",
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0571",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0572",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0573",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0574",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0575",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0576",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0577",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0578",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0579",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0580",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0581",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0582",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0583",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0584",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0585",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0586",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0587",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0588",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0589",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0590",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0591",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0592",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0593",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0594",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0595",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0596",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0597",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0598",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0599",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0600",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0601",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0602",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0603",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0604",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0605",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0606",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0607",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0608",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0609",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0610",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0611",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0612",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0613",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0614",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0615",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0616",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0617",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0618",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0619",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0620",
+      "fields": [
+        "tags"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0621",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0622",
+      "fields": [
+        "tags"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0623",
+      "fields": [
+        "tags"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0624",
+      "fields": [
+        "tags"
+      ],
+      "reasons": []
+    },
+    {
+      "id": "lfm_0625",
+      "fields": [
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0626",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0627",
+      "fields": [
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0628",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0629",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    },
+    {
+      "id": "lfm_0630",
+      "fields": [
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0631",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0632",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0633",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0634",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성",
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0635",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0636",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0637",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0638",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0639",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0640",
+      "fields": [
+        "difficulty"
+      ],
+      "reasons": [
+        "앱 내 문항 난이도 재분류"
+      ]
+    },
+    {
+      "id": "lfm_0641",
+      "fields": [
+        "stem",
+        "choices",
+        "explanation",
+        "difficulty",
+        "tags"
+      ],
+      "reasons": [
+        "질문·보기·해설 재작성"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 /* ============================================================
- * questions.js 생성기 — adv 500 + lfm 500 문항
+ * questions.js 생성기 — 현재 adv 400 + lfm 600 문항
+ * 800–900L 목표 편집판은 relevel_questions.js에서 재현한다.
  * 사용법: node tools/generate_questions.js
  * - 기존 questions.js의 수작업 문항(adv_0001~0018, lfm_0001~0018)은 보존
  * - 시드 고정 난수 → 재실행해도 동일한 결과
@@ -1320,6 +1321,11 @@ function genAdvHard() {
 //  메인
 // ============================================================
 function main() {
+  // Preserve the reviewed bank when using the existing documented entry point.
+  // The original generation code remains below as historical source material.
+  require("./relevel_questions.js");
+  return;
+
   // 기존 파일에서 수작업 문항 보존
   global.window = {};
   eval(fs.readFileSync(Q_PATH, "utf8"));

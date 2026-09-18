@@ -28,15 +28,16 @@ python -m http.server 8000
 
 > `index.html`을 더블클릭해 `file://`로 열어도 동작합니다 (PWA/오프라인 캐시만 비활성).
 
-## 문항 (총 1,200개 · 중·상급 위주)
+## 문항 (총 1,200개 · 독해 편집 목표 800–900L)
 
 `questions.js`에 **어드벤처 400 + LFM(문법·어휘) 600 = 1,000문항**,
 `questions_listening.js`에 **리스닝 200문항**이 들어 있습니다.
-- `adv/lfm_0001~0018`: 수작업 문항
-- `~0500`: 기본 문항 (Lv1~2)
-- `0501~`: **상위 난이도(Lv3~5)** — 독해는 장문 지문 + 추론·주제·어휘·지시어, 문법은 가정법·분사·사역·도치·관계사·강조구문·간접의문문·지각동사·고급 수동태·동명사 관용 등
-- 전부 `tools/generate_questions.js`로 생성 (시드 고정 → 재실행해도 동일, 기존 ID 보존).
-  1000개를 맞추기 위해 **입문(Lv1) 문항만** 일부 제거하며(중급·상급은 전부 유지), 이때 ID 번호에 빈 자리가 생길 수 있으나 남는 문항의 ID·내용은 그대로 유지됩니다.
+- `questions.js`는 독해의 어휘·구문·문맥을 **800–900L 독자층을 목표로 편집**한 버전입니다. 공식 Lexile 측정값은 아닙니다.
+- LFM 단문에는 Lexile 수치를 부여하지 않습니다. 복잡한 가정법·도치·강조구문 등을 기본 시제·관계사·문맥 문항으로 교체했습니다.
+- 앱의 `difficulty`는 2(기본 확인) 또는 3(문맥·추론·복합 구문)이며 Lexile 점수와 별개입니다. ID 번호는 난이도를 뜻하지 않습니다.
+- 기존 1,000개 ID와 트랙 구성을 유지합니다. 리스닝 200문항은 이번 편집 범위에 포함되지 않습니다.
+- 원본: `data/questions.before-800-900.js`. 재생성: `node tools/generate_questions.js` 또는 `node tools/relevel_questions.js`.
+- 검증: `node tools/relevel_questions.js --check`. 편집 기준은 [data/READABILITY.md](data/READABILITY.md), 문항별 변경 필드는 `data/relevel-report.json`을 참고하세요.
 
 난이도 분포: Lv1 83 · Lv2 609 · **Lv3 145 · Lv4 114 · Lv5 49** (1~5 척도)
 → **상급(Lv3~5)이 30.8%, Lv2 이상이 91.7%**.

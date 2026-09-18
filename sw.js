@@ -1,5 +1,5 @@
 /* Jr. TOEFL Daily - Service Worker (오프라인 캐시) */
-const CACHE = "jrtoefl-v7";
+const CACHE = "jrtoefl-v8-reading-800-900";
 const AUDIO_CACHE = "jrtoefl-audio"; // app.js의 prefetchAudio()와 같은 이름을 쓴다
 const ASSETS = [
   "./",
