@@ -91,9 +91,6 @@ const TAG_KO = {
   "inference": "추론", "main-idea": "주제 찾기", "purpose": "목적 찾기", "cause-effect": "원인과 결과",
   "sequence": "순서 파악", "feeling": "감정 파악", "dialogue": "대화문", "story": "이야기 글",
   "notice": "공지문", "letter": "편지 글", "nonfiction": "설명문", "how-to": "방법 설명 글", "reading": "독해",
-  // 리스닝
-  "listening": "듣기", "prosody": "억양·강세", "stress": "강세", "intonation": "억양",
-  "attitude": "화자 태도", "conversation": "대화", "announcement": "안내방송", "academic-talk": "학술 토크",
 };
 
 // 트랙 정의 — 이름·아이콘·색을 한곳에 모아 둔다 (화면마다 흩어지지 않게).
@@ -101,7 +98,6 @@ const TAG_KO = {
 const TRACKS = [
   { id: "adventure", name: "어드벤처",  icon: "🏝️", color: "#ea580c" },
   { id: "lfm",       name: "문법·어휘", icon: "✏️", color: "#0891b2" },
-  { id: "listening", name: "리스닝",    icon: "🎧", color: "#7c3aed" },
 ];
 const TRACK = Object.fromEntries(TRACKS.map(t => [t.id, t]));
 const trackLabel = id => { const t = TRACK[id]; return t ? `${t.icon} ${t.name}` : id; };
@@ -415,18 +411,14 @@ function shuffle(arr) {
   }
   return a;
 }
-// 하루 목표 문제 수 → 트랙별 문항 수 (TRACKS 순서: 어드벤처, LFM, 리스닝).
-// 리스닝은 매일 2문제를 기본으로 하되, 4문제 목표에서는 1문제로 줄인다.
-const GOAL_SPLIT = { 4: [1, 2, 1], 6: [2, 2, 2], 8: [3, 3, 2] };
+// 하루 목표 문제 수 → 트랙별 문항 수 (TRACKS 순서: 어드벤처, LFM). 균등 분배.
 function trackSplit(goal) {
-  if (GOAL_SPLIT[goal]) return GOAL_SPLIT[goal].slice();
-  // 정의에 없는 목표값이면 균등 분배로 흘린다.
   const base = Math.max(1, Math.floor(goal / TRACKS.length));
   const out = TRACKS.map(() => base);
   for (let i = 0; out.reduce((a, b) => a + b, 0) < goal; i = (i + 1) % TRACKS.length) out[i]++;
   return out;
 }
-// 트랙별 개수만큼 뽑아 하나의 id 배열로. 리스닝 음원이 없으면 그 트랙은 자동으로 비어 나온다.
+// 트랙별 개수만큼 뽑아 하나의 id 배열로.
 function pickDailyIds(goal) {
   const counts = trackSplit(goal);
   return TRACKS.flatMap((t, i) => pickForTrack(t.id, counts[i]));
@@ -454,19 +446,7 @@ function ensureDailySet() {
   const ids = pickDailyIds(goal);
   S.dailySets[key] = { questionIds: ids, index: 0, answers: [], completed: false, perfect: false };
   save();
-  prefetchAudio(ids);
   return S.dailySets[key];
-}
-
-// 오늘 세트에 리스닝이 있으면 음원을 미리 캐시에 넣어 둔다.
-// 전체를 프리캐시하면 설치가 무거워지므로, 그날 쓸 것만 받는다. 실패해도 무시(재생 시 다시 시도).
-function prefetchAudio(ids) {
-  if (!("caches" in window)) return;
-  const urls = ids.map(id => { const q = getQ(id); return q && q.audio; }).filter(Boolean);
-  if (!urls.length) return;
-  caches.open("jrtoefl-audio").then(c =>
-    Promise.all(urls.map(u => c.match(u).then(hit => hit || c.add(u).catch(() => {}))))
-  ).catch(() => {});
 }
 
 // ---------------- 오답노트 ----------------
@@ -744,7 +724,6 @@ function startExtra() {
   let ids = pickDailyIds(goal).filter(id => !usedToday.has(id));
   if (!ids.length) ids = pickDailyIds(goal);
   if (!ids.length) { toast("풀 수 있는 문제가 더 없어요!"); return; }
-  prefetchAudio(ids);
   quiz = { mode: "extra", qids: ids, idx: 0, phase: "answer", selected: null, results: [], startLevelIdx: levelIndex(S.points.total) };
   go("quiz");
 }
@@ -794,72 +773,10 @@ function viewQuiz() {
       <span class="track-tag ${q.track}">${trackName}</span>
       ${difficultyStars(q.difficulty)}
     </div>
-    ${q.audio ? audioBlockHTML(q, isGraded) : ""}
     ${q.passage ? `<div class="passage">${esc(q.passage)}</div>` : ""}
     <div class="stem">${esc(q.stem)}</div>
     <div class="choices">${choices}</div>
-    ${isGraded && q.transcript ? transcriptHTML(q) : ""}
     ${gradeHTML}
-  </div>`;
-}
-
-// ---------------- 리스닝 재생 ----------------
-// Audio 객체를 DOM 밖(모듈 변수)에 둔다. selectChoice 등이 render()로 화면을 통째로
-// 다시 그리기 때문에, <audio> 태그를 카드 안에 넣으면 보기를 고르는 순간 재생이 끊긴다.
-let qAudio = null;
-
-function stopAudio() {
-  if (qAudio) { qAudio.pause(); qAudio = null; }
-}
-function audioIsPlaying(q) {
-  return !!(qAudio && qAudio._src === q.audio && !qAudio.paused && !qAudio.ended);
-}
-function audioBlockHTML(q, isGraded) {
-  const used = (quiz.plays && quiz.plays[q.id]) || 0;
-  const limit = q.replayLimit || 2;
-  const left = Math.max(0, limit - used);
-  const playing = audioIsPlaying(q);
-  const blocked = !isGraded && left <= 0;
-  const label = playing ? "🔊 듣는 중…" : isGraded ? "▶ 다시 듣기" : used ? "▶ 한 번 더 듣기" : "▶ 듣기";
-  const meta = isGraded ? "이제 몇 번이든 들을 수 있어요"
-    : blocked ? "다 들었어요 — 답을 골라 보세요"
-      : `남은 재생 ${left}회`;
-  return `<div class="audio-box">
-    <button class="audio-btn${playing ? " playing" : ""}" ${playing || blocked ? "disabled" : ""}
-            onclick="playAudio()">${label}</button>
-    <div class="audio-bar"><div class="audio-fill" id="audio-fill"></div></div>
-    <div class="audio-meta">${meta}</div>
-  </div>`;
-}
-// 한 번 누르면 처음부터 끝까지 재생. 일시정지를 두지 않아 "몇 번 들었는가"가 명확해진다.
-function playAudio() {
-  if (!quiz) return;
-  const q = getQ(quiz.qids[quiz.idx]);
-  if (!q || !q.audio || audioIsPlaying(q)) return;
-  const isGraded = quiz.phase === "graded";
-  const used = (quiz.plays && quiz.plays[q.id]) || 0;
-  if (!isGraded && used >= (q.replayLimit || 2)) return;
-
-  stopAudio();
-  qAudio = new Audio(q.audio);
-  qAudio._src = q.audio;
-  qAudio.addEventListener("timeupdate", () => {
-    const bar = document.getElementById("audio-fill");
-    if (bar && qAudio && qAudio.duration) bar.style.width = (qAudio.currentTime / qAudio.duration * 100) + "%";
-  });
-  qAudio.addEventListener("ended", () => render());
-  qAudio.addEventListener("error", () => { stopAudio(); toast("음원을 불러오지 못했어요 😢"); render(); });
-
-  if (!isGraded) { quiz.plays = quiz.plays || {}; quiz.plays[q.id] = used + 1; }
-  qAudio.play().then(() => render()).catch(() => { stopAudio(); toast("재생할 수 없어요"); render(); });
-}
-// 채점 후 스크립트 공개. prosody 문항은 평문만으로는 정답 근거가 보이지 않으므로
-// 강세·억양 표기본(transcriptMarked)을 함께 띄운다.
-function transcriptHTML(q) {
-  return `<div class="transcript mt16">
-    <b>📄 스크립트</b>
-    <div class="transcript-body">${esc(q.transcript)}</div>
-    ${q.transcriptMarked ? `<div class="transcript-mark">🎯 ${esc(q.transcriptMarked)}</div>` : ""}
   </div>`;
 }
 
@@ -930,7 +847,6 @@ function gradeCurrent() {
 
 function nextQuestion() {
   if (!quiz) return;
-  stopAudio();
   quiz.idx += 1;
   quiz.phase = "answer";
   quiz.selected = null;
@@ -941,7 +857,6 @@ function nextQuestion() {
 }
 
 function finishQuiz() {
-  stopAudio();
   const r = S.settings.rules;
   if (quiz.mode === "daily") {
     const set = S.dailySets[todayKey()];
@@ -967,7 +882,6 @@ function finishQuiz() {
 
 function quitQuiz() {
   // daily 진행 상황은 이미 저장됨(문항 단위) — 그냥 나가기
-  stopAudio();
   quiz = null;
   go("home");
 }
@@ -1022,7 +936,7 @@ function todaysVocab() {
   if (!quiz) return [];
   const text = quiz.qids.map(id => {
     const q = getQ(id);
-    return q ? [q.passage || "", q.transcript || "", q.stem, (q.choices || []).join(" ")].join(" ") : "";
+    return q ? [q.passage || "", q.stem, (q.choices || []).join(" ")].join(" ") : "";
   }).join(" ");
   const found = [];
   for (const [w, k] of VOCAB) {
